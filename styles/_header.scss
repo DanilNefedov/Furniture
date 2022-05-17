@@ -1,0 +1,31 @@
+header{
+    background: url(../img/background.jpg) no-repeat 100% 100%;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+
+    .head-nav__logo{
+        margin-right: 41px;
+    }
+
+
+    .head-nav__item{
+        color: $black;
+        margin-right: 48px;
+        position: relative;
+       
+    }
+
+    .nav-arr:after{
+        content: '';
+        position: absolute;
+        background: url(../img/arrow-down.svg) no-repeat ;
+        width: 20px;
+        height: 20px;
+        top:5px;
+        right:-25px;
+    }
+}
