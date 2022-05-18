@@ -5,6 +5,7 @@
 	<title>Furniture</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<style>*{padding:0;margin:0;border:0}*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}:active,:focus{outline:0}footer,header,nav{display:block}body,html{height:100%;width:100%;font-family:Gilroy;font-style:normal;font-weight:600;font-size:18px;line-height:150%}input{font-family:inherit}input::-ms-clear{display:none}a,a:visited{text-decoration:none}ul li{list-style:none}img{max-width:100%}.wrapper{overflow:hidden}.container{max-width:1260px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 10px}header{background:url(img/background.jpg) no-repeat 100% 100%;background-size:cover}.header-navigation{padding-top:40px}.head-nav{display:flex;justify-content:space-between}.head-nav__logo{margin-right:41px}.head-nav__item{color:#3a3a3a;margin-right:48px;position:relative}.head-nav__item:last-child{margin-right:0}.head-nav .nav-arr:after{content:"";position:absolute;background:url(img/arrow-down.svg) no-repeat;width:20px;height:20px;top:5px;right:-25px}.head-search{position:relative;vertical-align:middle}.head-search__icon{position:absolute;left:12px;top:11px}.head-search__icon img{display:block}.head-search__field{width:473px;padding:12px 0 12px 44px}.head-user{display:flex;justify-content:space-between;align-items:center}.head-user__account{display:block;margin-left:32px}</style>
 	<link rel="stylesheet" type="text/css" href="styles/main.css" media="print" onload="this.media='all'">
 
 
@@ -37,28 +38,52 @@
 
 					<nav class="head-nav">
 						<div class="head-nav__logo">
-							<img src="img/logo.svg" alt="Furniture">
+							<a href="#"><img src="img/logo.svg" alt="Furniture"></a>
 						</div>
-						<div class="head-nav__item"></div>
-						<div class="head-nav__item"></div>
-						<div class="head-nav__item"></div>
+						<a href="#" class="head-nav__item nav-arr">Products</a>
+						<a href="#" class="head-nav__item nav-arr">Rooms</a>
+						<a href="#" class="head-nav__item">Inspirations</a>
+
 					</nav>
 
 					<div class="head-search">
-						<input type="text" id="main-search">
-						<label for="main-search"></label>
+						<label class="head-search__icon" for="main-search"><img src="img/search.svg" alt="search"></label>
+						<input class="head-search__field" type="text" id="main-search" placeholder="Search for minimalist chair">
 					</div>
 
 					<div class="head-user">
-						<div class="head-user__like"></div>
-						<div class="head-user__basket"></div>
-						<div class="head-user__login"></div>
+						<a href="#" class="head-user__account"><img src="img/heart.svg" alt="heart"></a>
+						<a href="#" class="head-user__account"><img src="img/cart.svg" alt="basket"></a>
+						<a href="#" class="head-user__account"><img src="img/ellipse 2.png" alt="user"></a>
 					</div>
 
 				</div>
 			</div>
 
-			<div class="header-main-swiper">
+			<div class="main-swiper">
+
+				<div class="main-swiper__content">
+					<ul class="main-swiper__pagination">
+						<li class="main-swiper__dot"></li>
+						<li class="main-swiper__dot"></li>
+						<li class="main-swiper__dot"></li>
+					</ul>
+
+					<div class="main-swiper__item">
+						<div class="main-swiper__elem"></div>
+						<div class="main-swiper__elem"></div>
+						<div class="main-swiper__elem"></div>
+					</div>
+
+					<div class="main-swiper__arrow">
+						<div class="main-swiper__left"></div>
+						<div class="main-swiper__right"></div>
+					</div>
+				</div>
+
+				<div class="main-swiper__header">
+
+				</div>
 
 			</div>
 

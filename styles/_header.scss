@@ -1,31 +1,138 @@
-header{
+header {
     background: url(../img/background.jpg) no-repeat 100% 100%;
     background-size: cover;
 }
 
-nav{
+.header-navigation {
+    padding-top: 40px;
+}
+
+.head-nav {
     display: flex;
     justify-content: space-between;
 
-    .head-nav__logo{
+    &__logo {
         margin-right: 41px;
     }
 
 
-    .head-nav__item{
+    &__item {
         color: $black;
         margin-right: 48px;
         position: relative;
-       
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+
+
+
     }
 
-    .nav-arr:after{
+    .nav-arr:after {
         content: '';
         position: absolute;
-        background: url(../img/arrow-down.svg) no-repeat ;
+        background: url(../img/arrow-down.svg) no-repeat;
         width: 20px;
         height: 20px;
-        top:5px;
-        right:-25px;
+        top: 5px;
+        right: -25px;
+    }
+}
+
+.head-search {
+    position: relative;
+    vertical-align: middle;
+
+    &__icon {
+        position: absolute;
+        left: 12px;
+        top: 11px;
+
+        img {
+            display: block;
+        }
+    }
+
+    &__field {
+        width: 473px;
+        padding: 12px 0 12px 44px;
+    }
+}
+
+.head-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__account {
+        display: block;
+        margin-left: 32px;
+    }
+
+}
+
+.main-swiper {
+
+    &__content {
+
+        .main-swiper__item {
+            display: flex;
+            margin: 136px -41%;
+            position: relative;
+
+            .main-swiper__elem {
+                min-width: 934px;
+                margin: 0 16px;
+
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.main-swiper__about {
+    position: absolute;
+    padding: 25px 105px 25px 25px;
+    margin-left: 600px;
+    bottom: 40px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
+
+
+    .main-swiper__text {
+        color: $black;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 120%;
+        padding-bottom: 8px;
+    }
+
+    .main-swiper__descr {
+        font-size: 16px;
+        line-height: 150%;
+        color: $gray-text;
+        font-weight: 500;
+        padding-bottom: 8px;
+    }
+
+    .main-swiper__price {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+        
+
+        &:before{
+            content: '';
+            position: absolute;
+            background: url(../img/arrow-right-long.svg) no-repeat 100% 100%;
+            width: 24px;
+            height: 24px;
+            right: 24px;
+            bottom: 24px;
+        }
     }
 }

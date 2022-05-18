@@ -114,19 +114,26 @@ header {
   background-size: cover;
 }
 
-nav {
+.header-navigation {
+  padding-top: 40px;
+}
+
+.head-nav {
   display: flex;
   justify-content: space-between;
 }
-nav .head-nav__logo {
+.head-nav__logo {
   margin-right: 41px;
 }
-nav .head-nav__item {
+.head-nav__item {
   color: #3A3A3A;
   margin-right: 48px;
   position: relative;
 }
-nav .nav-arr:after {
+.head-nav__item:last-child {
+  margin-right: 0;
+}
+.head-nav .nav-arr:after {
   content: "";
   position: absolute;
   background: url(../img/arrow-down.svg) no-repeat;
@@ -134,4 +141,81 @@ nav .nav-arr:after {
   height: 20px;
   top: 5px;
   right: -25px;
+}
+
+.head-search {
+  position: relative;
+  vertical-align: middle;
+}
+.head-search__icon {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+}
+.head-search__icon img {
+  display: block;
+}
+.head-search__field {
+  width: 473px;
+  padding: 12px 0 12px 44px;
+}
+
+.head-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head-user__account {
+  display: block;
+  margin-left: 32px;
+}
+
+.main-swiper__content .main-swiper__item {
+  display: flex;
+  margin: 136px -41%;
+  position: relative;
+}
+.main-swiper__content .main-swiper__item .main-swiper__elem {
+  min-width: 934px;
+  margin: 0 16px;
+}
+.main-swiper__content .main-swiper__item .main-swiper__elem img {
+  display: block;
+}
+
+.main-swiper__about {
+  position: absolute;
+  padding: 25px 105px 25px 25px;
+  margin-left: 600px;
+  bottom: 40px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+}
+.main-swiper__about .main-swiper__text {
+  color: #3A3A3A;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 120%;
+  padding-bottom: 8px;
+}
+.main-swiper__about .main-swiper__descr {
+  font-size: 16px;
+  line-height: 150%;
+  color: #616161;
+  font-weight: 500;
+  padding-bottom: 8px;
+}
+.main-swiper__about .main-swiper__price {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+}
+.main-swiper__about .main-swiper__price:before {
+  content: "";
+  position: absolute;
+  background: url(../img/arrow-right-long.svg) no-repeat 100% 100%;
+  width: 24px;
+  height: 24px;
+  right: 24px;
+  bottom: 24px;
 }
