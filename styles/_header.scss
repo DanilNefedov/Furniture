@@ -74,12 +74,14 @@ header {
 }
 
 .main-swiper {
+    position: relative;
 
     &__content {
+        position: relative;
 
         .main-swiper__item {
             display: flex;
-            margin: 136px -41%;
+            margin: 136px -41% 0;
             position: relative;
 
             .main-swiper__elem {
@@ -88,6 +90,43 @@ header {
 
                 img {
                     display: block;
+                }
+            }
+        }
+
+        .main-swiper__pagination {
+            display: flex;
+            position: absolute;
+            top: -40px;
+            left: calc(50% - 104px);
+
+            .main-swiper__dot {
+                border-radius: 50%;
+                width: 11px;
+                height: 11px;
+                background-color: $light-gray;
+                margin-left: 20px;
+                transition: .3s;
+                cursor: pointer;
+                position: relative;
+
+                &:hover {
+                    background-color: $primary;
+                }
+
+                &:hover::after{
+                    border-color: $primary;
+                }
+
+                &::after {
+                    border: 1px solid transparent;
+                    border-radius: 50%;
+                    padding: 9px;
+                    position: absolute;
+                    content: '';
+                    top: calc(50% - 10px);
+                    left: calc(50% - 10px);
+                    transition: .3s;
                 }
             }
         }
@@ -123,9 +162,9 @@ header {
         font-weight: 600;
         font-size: 20px;
         line-height: 150%;
-        
 
-        &:before{
+
+        &::before {
             content: '';
             position: absolute;
             background: url(../img/arrow-right-long.svg) no-repeat 100% 100%;
@@ -135,4 +174,82 @@ header {
             bottom: 24px;
         }
     }
+}
+
+
+
+.main-swiper__banner {
+    position: absolute;
+    top: -80px;
+    left: 100px;
+    max-width: 494px;
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.60);
+    backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
+
+    .main-swiper__header {
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 120%;
+        padding-bottom: 16px;
+    }
+
+    .main-swiper__subtitle {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $gray-text;
+        padding-bottom: 48px;
+    }
+
+    .main-swiper__button {
+        padding: 24px 140px;
+        background-color: $primary;
+        color: $white;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 150%;
+    }
+}
+
+
+.main-swiper__arrow {
+    position: absolute;
+    top: -65px;
+    right: 100px;
+    display: flex;
+
+    .arrow {
+        border-radius: 50%;
+        background-color: $primary;
+        width: 48px;
+        height: 48px;
+        margin-left: 8px;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 12px;
+            left: 12px;
+        }
+
+        &:nth-of-type(2)::after {
+            background: url(../img/right-arr-white.svg) no-repeat 100% 100%;
+        }
+
+        &:nth-of-type(1)::after {
+            background: url(../img/left-arr-orange.svg) no-repeat 100% 100%;
+        }
+
+    }
+
+    .main-swiper__left {
+        background-color: rgba(232, 159, 113, .3);
+    }
+
+
 }
