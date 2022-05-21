@@ -1,0 +1,100 @@
+.products-header {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    padding-bottom: 32px;
+    text-align: center;
+}
+
+
+
+.products-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+    &__elem {
+        margin: 0 32px 32px 0;
+        background-color: $back-gray;
+        padding-bottom: 30px;
+        position: relative;
+
+        &:nth-child(n+4) {
+            margin-right: 0;
+        }
+
+        .products-list__header {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            padding: 16px 0 0 16px;
+        }
+
+        .products-list__subtitle {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            color: $gray;
+            padding: 8px 0 8px 16px;
+        }
+
+        .products-list__price {
+            display: inline;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 150%;
+            padding: 0 16px 0 16px;
+        }
+
+        .products-list__discount {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: $gray;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            border-radius: 50%;
+            background-color: $red;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            color: $white;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            padding: 12px 5px;
+            top: 24px;
+            right: 24px;
+        }
+
+        .new {
+            border-radius: 50%;
+            background-color: $green;
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            color: $white;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            padding: 12px 8px;
+            top: 24px;
+            right: 24px;
+        }
+    }
+}
+
+.button {
+    border: 1px solid $primary;
+    padding: 12px 82px;
+    color: $primary;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 150%;
+    max-width: 245px;
+    margin: 0 auto 44px;
+
+}
