@@ -94,44 +94,47 @@ header {
             }
         }
 
-        .main-swiper__pagination {
-            display: flex;
+        
+    }
+}
+
+.main-swiper__pagination {
+    display: flex;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 104px);
+
+    .main-swiper__dot {
+        border-radius: 50%;
+        width: 11px;
+        height: 11px;
+        background-color: $light-gray;
+        margin-left: 20px;
+        transition: .3s;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            background-color: $primary;
+        }
+
+        &:hover::after{
+            border-color: $primary;
+        }
+
+        &::after {
+            border: 1px solid transparent;
+            border-radius: 50%;
+            padding: 9px;
             position: absolute;
-            top: -40px;
-            left: calc(50% - 104px);
-
-            .main-swiper__dot {
-                border-radius: 50%;
-                width: 11px;
-                height: 11px;
-                background-color: $light-gray;
-                margin-left: 20px;
-                transition: .3s;
-                cursor: pointer;
-                position: relative;
-
-                &:hover {
-                    background-color: $primary;
-                }
-
-                &:hover::after{
-                    border-color: $primary;
-                }
-
-                &::after {
-                    border: 1px solid transparent;
-                    border-radius: 50%;
-                    padding: 9px;
-                    position: absolute;
-                    content: '';
-                    top: calc(50% - 10px);
-                    left: calc(50% - 10px);
-                    transition: .3s;
-                }
-            }
+            content: '';
+            top: calc(50% - 10px);
+            left: calc(50% - 10px);
+            transition: .3s;
         }
     }
 }
+
 
 .main-swiper__about {
     position: absolute;

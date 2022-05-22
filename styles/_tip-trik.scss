@@ -1,0 +1,67 @@
+.tip-trik {
+    padding: 44px 0 88px;
+
+    &__header {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 120%;
+        text-align: center;
+        padding-bottom: 32px;
+    }
+}
+
+.tip-trik-swiper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &__elem {
+        margin-right: 32px;
+        max-width: 391px;
+        transition: .3s;
+        cursor: pointer;
+
+        &:nth-of-type(3) {
+            margin-right: 0;
+        }
+
+        &:hover {
+            -webkit-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tip-trik-swiper__header,
+        .tip-trik-swiper__date {
+            padding-left: 16px;
+        }
+
+        img {
+            display: block;
+            padding-bottom: 16px;
+        }
+
+        .tip-trik-swiper__date {
+            padding-bottom: 16px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: $gray;
+        }
+
+        .tip-trik-swiper__header {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            padding-bottom: 8px;
+        }
+    }
+
+    .main-swiper__pagination{
+        left: calc(50% - 67px);
+        
+        top:410px;
+    }
+
+    
+}
