@@ -549,3 +549,78 @@ header {
   top: calc(100% - 48px);
   right: -48px;
 }
+
+.tip-trik {
+  padding: 44px 0 88px;
+}
+.tip-trik__header {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.tip-trik-swiper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.tip-trik-swiper__elem {
+  margin-right: 32px;
+  max-width: 391px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.tip-trik-swiper__elem:nth-of-type(3) {
+  margin-right: 0;
+}
+.tip-trik-swiper__elem:hover {
+  -webkit-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+}
+.tip-trik-swiper__elem .tip-trik-swiper__header,
+.tip-trik-swiper__elem .tip-trik-swiper__date {
+  padding-left: 16px;
+}
+.tip-trik-swiper__elem img {
+  display: block;
+  padding-bottom: 16px;
+}
+.tip-trik-swiper__elem .tip-trik-swiper__date {
+  padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #898989;
+}
+.tip-trik-swiper__elem .tip-trik-swiper__header {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  padding-bottom: 8px;
+}
+.tip-trik-swiper .main-swiper__pagination {
+  left: calc(50% - 67px);
+  top: 410px;
+}
+
+.furniture {
+  position: relative;
+  padding-bottom: 781px;
+}
+
+.furniture__header {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  text-align: center;
+}
+.furniture__header--text {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #616161;
+  display: block;
+}
