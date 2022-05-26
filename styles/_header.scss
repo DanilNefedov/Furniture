@@ -20,11 +20,57 @@ header {
         color: $black;
         margin-right: 48px;
         position: relative;
+        transition: .2s;
 
         &:last-child {
             margin-right: 0;
         }
 
+
+
+        //************************************************//
+
+        // &::before,
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     width: 20px;
+        //     height: 20px;
+        //     transition: .3s ease-in-out;
+        // }
+
+        // &::before {
+        //     top: 28px;
+        //     left: -5px;
+        //     border-top: 1px solid red;
+            
+        // }
+
+        // &::after {
+        //     right: 28px;
+        //     bottom: -5px;
+        //     border-bottom: 1px solid red;
+            
+        // }
+
+        // &:hover::before,
+        // &:hover::after {
+        //     width: calc(100% + 9px);
+        //     height: calc(100% + 9px);
+        // }
+
+
+
+        //*************************************************//
+
+
+
+
+
+            &:hover{
+                filter: brightness(0) saturate(100%) invert(67%) sepia(77%) saturate(337%) hue-rotate(330deg) brightness(93%) contrast(95%);
+
+            }
 
 
 
@@ -38,6 +84,8 @@ header {
         height: 20px;
         top: 5px;
         right: -25px;
+
+        
     }
 }
 
@@ -94,7 +142,7 @@ header {
             }
         }
 
-        
+
     }
 }
 
@@ -106,8 +154,8 @@ header {
 
     .main-swiper__dot {
         border-radius: 50%;
-        width: 11px;
-        height: 11px;
+        width: 12px;
+        height: 12px;
         background-color: $light-gray;
         margin-left: 20px;
         transition: .3s;
@@ -118,18 +166,18 @@ header {
             background-color: $primary;
         }
 
-        &:hover::after{
+        &:hover::after {
             border-color: $primary;
         }
 
         &::after {
             border: 1px solid transparent;
             border-radius: 50%;
-            padding: 9px;
+            padding: 13px;
             position: absolute;
             content: '';
-            top: calc(50% - 10px);
-            left: calc(50% - 10px);
+            top: calc(50% - 14px);
+            left: calc(50% - 14px);
             transition: .3s;
         }
     }
@@ -189,7 +237,8 @@ header {
     padding: 60px;
     background: rgba(255, 255, 255, 0.60);
     backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
-
+    
+    
     .main-swiper__header {
         font-weight: 700;
         font-size: 56px;
@@ -205,14 +254,15 @@ header {
         padding-bottom: 48px;
     }
 
-    .main-swiper__button {
-        padding: 24px 140px;
-        background-color: $primary;
-        color: $white;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 150%;
-    }
+    // .main-swiper__button {
+    //     padding: 24px 140px;
+    //     background-color: $primary;
+    //     color: $white;
+    //     font-weight: 600;
+    //     font-size: 20px;
+    //     line-height: 150%;
+    //     position: relative;
+    // }
 }
 
 
@@ -256,3 +306,13 @@ header {
 
 
 }
+
+
+
+
+
+
+
+
+
+

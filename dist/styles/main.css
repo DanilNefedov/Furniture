@@ -130,9 +130,13 @@ header {
   color: #3A3A3A;
   margin-right: 48px;
   position: relative;
+  transition: 0.2s;
 }
 .head-nav__item:last-child {
   margin-right: 0;
+}
+.head-nav__item:hover {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(77%) saturate(337%) hue-rotate(330deg) brightness(93%) contrast(95%);
 }
 .head-nav .nav-arr:after {
   content: "";
@@ -198,8 +202,8 @@ header {
 }
 .main-swiper__pagination .main-swiper__dot {
   border-radius: 50%;
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   background-color: #D8D8D8;
   margin-left: 20px;
   transition: 0.3s;
@@ -215,11 +219,11 @@ header {
 .main-swiper__pagination .main-swiper__dot::after {
   border: 1px solid transparent;
   border-radius: 50%;
-  padding: 9px;
+  padding: 13px;
   position: absolute;
   content: "";
-  top: calc(50% - 10px);
-  left: calc(50% - 10px);
+  top: calc(50% - 14px);
+  left: calc(50% - 14px);
   transition: 0.3s;
 }
 
@@ -282,14 +286,6 @@ header {
   color: #616161;
   padding-bottom: 48px;
 }
-.main-swiper__banner .main-swiper__button {
-  padding: 24px 140px;
-  background-color: #E89F71;
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 150%;
-}
 
 .main-swiper__arrow {
   position: absolute;
@@ -322,6 +318,60 @@ header {
 }
 .main-swiper__arrow .main-swiper__left {
   background-color: rgba(232, 159, 113, 0.3);
+}
+
+.btn {
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  max-width: 374px;
+  position: relative;
+  width: 100%;
+  padding: 24px 0;
+}
+
+.bac {
+  background-color: #E89F71;
+}
+
+.butn {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-4 {
+  border: 2px solid #E89F71;
+  overflow: hidden;
+  position: relative;
+}
+
+span {
+  z-index: 20;
+}
+
+.btn-4:after {
+  background: red;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.4;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 1500ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: -10;
+}
+
+.btn-4:hover:after {
+  left: 120%;
+  transition: all 1500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .top {
@@ -607,8 +657,7 @@ header {
 }
 
 .furniture {
-  position: relative;
-  padding-bottom: 781px;
+  padding-bottom: 87px;
 }
 
 .furniture__header {
@@ -623,4 +672,111 @@ header {
   line-height: 150%;
   color: #616161;
   display: block;
+}
+
+.furniture__main {
+  display: flex;
+  justify-content: space-between;
+}
+.furniture__main img {
+  display: block;
+}
+.furniture__main .furniture__content {
+  display: flex;
+  align-items: end;
+}
+
+footer {
+  padding-bottom: 50px;
+}
+footer .container {
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: #D8D8D8;
+  align-items: start;
+}
+
+.footer-elem {
+  padding: 80px 0 0;
+  margin-right: 67px;
+}
+.footer-elem__header {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #3A3A3A;
+  padding-bottom: 16px;
+}
+.footer-elem__content {
+  max-width: 249px;
+  padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #616161;
+  display: block;
+}
+.footer-elem__content:last-child {
+  padding-bottom: 0;
+}
+.footer-elem:last-child {
+  margin-right: 0;
+}
+
+.location,
+.phone {
+  position: relative;
+  margin-left: 28px;
+}
+
+.location::before {
+  background: url(../img/location.svg) no-repeat;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: -30px;
+}
+
+.phone::before {
+  background: url(../img/phone.svg) no-repeat;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: -30px;
+}
+
+.footer-email::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.footer-email {
+  padding: 14px 113px 14px 12px;
+  background-color: #F4F5F7;
+}
+
+.footer-btn {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  background-color: #E89F71;
+  margin-left: 5px;
+}
+.footer-btn::after {
+  content: "";
+  position: absolute;
+  background: url(../img/send.svg) no-repeat;
+  width: 24px;
+  height: 24px;
+  top: 10px;
+  left: 10px;
+}
+
+.inp {
+  display: flex;
 }
