@@ -802,3 +802,72 @@ footer .container {
   -webkit-transform: rotate(40deg);
   transform: rotate(40deg);
 }
+
+.heart {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.heart:hover {
+  background-color: rgba(255, 24, 88, 0.2);
+}
+.heart:hover svg {
+  animation: heart 0.4s;
+  animation-iteration-count: 1;
+}
+@keyframes heart {
+  0% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+.heart:hover svg {
+  fill: #E97171;
+}
+.heart:hover path {
+  stroke: #E97171;
+}
+.heart svg {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+}
+
+.cart {
+  padding: 22px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.cart:hover {
+  background-color: #D8D8D8;
+}
+.cart svg {
+  display: block;
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  transition-duration: 0.3s;
+  transition-property: left;
+}
+.cart:hover svg {
+  left: 45px;
+}
+.cart__calc {
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 6px);
+  transition-duration: 0.3s;
+  transition-property: top;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #3A3A3A;
+}
+.cart:hover .cart__calc {
+  top: 7px;
+}
