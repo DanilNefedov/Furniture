@@ -103,8 +103,12 @@
       transform: scale(.3);
     }
 
-    100% {
+    50% {
       transform: scale(1.25);
+    }
+
+    100% {
+      transform: scale(1);
     }
   }
 
@@ -140,7 +144,7 @@
   overflow: hidden;
 
   &:hover {
-    background-color: $light-gray;
+    background-color: $hover-primary;
   }
 
   svg {
@@ -176,3 +180,79 @@
 
 
 //*******************SHOP CART********************//
+
+
+
+//*******************SWIPER ARROW********************//
+
+
+.main-swiper__arrow{
+  overflow: hidden;
+
+}
+
+.main-swiper__right:hover svg{
+  animation: arrowSwiperR 1s;
+  animation-iteration-count: 1;
+  
+}
+
+
+
+.arrow{
+  transition: .3s;
+
+  &:hover{
+  background-color: $primary;
+
+    svg{
+
+      path{
+        stroke: $white;
+      }
+    }
+  }
+}
+
+
+
+@keyframes arrowSwiperR{
+  0% { 
+    opacity:1; 
+    transform: translateX(-13px); 
+  }
+  50% { 
+    opacity:1; 
+    transform: translateX(13px); 
+  }
+  100% { 
+    opacity:0; 
+    transform: translateX(0); 
+  }
+}
+
+
+
+.main-swiper__left:hover svg {
+  animation: arrowSwiperL 1s;
+  animation-iteration-count: 1;
+  
+}
+
+@keyframes arrowSwiperL{
+  0% { 
+    opacity:1; 
+    transform: translateX(13px); 
+  }
+  50% { 
+    opacity:1; 
+    transform: translateX(-13px); 
+  }
+  100% { 
+    opacity:0; 
+    transform: translateX(0); 
+  }
+}
+
+
+//*******************SWIPER ARROW********************//

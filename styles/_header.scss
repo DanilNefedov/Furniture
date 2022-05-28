@@ -26,47 +26,6 @@ header {
             margin-right: 0;
         }
 
-
-
-        //************************************************//
-
-        // &::before,
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     width: 20px;
-        //     height: 20px;
-        //     transition: .3s ease-in-out;
-        // }
-
-        // &::before {
-        //     top: 28px;
-        //     left: -5px;
-        //     border-top: 1px solid red;
-            
-        // }
-
-        // &::after {
-        //     right: 28px;
-        //     bottom: -5px;
-        //     border-bottom: 1px solid red;
-            
-        // }
-
-        // &:hover::before,
-        // &:hover::after {
-        //     width: calc(100% + 9px);
-        //     height: calc(100% + 9px);
-        // }
-
-
-
-        //*************************************************//
-
-
-
-
-
             &:hover{
                 filter: brightness(0) saturate(100%) invert(67%) sepia(77%) saturate(337%) hue-rotate(330deg) brightness(93%) contrast(95%);
 
@@ -254,15 +213,6 @@ header {
         padding-bottom: 48px;
     }
 
-    // .main-swiper__button {
-    //     padding: 24px 140px;
-    //     background-color: $primary;
-    //     color: $white;
-    //     font-weight: 600;
-    //     font-size: 20px;
-    //     line-height: 150%;
-    //     position: relative;
-    // }
 }
 
 
@@ -274,37 +224,32 @@ header {
 
     .arrow {
         border-radius: 50%;
-        background-color: $primary;
+        background-color: $hover-primary;
         width: 48px;
         height: 48px;
         margin-left: 8px;
         position: relative;
         cursor: pointer;
 
-        &::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            top: 12px;
-            left: 12px;
-        }
-
-        &:nth-of-type(2)::after {
-            background: url(../img/right-arr-white.svg) no-repeat 100% 100%;
-        }
-
-        &:nth-of-type(1)::after {
-            background: url(../img/left-arr-orange.svg) no-repeat 100% 100%;
-        }
-
     }
 
-    .main-swiper__left {
-        background-color: rgba(232, 159, 113, .3);
+    .main-swiper__right{
+
+        svg{
+            margin-top: calc(50% - 12px);
+            margin-left: calc(50% - 11px);
+        }
+        
     }
 
+    .main-swiper__left{
 
+        svg{
+            margin-top: calc(50% - 12px);
+            margin-left: calc(50% - 13px);
+        }
+        
+    }
 }
 
 
