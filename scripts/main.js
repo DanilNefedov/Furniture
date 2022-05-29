@@ -1,4 +1,20 @@
-function hi(){
-	console.log('hi');
+const menu = document.getElementById('menu');
+const nav = document.getElementById('nav').cloneNode(1);
+
+
+menu.addEventListener('click', open);
+
+function open(e){
+	e.preventDefault();
+	menu.classList.toggle('active');
+
+	renderNav();
 }
-hi();
+
+function renderNav(){
+	menu.appendChild(nav);
+}
+
+
+
+

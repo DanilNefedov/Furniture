@@ -256,3 +256,79 @@
 
 
 //*******************SWIPER ARROW********************//
+
+
+
+//*******************BURGER MENU********************//
+
+
+
+
+.checkbox-menu{
+  appearance: none;
+}
+
+.menu{
+  position: relative;
+  left: 21px;
+  top: 9px;
+}
+
+
+.hamburger::before { 
+  top: 1px; 
+
+ 
+}
+
+.hamburger::after { 
+  bottom: 12px; 
+
+  
+}
+
+.hamburger::after, .hamburger::before{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: $black;
+  border-radius: 2px;
+  
+}
+
+.hamburger{
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: $black;
+  align-items: center;
+  border-radius: 2px;
+
+  
+}
+
+.label-menu{
+  border-radius: 60% 40% 46% 54% / 59% 64% 36% 41% ;
+  background-color: $primary;
+  padding: 44px;
+  position: absolute;
+  left: -47px;
+  top: -36px;
+  transition: all .4s;
+  z-index: 20;
+  cursor: pointer;
+
+  
+}
+
+.active{
+  box-shadow: 0 0 0 100vw $primary, 0 0 0 100vh $primary;
+  border-radius: 0;
+    
+}
+
+
+
+//*******************BURGER MENU********************//
