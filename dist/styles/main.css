@@ -971,7 +971,39 @@ footer .container {
   cursor: pointer;
 }
 
+.list-elem {
+  display: none;
+}
+
 .active {
   box-shadow: 0 0 0 100vw #E89F71, 0 0 0 100vh #E89F71;
   border-radius: 0;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.active .list-elem {
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.active .list-elem .head-nav__item {
+  margin: 0;
+  padding: 20px 0;
+}
+
+.act-bod {
+  pointer-events: none;
+}
+
+.burder {
+  position: relative;
+}
+
+.active-elem {
+  display: block;
+  z-index: 20;
+  position: absolute;
+  transition: all 0.3s;
 }
