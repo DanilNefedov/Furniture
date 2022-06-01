@@ -17,6 +17,15 @@
   position: relative;
   width: 100%;
   padding: 10px 0;
+
+  @media(max-width:1100px){
+    font-size: 15px;
+    
+    @media(max-width:500px){
+      padding: 5px 0 ;
+    }
+  }
+
 }
 
 .btn:hover {
@@ -380,6 +389,11 @@
   transform: translate(-50%, -50%);
   transform: scale(1.1);
   display: flex;
+
+
+  @media(max-width:500px){
+    left: 40%;
+  }
 
   .head-nav__item{
     margin: 0;
