@@ -160,29 +160,38 @@ header {
             margin: 136px -41% 0;
             position: relative;
 
+            @media(max-width:880px){
+                margin: 136px 0% 0;
+            }
+
             .main-swiper__elem {
                 min-width: 934px;
                 margin: 0 16px;
-                
+                position: relative;
 
                 img {
                     display: block;
-                    position: relative;
+                    
                 }
 
                 @media(max-width:1100px){
                     min-width: 33%;
 
                     @media (max-width:880px) {
-                        min-width: 44%;
+                        min-width: 96%;
 
-                        @media(max-width:640px){
-                            min-width: 50%;
+                        @media(max-width:600px){
+                            margin: 0 12px;
 
-                            @media (max-width:400px) {
-                                min-width: 60%;
+                            @media(max-width:480px){
+                                margin: 0 9px;
+
+                                @media(max-width:380px){
+                                    margin: 0 6px;
+                                }
                             }
                         }
+                        
                     }
                 }
             }
@@ -245,14 +254,27 @@ header {
 .main-swiper__about {
     position: absolute;
     padding: 25px 105px 25px 25px;
-    margin-left: calc(28% - 374px);
     bottom: 40px;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
+    right: 40px;
 
+    @media(max-width:850px){
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 50px 10px 10px;
 
-    @media(max-width:1100px){
-        margin-left: calc(35% - 374px);
+        @media(max-width:480px){
+            bottom: 10px;
+            right: 10px;
+            padding-right: 10px;
+
+            @media(max-width:380px){
+                right: 5px;
+                bottom: 5px;
+                padding: 5px;
+            }
+        }
     }
 
 
@@ -262,6 +284,15 @@ header {
         font-size: 28px;
         line-height: 120%;
         padding-bottom: 8px;
+        
+        @media(max-width:850px){
+            font-size: 20px;
+            padding-bottom: 4px;
+
+            @media (max-width:480px){
+                font-size: 16px;
+            }
+        }
     }
 
     .main-swiper__descr {
@@ -270,12 +301,30 @@ header {
         color: $gray-text;
         font-weight: 500;
         padding-bottom: 8px;
+
+
+        @media(max-width:850px){
+            font-size: 14px;
+            padding-bottom: 4px;
+
+            @media(max-width:480px){
+                font-size: 13px;
+            }
+        }
     }
 
     .main-swiper__price {
         font-weight: 600;
         font-size: 20px;
         line-height: 150%;
+
+        @media(max-width:850px){
+            font-size: 14px;
+
+            @media(max-width:480px){
+                font-size: 13px;
+            }
+        }
 
 
         &::before {
@@ -286,6 +335,11 @@ header {
             height: 24px;
             right: 24px;
             bottom: 24px;
+
+            @media(max-width:850px){
+                bottom: 9px;
+                right: 13px;
+            }
         }
     }
 }
@@ -311,8 +365,13 @@ header {
         @media(max-width:1100px){
             font-size: 35px;
 
-            @media (max-width:500px){
+            @media (max-width:600px){
                 font-size: 20px;
+
+                @media(max-width:480px){
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
             }
         }
     }
@@ -328,8 +387,13 @@ header {
             font-size: 15px;
             
 
-            @media(max-width:500px){
+            @media(max-width:600px){
                 padding-bottom: 20px;
+
+                @media(max-width:480px){
+                    padding-bottom: 10px;
+                    font-size: 13px;
+                }
             }
         }
     }
@@ -339,10 +403,16 @@ header {
         padding: 30px;
         max-width: 340px;
 
-        @media(max-width:500px){
+        @media(max-width:600px){
             left:10px;
             padding: 10px;
             max-width: 230px;
+            top:-80px;
+
+            @media(max-width:480px){
+                padding: 5px;
+                max-width: 150px;
+            }
         }
     }
 
