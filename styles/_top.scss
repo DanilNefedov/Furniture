@@ -1,19 +1,46 @@
 .top {
     padding: 104px 0;
+
+    @media (max-width:1100px) {
+        padding: 10px 0 50px;
+    }
+
+    .container{
+        @media(max-width:1100px){
+            flex-wrap: wrap;
+        }
+    }
 }
 
 .list-top {
     display: flex;
     margin-right: 114px;
 
+    @media(max-width:1100px){
+        margin-right: 0;
+        padding-top: 40px;
+        width: 50%;
+        justify-content: center;
+
+        @media(max-width:480px){
+            width: 100%;
+        }
+    }
+
     &__img {
         display: block;
         margin-right: 24px;
+
+        @media(max-width:1100px){
+            margin-right: 12px;
+        }
     }
 
     &:last-child {
         margin: 0;
     }
+
+ 
 
     &__about {
 
@@ -22,13 +49,23 @@
             font-size: 18px;
             line-height: 150%;
             padding-bottom: 2px;
+
+            @media (max-width:600px) {
+                font-size: 16px;
+            }
         }
 
         .list-top__subtitle {
             font-weight: 500;
             font-size: 16px;
             line-height: 150%;
+            @media (max-width:600px) {
+                font-size: 14px;
+            }
         }
 
+        @media(max-width:1100px){
+            text-align: center;
+        }        
     }
 }
