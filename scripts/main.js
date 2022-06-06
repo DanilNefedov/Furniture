@@ -2,6 +2,7 @@ const menu = document.getElementById('menu');
 const nav = document.getElementById('nav');
 const widthWind =  window.screen.width;
 
+
 menu.addEventListener('click', open);
 
 function open(e){

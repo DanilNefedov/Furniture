@@ -12,7 +12,7 @@
 }
 
 main{
-    .container{
+    .container-products{
 
         @media(max-width:1180px){
             justify-content: center;
@@ -168,5 +168,6 @@ main{
     max-width: 245px;
     margin: 30px auto 44px;
     display: block;
-
+    position: relative;
+    background-color: $white;
 }

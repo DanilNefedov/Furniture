@@ -1,17 +1,36 @@
 .rooms {
     background-color: $back-color;
     padding: 44px 0 90px;
+
+    .container{
+        @media(max-width:780px){
+            flex-direction: column;
+            
+        }
+    }
+
+    @media(max-width:1160px){
+        padding: 30px 0 40px;
+    }
 }
 
 .rooms-text {
     max-width: 378px;
 
+    @media(max-width:780px){
+        padding-bottom: 30px;
+        text-align: center;
+    }
 
     &__header {
         font-weight: 700;
         font-size: 40px;
         line-height: 120%;
         padding-bottom: 8px;
+
+        @media(max-width:780px){
+            font-size: 25px;
+        }
     }
 
     &__subtitle {
@@ -19,6 +38,10 @@
         font-size: 16px;
         line-height: 150%;
         padding-bottom: 24px;
+
+        @media(max-width:780px){
+            font-size: 14;
+        }
     }
 
     &__btn {
@@ -28,6 +51,10 @@
         color: $white;
         padding: 12px 40px;
         background-color: $primary;
+
+        @media(max-width:780px){
+            font-size: 14px;
+        }
     }
 }
 
@@ -49,8 +76,24 @@
             img {
                 transform: scale(1.2);
                 position: relative;
+
+                @media(max-width:1160px){
+                    transform: none;
+                }
             }
 
+            @media(max-width:1160px){
+                margin-top: 0;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    @media(max-width:1160px){
+        margin-right: -1200px;
+
+        @media(max-width:780px){
+            margin-right: -890px;
         }
     }
 
@@ -61,10 +104,20 @@
         top: 532px;
         left: calc(35% - 104px);
 
+        @media(max-width:1160px){
+            left:125px;
+            top:500px;
+
+            @media(max-width:780px){
+                top:calc(100% - -10px);
+                left: calc(10% - 48px); //try everywhere
+            }
+        }
+
         .main-swiper__dot {
             border-radius: 50%;
-            width: 11px;
-            height: 11px;
+            width: 12px;
+            height: 12px;
             background-color: $light-gray;
             margin-left: 20px;
             transition: .3s;
@@ -82,11 +135,11 @@
             &::after {
                 border: 1px solid transparent;
                 border-radius: 50%;
-                padding: 9px;
+                padding: 13px;
                 position: absolute;
                 content: '';
-                top: calc(50% - 10px);
-                left: calc(50% - 10px);
+                top: calc(50% - 14px);
+                left: calc(50% - 14px);
                 transition: .3s;
             }
         }
@@ -101,18 +154,35 @@
     bottom: -18px;
     left: -9px;
 
+    @media(max-width:1160px){
+        bottom: 24px;
+        left: 20px;
+
+        @media(max-width:780px){
+            padding: 20px;
+        }
+    }
+
     &__position {
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
         color: $gray-text;
         padding-bottom: 8px;
+
+        @media(max-width:780px){
+            font-size: 14px;
+        }
     }
 
     &__name {
         font-weight: 600;
         font-size: 28px;
         line-height: 120%;
+
+        @media(max-width:780px){
+            font-size: 20px;
+        }
     }
 
     &::after{

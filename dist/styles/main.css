@@ -624,42 +624,96 @@ header {
   padding-bottom: 32px;
   text-align: center;
 }
+@media (max-width: 835px) {
+  .products-header {
+    font-size: 30px;
+    padding-bottom: 25px;
+  }
+}
+
+@media (max-width: 1180px) {
+  main .container {
+    justify-content: center;
+  }
+}
+@media (max-width: 1180px) and (max-width: 835px) {
+  main .container {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 1180px) and (max-width: 835px) and (max-width: 456px) {
+  main .container {
+    justify-content: center;
+  }
+}
 
 .products-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  height: 100%;
+  gap: 30px;
+}
+@media (max-width: 1260px) {
+  .products-list {
+    justify-content: center;
+  }
 }
 .products-list__elem {
-  margin: 0 32px 32px 0;
-  background-color: #F4F5F7;
-  padding-bottom: 30px;
   position: relative;
+}
+.products-list__elem img {
+  display: block;
+}
+@media (max-width: 600px) {
+  .products-list__elem {
+    padding-bottom: 15px;
+  }
+}
+@media (max-width: 600px) and (max-width: 456px) {
+  .products-list__elem {
+    padding-right: 0;
+  }
+}
+@media (max-width: 1180px) {
+  .products-list__elem:nth-of-type(2n) {
+    padding-right: 0;
+  }
 }
 .products-list__elem:nth-child(n+4) {
   margin-right: 0;
 }
-.products-list__elem .products-list__header {
+.products-list__elem .products-list__about {
+  background-color: #F4F5F7;
+  width: 285px;
+  padding-bottom: 30px;
+}
+@media (max-width: 600px) {
+  .products-list__elem .products-list__about {
+    padding-bottom: 15px;
+  }
+}
+.products-list__elem .products-list__about .products-list__header {
   font-weight: 600;
   font-size: 24px;
   line-height: 120%;
   padding: 16px 0 0 16px;
 }
-.products-list__elem .products-list__subtitle {
+.products-list__elem .products-list__about .products-list__subtitle {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   color: #898989;
   padding: 8px 0 8px 16px;
 }
-.products-list__elem .products-list__price {
+.products-list__elem .products-list__about .products-list__price {
   display: inline;
   font-weight: 600;
   font-size: 20px;
   line-height: 150%;
   padding: 0 16px 0 16px;
 }
-.products-list__elem .products-list__discount {
+.products-list__elem .products-list__about .products-list__discount {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -703,7 +757,9 @@ header {
   font-size: 15px;
   line-height: 150%;
   max-width: 245px;
-  margin: 0 auto 44px;
+  margin: 30px auto 44px;
+  display: block;
+  position: relative;
 }
 
 .rooms {
@@ -1335,4 +1391,14 @@ footer .container {
 }
 .act-nav .head-nav__logo {
   margin: 0 0 0 0;
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  top: 0;
+  left: 0;
 }

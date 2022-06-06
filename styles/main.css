@@ -632,17 +632,17 @@ header {
 }
 
 @media (max-width: 1180px) {
-  main .container {
+  main .container-products {
     justify-content: center;
   }
 }
 @media (max-width: 1180px) and (max-width: 835px) {
-  main .container {
+  main .container-products {
     justify-content: space-between;
   }
 }
 @media (max-width: 1180px) and (max-width: 835px) and (max-width: 456px) {
-  main .container {
+  main .container-products {
     justify-content: center;
   }
 }
@@ -759,15 +759,33 @@ header {
   max-width: 245px;
   margin: 30px auto 44px;
   display: block;
+  position: relative;
+  background-color: #FFFFFF;
 }
 
 .rooms {
   background-color: #FCF8F3;
   padding: 44px 0 90px;
 }
+@media (max-width: 780px) {
+  .rooms .container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1160px) {
+  .rooms {
+    padding: 30px 0 40px;
+  }
+}
 
 .rooms-text {
   max-width: 378px;
+}
+@media (max-width: 780px) {
+  .rooms-text {
+    padding-bottom: 30px;
+    text-align: center;
+  }
 }
 .rooms-text__header {
   font-weight: 700;
@@ -775,11 +793,21 @@ header {
   line-height: 120%;
   padding-bottom: 8px;
 }
+@media (max-width: 780px) {
+  .rooms-text__header {
+    font-size: 25px;
+  }
+}
 .rooms-text__subtitle {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   padding-bottom: 24px;
+}
+@media (max-width: 780px) {
+  .rooms-text__subtitle {
+    font-size: 14;
+  }
 }
 .rooms-text__btn {
   font-weight: 600;
@@ -788,6 +816,11 @@ header {
   color: #FFFFFF;
   padding: 12px 40px;
   background-color: #E89F71;
+}
+@media (max-width: 780px) {
+  .rooms-text__btn {
+    font-size: 14px;
+  }
 }
 
 .rooms-swiper {
@@ -807,16 +840,49 @@ header {
   transform: scale(1.2);
   position: relative;
 }
+@media (max-width: 1160px) {
+  .rooms-swiper__elem:nth-child(1) img {
+    transform: none;
+  }
+}
+@media (max-width: 1160px) {
+  .rooms-swiper__elem:nth-child(1) {
+    margin-top: 0;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 1160px) {
+  .rooms-swiper {
+    margin-right: -1200px;
+  }
+}
+@media (max-width: 1160px) and (max-width: 780px) {
+  .rooms-swiper {
+    margin-right: -890px;
+  }
+}
 .rooms-swiper .main-swiper__pagination {
   display: flex;
   position: absolute;
   top: 532px;
   left: calc(35% - 104px);
 }
+@media (max-width: 1160px) {
+  .rooms-swiper .main-swiper__pagination {
+    left: 125px;
+    top: 500px;
+  }
+}
+@media (max-width: 1160px) and (max-width: 780px) {
+  .rooms-swiper .main-swiper__pagination {
+    top: calc(100% - -10px);
+    left: calc(10% - 48px);
+  }
+}
 .rooms-swiper .main-swiper__pagination .main-swiper__dot {
   border-radius: 50%;
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   background-color: #D8D8D8;
   margin-left: 20px;
   transition: 0.3s;
@@ -832,11 +898,11 @@ header {
 .rooms-swiper .main-swiper__pagination .main-swiper__dot::after {
   border: 1px solid transparent;
   border-radius: 50%;
-  padding: 9px;
+  padding: 13px;
   position: absolute;
   content: "";
-  top: calc(50% - 10px);
-  left: calc(50% - 10px);
+  top: calc(50% - 14px);
+  left: calc(50% - 14px);
   transition: 0.3s;
 }
 
@@ -848,6 +914,17 @@ header {
   bottom: -18px;
   left: -9px;
 }
+@media (max-width: 1160px) {
+  .elem-about {
+    bottom: 24px;
+    left: 20px;
+  }
+}
+@media (max-width: 1160px) and (max-width: 780px) {
+  .elem-about {
+    padding: 20px;
+  }
+}
 .elem-about__position {
   font-weight: 500;
   font-size: 16px;
@@ -855,10 +932,20 @@ header {
   color: #616161;
   padding-bottom: 8px;
 }
+@media (max-width: 780px) {
+  .elem-about__position {
+    font-size: 14px;
+  }
+}
 .elem-about__name {
   font-weight: 600;
   font-size: 28px;
   line-height: 120%;
+}
+@media (max-width: 780px) {
+  .elem-about__name {
+    font-size: 20px;
+  }
 }
 .elem-about::after {
   content: "";
@@ -1390,4 +1477,35 @@ footer .container {
 }
 .act-nav .head-nav__logo {
   margin: 0 0 0 0;
+}
+
+.button {
+  overflow: hidden;
+}
+.button::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #E89F71;
+  top: -101%;
+  left: 0;
+  transition: 0.3s;
+}
+.button::before {
+  position: absolute;
+  content: attr(data-show);
+  background: url(../img/rotate--180.svg) no-repeat;
+  width: 32px;
+  height: 32px;
+  left: calc(50% - 22px);
+  top: -100%;
+  z-index: 1;
+  transition: 0.3s;
+}
+.button:hover::after {
+  top: 0;
+}
+.button:hover::before {
+  top: calc(50% - 15px);
 }
