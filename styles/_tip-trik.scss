@@ -7,7 +7,26 @@
         line-height: 120%;
         text-align: center;
         padding-bottom: 32px;
+
+        @media(max-width:950px){
+            font-size: 32px;
+
+            @media(max-width:580px){
+                font-size: 25px;
+            }
+        }
     }
+
+    .container{
+        display: block;
+        padding: 0;
+    }
+
+    @media(max-width:950px){
+        padding: 25px 15px;
+    }
+    
+    
 }
 
 .tip-trik-swiper {
@@ -16,14 +35,15 @@
     position: relative;
 
     &__elem {
-        margin-right: 32px;
-        max-width: 391px;
+        padding: 0 16px;
+        max-width: 33.3%;
         transition: .3s;
         cursor: pointer;
 
-        &:nth-of-type(3) {
-            margin-right: 0;
+        @media(max-width:950px){
+            padding: 0 8px;
         }
+        
 
         &:hover {
             -webkit-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
@@ -47,6 +67,10 @@
             font-size: 14px;
             line-height: 150%;
             color: $gray;
+
+            @media(max-width:950px){
+                font-size: 12px;
+            }
         }
 
         .tip-trik-swiper__header {
@@ -54,14 +78,26 @@
             font-size: 24px;
             line-height: 120%;
             padding-bottom: 8px;
+
+            @media(max-width:950px){
+                font-size: 18px;
+
+                @media(max-width:580px){
+                    font-size: 16px;
+                }
+            }
         }
     }
 
     .main-swiper__pagination{
         left: calc(50% - 67px);
         
-        top:410px;
+        top:100%;
     }
 
     
 }
+
+
+
+
