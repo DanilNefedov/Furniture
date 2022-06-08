@@ -6,6 +6,10 @@ footer {
         border-style: solid;
         border-color: $light-gray;
         align-items: start;
+
+        @media(max-width:1045px){
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -13,12 +17,27 @@ footer {
     padding: 80px 0 0;
     margin-right: 67px;
 
+    @media(max-width:1045px){
+        padding-top: 40px;
+    }
+
+    @media(max-width:1045px){
+        margin-right: 0;
+        justify-content: center;
+        width: 50%;
+        text-align: center;
+    }
+
     &__header {
         font-weight: 700;
         font-size: 24px;
         line-height: 30px;
         color: $black;
         padding-bottom: 16px;
+
+        @media(max-width:850px){
+            font-size: 20px;
+        }
     }
 
     &__content {
@@ -30,22 +49,49 @@ footer {
         color: $gray-text;
         display: block;
 
+        @media(max-width:850px){
+            font-size: 14px;
+        }
+
         &:last-child {
             padding-bottom: 0;
+            
+        }
+
+        @media(max-width:1045px){
+            max-width: none;
             
         }
     }
 
     &:last-child{
         margin-right: 0;
+
+        @media(max-width:1045px){
+            margin: 0 auto;
+            width: 100%;
+        }
     }
 
+    .inp{
+        @media(max-width:1045px){
+            justify-content: center;
+        }
+    }
 }
 
 .location,
 .phone {
     position: relative;
     margin-left: 28px;
+
+    @media(max-width:1045px){
+        margin-left: 0;
+
+        @media(max-width:500px){
+            padding-left: 10px;
+        }
+    }
 }
 
 .location::before {
@@ -57,6 +103,30 @@ footer {
     height: 20px;
     top: 0;
     left: -30px;
+
+    @media(max-width:1045px){
+        left: 22%;
+
+        @media(max-width:995px){
+            left: 18%;
+
+            @media(max-width:870px){
+                left: 12%;
+
+                @media(max-width:700px){
+                    left:4%;
+
+                    @media(max-width:565px){
+                        left:-3%;
+
+                        @media(max-width:370px){
+                            left:-5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .phone::before {
@@ -68,6 +138,30 @@ footer {
     height: 20px;
     top: 0;
     left: -30px;
+
+    @media(max-width:1045px){
+        left: 34% ;
+
+        @media(max-width:995px){
+            left:30%;
+
+            @media(max-width:870px){
+                left:24%;
+
+                @media(max-width:700px){
+                    left:16%;
+
+                    @media(max-width:565px){
+                        left:8%;
+
+                        @media(max-width:370px){
+                            left:-5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer-email::placeholder {
@@ -81,6 +175,9 @@ footer {
     padding: 14px 113px 14px 12px;
     background-color: #F4F5F7;
     
+    @media(max-width:350px){
+        padding-right: 60px;
+    }
 }
 
 .footer-btn{
@@ -98,6 +195,8 @@ footer {
         height: 24px;
         top:10px;
         left: 10px;
+
+        
     }
 }
 .inp{

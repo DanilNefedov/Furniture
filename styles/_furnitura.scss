@@ -1,6 +1,10 @@
 .furniture{
     
     padding-bottom: 87px;
+
+    @media(max-width:850px){
+        padding-bottom: 30px;
+    }
 }
 
 
@@ -10,94 +14,27 @@
     line-height: 120%;
     text-align: center;
 
+    @media(max-width:850px){
+        font-size: 20px;
+    }
+
     &--text {
         font-weight: 600;
         font-size: 20px;
         line-height: 150%;
         color: $gray-text;
         display: block;
+
+        @media(max-width:850px){
+            font-size: 14px;
+        }
     }
 }
 
 
 
 .furniture__main{
-    display: flex;
-    justify-content: space-between;
-
-    img{
-        display: block;
-        
-    }
-
-
-    .furniture__elem{
-
-        &:nth-last-of-type(2){
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            padding-left: 8%;
-        }
-
-
-        &:nth-of-type(1){
-            .furniture__content{
-                &:nth-of-type(1){
-                    align-items: end;
-
-                    img{
-                        padding-right: 20%;
-                    }
-                }
-                &:nth-of-type(2){
-                    align-items: start;
-                    padding-top: 5%;
-
-                    img{
-                        padding-right: 20%;
-                    }
-                }
-            }
-        }
-
-
-        &:nth-of-type(3){
-            margin-right: 4%;
-
-            .furniture__content{
-                &:nth-of-type(1){
-                    align-items: end;
-
-                    img{
-                        padding-right: 20%;
-
-                        &:nth-of-type(2){
-                            margin-right: 0;
-                        }
-                    }
-                }   
-                &:nth-of-type(2){
-                    align-items: start;
-                    padding-top: 5%;
-
-                    img{
-                        padding-right: 20%;
-
-                        &:nth-of-type(2){
-                            margin-right: 0;
-                        }
-                    }
-                }
-            }
-        }
-
-
-        .furniture__content{
-            display: flex;
-            
-        }
-    }
-
-    
+    padding-bottom: 40%;
+    background: url(../img/back-furniture.jpg) no-repeat;
+    background-size: contain;
 }
