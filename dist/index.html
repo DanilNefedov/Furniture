@@ -87,17 +87,17 @@
 
 			<section class="main-swiper">
 
-				<div class="main-swiper__content">
+				<div class="main-swiper__content" id="slider">
 					<ul class="main-swiper__pagination">
-						<li class="main-swiper__dot"></li>
-						<li class="main-swiper__dot"></li>
-						<li class="main-swiper__dot"></li>
-						<li class="main-swiper__dot"></li>
+						<li class="main-swiper__dot" data-slide="0"></li>
+						<li class="main-swiper__dot" data-slide="1"></li>
+						<li class="main-swiper__dot" data-slide="2"></li>
+						<li class="main-swiper__dot" data-slide="3"></li>
 					</ul>
 
-					<div class="main-swiper__item">
+					<div class="main-swiper__item" id="cont-slide">
 						<div class="main-swiper__elem">
-							<img src="img/main-swiper-f.jpg" alt="bohauss">
+							<img src="img/main-swiper-f.jpg" id='width-img' alt="bohauss">
 
 							<div class="main-swiper__about">
 								<h2 class="main-swiper__text">Bohauss</h2>
@@ -126,17 +126,30 @@
 							</div>
 
 						</div>
+
+						<div class="main-swiper__elem">
+							<img src="img/main-swiper-f.jpg" alt="bohauss">
+
+							<div class="main-swiper__about">
+								<h2 class="main-swiper__text">Bohauss</h2>
+								<p class="main-swiper__descr">Luxury big sofa 2-seat</p>
+								<p class="main-swiper__price">Rp 17.000.000</p>
+							</div>
+
+						</div>
+
+						
 					</div>
 
 					<div class="main-swiper__arrow">
-						<div class="main-swiper__left arrow ">
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M14.9999 5L7.99988 12L14.9999 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+						<div class="main-swiper__left arrow left">
+							<svg class="left" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path class="left" d="M14.9999 5L7.99988 12L14.9999 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>	
 						</div>
-						<div class="main-swiper__right arrow ">
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M9.00012 5L16.0001 12L9.00012 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+						<div class="main-swiper__right arrow right">
+							<svg class="right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path class="right" d="M9.00012 5L16.0001 12L9.00012 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</div>
 					</div>

@@ -547,6 +547,10 @@ header {
   }
 }
 
+.active-pag {
+  background-color: red;
+}
+
 .top {
   padding: 104px 0;
 }
