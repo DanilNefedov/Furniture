@@ -32,81 +32,61 @@ window.addEventListener('resize', function (e) {
 const slider = document.getElementById('slider');
 const slide = document.getElementById('cont-slide');
 const widthImg = document.getElementById('width-img');
-const navs = document.querySelectorAll('.nav');
-const slides = document.querySelectorAll('.main-swiper__elem');
-let count = 0;
+let position = 0;
 
 
 slider.onclick = function (event) {
 	let target = event.target;
 	let widthElem = widthImg.offsetWidth;
+	let num = target.dataset.slide;
 
-	//console.log(target)
 
-	if(target.classList.contains('main-swiper__dot')){
-		pagination(target);
+	//console.log(position)
+
+	if (target.classList.contains('main-swiper__dot')) {
+		
+		
+		if (num === '0') {
+			position = widthElem;
+			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
+			transition-duration: 1195ms;`;
+		} else if (num > 1) {
+			position = widthElem * (-num + 1);
+			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
+			transition-duration: 1195ms;`;
+		} else {
+			position = 0;
+			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
+			transition-duration: 1195ms;`;
+		}
 	}
 
 
 	if (target.classList.contains('arrow') || (target.tagName = 'SVG') || (target.tagName = 'PATH')) {
 
 
-		if (target.classList.contains('left') && count < widthElem * 1) {
-			count += widthElem;
+		if (target.classList.contains('left') && position < widthElem * 1) {
+			position += widthElem
 
-			slide.style.cssText = `transform: translate3d(${count}px, 0px, 0px);
+			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
 		transition-duration: 1195ms;`;
 
 
+		} else if (target.classList.contains('right') && position > widthElem * (-2)) {
+			position -= widthElem;
 
-		} else if (target.classList.contains('right') && count > widthElem * (-2)) {
-			count -= widthElem;
-			slide.style.cssText = `transform: translate3d(${count}px, 0px, 0px);
+			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
 		transition-duration: 1195ms;`;
 
 
 		} else {
-
-			return
-		}
-	} 
-}
-
-
-function pagination(target){
-	let nav = target.dataset.slide;
-	//console.log(nav);
-	for(let i = 0; i < slides.length; i++){
-		//console.log(i.toString())
-
-		if(nav === i.toString()){
-			console.log('sss');
-			slide.style.cssText = `transform: translate3d(${count}px, 0px, 0px);
-			transition-duration: 1195ms;`;
-			//при нажатии на кнопки пагинации сделать гибкий переход между салйдами. Пока что все по 0
-		}else{
 			return
 		}
 	}
+
+
+	
+
 }
 
-// for(let nav of navs){ // перебираем коллекцию точек и на каждую вешаем обработчик кликов
-// 	nav.onclick = function(){
-// 		//changeSlide(+nav.dataset['slide']);
-// 		console.log(nav.dataset.slide) // берет data-slide из li, на который нажали
-// 	}; 
-// 	// аналог nav.dataset['slide'] - nav.getAttribute('data-slide');
-// }
-// function changeSlide(num){
-// 	for(let i = 0; i < slides.length; i++){
-// 		// slides[i].classList.remove('active-pag');
-// 		// navs[i].classList.remove('active-pag');
-// 		console.log(slides[i], num)
-// 	}
-// 	// currentSlide = num;
-// 	// slides[currentSlide].classList.add('active-pag');
-// 	// navs[currentSlide].classList.add('active-pag');
 
-// 	// clearInterval(interval);
-// 	// autoplay();
-// }

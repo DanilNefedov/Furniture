@@ -240,6 +240,10 @@ header {
             left: calc(50% - 14px);
             transition: .3s;
         }
+        
+    }
+    .active-pag{
+        background-color: $primary;
     }
 
     @media(max-width:700px){
@@ -472,6 +476,3 @@ header {
 
 
 
-.active-pag{
-    background-color: red;
-}
