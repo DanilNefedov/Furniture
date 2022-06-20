@@ -32,6 +32,7 @@ window.addEventListener('resize', function (e) {
 const slider = document.getElementById('slider');
 const slide = document.getElementById('cont-slide');
 const widthImg = document.getElementById('width-img');
+const dot = document.getElementsByClassName('pag-main-swiper');
 let position = 0;
 
 
@@ -40,11 +41,17 @@ slider.onclick = function (event) {
 	let widthElem = widthImg.offsetWidth;
 	let num = target.dataset.slide;
 
+	
+	
 
 	//console.log(position)
 
 	if (target.classList.contains('main-swiper__dot')) {
-		
+
+		for(let i = 0; i < dot.length; i++){
+			dot[i].classList.remove('active-pag');
+		}
+		target.classList.add('active-pag');
 		
 		if (num === '0') {
 			position = widthElem;
@@ -66,7 +73,15 @@ slider.onclick = function (event) {
 
 
 		if (target.classList.contains('left') && position < widthElem * 1) {
-			position += widthElem
+			position += widthElem;
+
+			for(let i = 0; i < dot.length; i++){
+				if(dot[i].classList.contains('active-pag')){
+					dot[i-1].classList.add('active-pag')
+				}
+				dot[i].classList.remove('active-pag');
+			}
+
 
 			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
 		transition-duration: 1195ms;`;
@@ -74,7 +89,21 @@ slider.onclick = function (event) {
 
 		} else if (target.classList.contains('right') && position > widthElem * (-2)) {
 			position -= widthElem;
+// console.log(dot)
+// 			for(let i = 3; i <= dot.length; i--){
+// 				console.log(dot[i])
+// 				//dot[i].classList.remove('active-pag');
+// 				if(dot[i].classList.contains('active-pag')){
+// 					//console.log(dot[i+1])
+// 					dot[i+1].classList.add('active-pag');
+// 				}
+				
+				
+// 			}
 
+//сделать обратный цикл\исключить из цикла undefined
+
+			
 			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
 		transition-duration: 1195ms;`;
 
