@@ -40,11 +40,11 @@ slider.onclick = function (event) {
 	let target = event.target;
 	let widthElem = widthImg.offsetWidth;
 	let num = target.dataset.slide;
+	let sliderContent = event.path[2].childNodes[3].children;
 
 	
 	
-
-	//console.log(position)
+	//console.log(sliderContent)
 
 	if (target.classList.contains('main-swiper__dot')) {
 
@@ -84,29 +84,27 @@ slider.onclick = function (event) {
 
 
 			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
-		transition-duration: 1195ms;`;
+			transition-duration: 1195ms;`;
 
 
 		} else if (target.classList.contains('right') && position > widthElem * (-2)) {
 			position -= widthElem;
-// console.log(dot)
-// 			for(let i = 3; i <= dot.length; i--){
-// 				console.log(dot[i])
-// 				//dot[i].classList.remove('active-pag');
-// 				if(dot[i].classList.contains('active-pag')){
-// 					//console.log(dot[i+1])
-// 					dot[i+1].classList.add('active-pag');
-// 				}
-				
-				
-// 			}
-
-//сделать обратный цикл\исключить из цикла undefined
-
 			
 			slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
-		transition-duration: 1195ms;`;
+			transition-duration: 1195ms;`;
 
+
+			
+			for(let i = 0; i < dot.length; i++){
+				console.log(dot[i]);
+				
+				if(dot[i].classList.contains('active-pag')){
+					console.log('sss')
+					dot[i].classList.remove('active-pag');
+					dot[i+1].classList.add('active-pag');
+					break;
+				}
+			}
 
 		} else {
 			return

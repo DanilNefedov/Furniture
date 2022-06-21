@@ -664,6 +664,12 @@ header {
 }
 .products-list__elem {
   position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.products-list__elem:hover .product-list-hover {
+  transition: 0.7s;
+  top: 0;
 }
 .products-list__elem img {
   display: block;
@@ -750,6 +756,66 @@ header {
   padding: 12px 8px;
   top: 24px;
   right: 24px;
+}
+
+.product-list-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: -100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.product-list-hover__btn {
+  max-width: 202px;
+  padding-bottom: 12px;
+}
+.product-list-hover__btn .product-list-hover__add {
+  padding: 12px 58px;
+  background-color: #FFFFFF;
+  color: #E89F71;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  transition: 0.3s;
+}
+.product-list-hover__btn .product-list-hover__add:hover {
+  background-color: #E89F71;
+  color: #FFFFFF;
+}
+.product-list-hover__link {
+  padding-top: 12px;
+  margin-left: 28px;
+}
+.product-list-hover__link a {
+  color: #FFFFFF;
+  margin-right: 80px;
+  position: relative;
+  transition: 0.3s;
+}
+.product-list-hover__link a:hover {
+  color: #E89F71;
+}
+.product-list-hover__link a:last-child {
+  margin-right: 0;
+}
+.product-list-hover__link a:last-child::before {
+  left: -32px;
+  background: url(../img/heart-white.svg) no-repeat;
+}
+.product-list-hover__link a:first-child::before {
+  left: -32px;
+  background: url(../img/share.svg) no-repeat;
+}
+.product-list-hover__link a:before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
 }
 
 .button {

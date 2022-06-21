@@ -35,6 +35,8 @@ main{
     height: 100%;
     gap: 30px;
 
+   
+
 
     @media(max-width:1260px){
         justify-content: center;
@@ -44,6 +46,18 @@ main{
 
     &__elem {
         position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover{
+           
+            .product-list-hover{
+                transition: .7s;
+                top:0;
+            }
+        }
+
+
         
         img{
             display: block;
@@ -157,6 +171,84 @@ main{
         }
     }
 }
+
+
+
+.product-list-hover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    top:-100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__btn{
+        max-width: 202px;
+        padding-bottom: 12px;
+
+        .product-list-hover__add{
+            padding: 12px 58px;
+            background-color: $white;
+            color:$primary;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 150%;
+            transition: .3s;
+
+            &:hover{
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+
+    &__link{
+        padding-top: 12px;
+        margin-left: 28px;
+        a{
+            color: $white;
+            margin-right: 80px;
+            position: relative;
+            transition: .3s;
+
+            &:hover{
+                color: $primary;
+            }
+
+
+            &:last-child{
+                margin-right: 0;
+
+                &::before{
+                    left: -32px;
+                    background: url(../img/heart-white.svg) no-repeat;
+                }
+            }
+
+
+            &:first-child{
+                &::before{
+                    left: -32px;
+                    background: url(../img/share.svg) no-repeat;
+                }
+            }
+
+
+            &:before{
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                top:0;
+            }
+        }
+    }
+}
+
+
 
 .button {
     border: 1px solid $primary;
