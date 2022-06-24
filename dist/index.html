@@ -444,22 +444,34 @@
 						</p>
 						<a href="#" class="rooms-text__btn">Explore More</a>
 					</div>
-					<div class="rooms-swiper">
+					<div class="rooms-swiper" id="slider-room">
 						<div class="rooms-swiper__elem">
-							<img src="img/rooms-swiper1.jpg" alt="room" class="rooms-swiper__img">
-							<div class="elem-about">
+							<img src="img/rooms-swiper1.jpg" alt="room" id="room-swiper-img" class="rooms-swiper__img">
+							<div class="elem-about active-about-room">
 								<p class="elem-about__position">01 &#8212; Bed Room</p>
 								<h3 class="elem-about__name">Inner Peace</h3>
 							</div>
 						</div>
 						<div class="rooms-swiper__elem">
 							<img src="img/rooms-swiper2.jpg" alt="room" class="rooms-swiper__img">
+							<div class="elem-about">
+								<p class="elem-about__position">02 &#8212; Bed Room</p>
+								<h3 class="elem-about__name">Inner Peace</h3>
+							</div>
 						</div>
 						<div class="rooms-swiper__elem">
 							<img src="img/rooms-swiper1.jpg" alt="room" class="rooms-swiper__img">
+							<div class="elem-about">
+								<p class="elem-about__position">03 &#8212; Bed Room</p>
+								<h3 class="elem-about__name">Inner Peace</h3>
+							</div>
 						</div>
 						<div class="rooms-swiper__elem">
 							<img src="img/rooms-swiper2.jpg" alt="room" class="rooms-swiper__img">
+							<div class="elem-about">
+								<p class="elem-about__position">04 &#8212; Bed Room</p>
+								<h3 class="elem-about__name">Inner Peace</h3>
+							</div>
 						</div>
 
 
@@ -470,21 +482,21 @@
 
 
 						<ul class="main-swiper__pagination">
-							<li class="main-swiper__dot"></li>
-							<li class="main-swiper__dot"></li>
-							<li class="main-swiper__dot"></li>
-							<li class="main-swiper__dot"></li>
+							<li class="main-swiper__dot active-pag" data-room="0"></li>
+							<li class="main-swiper__dot"  data-room="1"></li>
+							<li class="main-swiper__dot"  data-room="2"></li>
+							<li class="main-swiper__dot"  data-room="3"></li>
 						</ul>
 
 						<div class="main-swiper__arrow">
-							<div class="main-swiper__left arrow ">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M14.9999 5L7.99988 12L14.9999 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+							<div class="main-swiper__left arrow left">
+								<svg class="left" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path class="left" d="M14.9999 5L7.99988 12L14.9999 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>	
 							</div>
-							<div class="main-swiper__right arrow ">
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M9.00012 5L16.0001 12L9.00012 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+							<div class="main-swiper__right arrow right">
+								<svg class="right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path class="right" d="M9.00012 5L16.0001 12L9.00012 19" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
 							</div>
 						</div>
