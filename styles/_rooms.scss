@@ -7,6 +7,10 @@
             flex-direction: column;
             
         }
+
+        .active-about-room{
+            display: block;
+        }
     }
 
     @media(max-width:1160px){
@@ -68,6 +72,9 @@
     &__elem {
         margin-right: 24px;
 
+        img{
+            position: relative;
+        }
 
         &:nth-child(1) {
             margin-top: 49px;
@@ -75,7 +82,7 @@
 
             img {
                 transform: scale(1.2);
-                position: relative;
+                
 
                 @media(max-width:1160px){
                     transform: none;
@@ -142,9 +149,37 @@
                 left: calc(50% - 14px);
                 transition: .3s;
             }
+
+            
+        }
+        .active-pag{
+            background-color: $primary;
+        }
+    }
+
+
+    .main-swiper__arrow{
+        top: calc(80% - 50px);
+        right: calc(70% - 228px);
+        
+
+        .arrow{
+            background: #FFFFFF;
+            box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
+            margin:17px;
+
+            svg{
+
+                path{
+                    stroke:$primary;
+                }
+                
+            }
         }
     }
 }
+
+
 
 .elem-about {
     position: absolute;
@@ -153,7 +188,9 @@
     backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
     bottom: -18px;
     left: -9px;
+    display: none;
 
+    
     @media(max-width:1160px){
         bottom: 24px;
         left: 20px;

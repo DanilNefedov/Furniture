@@ -841,6 +841,9 @@ header {
     flex-direction: column;
   }
 }
+.rooms .container .active-about-room {
+  display: block;
+}
 @media (max-width: 1160px) {
   .rooms {
     padding: 30px 0 40px;
@@ -901,13 +904,15 @@ header {
 .rooms-swiper__elem {
   margin-right: 24px;
 }
+.rooms-swiper__elem img {
+  position: relative;
+}
 .rooms-swiper__elem:nth-child(1) {
   margin-top: 49px;
   margin-right: 61px;
 }
 .rooms-swiper__elem:nth-child(1) img {
   transform: scale(1.2);
-  position: relative;
 }
 @media (max-width: 1160px) {
   .rooms-swiper__elem:nth-child(1) img {
@@ -974,6 +979,21 @@ header {
   left: calc(50% - 14px);
   transition: 0.3s;
 }
+.rooms-swiper .main-swiper__pagination .active-pag {
+  background-color: #E89F71;
+}
+.rooms-swiper .main-swiper__arrow {
+  top: calc(80% - 50px);
+  right: calc(70% - 228px);
+}
+.rooms-swiper .main-swiper__arrow .arrow {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
+  margin: 17px;
+}
+.rooms-swiper .main-swiper__arrow .arrow svg path {
+  stroke: #E89F71;
+}
 
 .elem-about {
   position: absolute;
@@ -982,6 +1002,7 @@ header {
   backdrop-filter: blur(8px);
   bottom: -18px;
   left: -9px;
+  display: none;
 }
 @media (max-width: 1160px) {
   .elem-about {
@@ -1116,7 +1137,7 @@ header {
 }
 .tip-trik-swiper .main-swiper__pagination {
   left: calc(50% - 67px);
-  top: 100%;
+  top: 113%;
 }
 
 .furniture {

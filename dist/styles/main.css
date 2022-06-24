@@ -664,14 +664,11 @@ header {
 }
 .products-list__elem {
   position: relative;
-  transition: 0.3s;
   cursor: pointer;
   overflow: hidden;
 }
-.products-list__elem:hover {
-  transition: all 0.3s;
-}
 .products-list__elem:hover .product-list-hover {
+  transition: 0.7s;
   top: 0;
 }
 .products-list__elem img {
@@ -977,6 +974,10 @@ header {
   left: calc(50% - 14px);
   transition: 0.3s;
 }
+.rooms-swiper .main-swiper__arrow {
+  top: calc(50% - 50px);
+  right: calc(50% - 215px);
+}
 
 .elem-about {
   position: absolute;
@@ -1119,7 +1120,7 @@ header {
 }
 .tip-trik-swiper .main-swiper__pagination {
   left: calc(50% - 67px);
-  top: 100%;
+  top: 113%;
 }
 
 .furniture {
