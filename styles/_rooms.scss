@@ -48,17 +48,23 @@
         }
     }
 
-    &__btn {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 150%;
-        color: $white;
-        padding: 12px 40px;
-        background-color: $primary;
+    // &__btn {
+    //     font-weight: 600;
+    //     font-size: 16px;
+    //     line-height: 150%;
+    //     color: $white;
+    //     padding: 12px 40px;
+    //     background-color: $primary;
 
-        @media(max-width:780px){
-            font-size: 14px;
-        }
+    //     @media(max-width:780px){
+    //         font-size: 14px;
+    //     }
+    // }
+
+
+
+    .container-btn{
+        max-width: 176px;
     }
 }
 
@@ -68,30 +74,18 @@
     justify-content: space-between;
     margin-right: -890px;
     position: relative;
+    overflow: hidden;
+    padding: 0 0 42px 38px;
+    min-height: 584px;
 
     &__elem {
         margin-right: 24px;
+        position: relative;
 
         img{
-            position: relative;
-        }
-
-        &:nth-child(1) {
-            margin-top: 49px;
-            margin-right: 61px;
-
-            img {
-                transform: scale(1.2);
-                
-
-                @media(max-width:1160px){
-                    transform: none;
-                }
-            }
-
+            
             @media(max-width:1160px){
-                margin-top: 0;
-                margin-right: 20px;
+                transform: none;
             }
         }
     }
@@ -159,8 +153,8 @@
 
 
     .main-swiper__arrow{
-        top: calc(80% - 50px);
-        right: calc(70% - 228px);
+        top: calc(74% - 50px);
+        right: calc(69% - 228px);
         
 
         .arrow{
@@ -186,8 +180,8 @@
     padding: 31px 32px 24px 25px;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
-    bottom: -18px;
-    left: -9px;
+    bottom: calc(2% - 25px);
+    left: calc(4% - 25px);
     display: none;
 
     
@@ -231,5 +225,26 @@
         height: 48px;
         top: calc(100% - 48px);
         right: -48px;
+    }
+}
+
+
+
+
+.active-elem-room{
+    margin-top: 49px;
+    margin-right: 61px;
+    
+
+    img{
+        transform: scale(1.2);
+    }
+
+    .elem-about{
+        display: block;
+    }
+     @media(max-width:1160px){
+        margin-top: 0;
+        margin-right: 20px;
     }
 }

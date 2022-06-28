@@ -124,7 +124,9 @@ let positionRoom = 0;
 sliderRoom.onclick = function (event) {
 	let target = event.target;
 	let num = target.dataset.room;
-	let widthElem = roomSwiperImg.offsetWidth * 1.2;
+	let widthElem = roomSwiperImg.offsetWidth * 1.2 - 49;
+
+
 
 
 	if (target.classList.contains('dot-room')) {
@@ -134,7 +136,7 @@ sliderRoom.onclick = function (event) {
 		}
 		target.classList.add('active-pag');
 
-
+		transformElement();
 
 		if (num > 0) {
 			positionRoom = widthElem * (-num);
@@ -152,6 +154,9 @@ sliderRoom.onclick = function (event) {
 			}
 		}
 	}
+
+
+
 
 
 
@@ -174,7 +179,7 @@ sliderRoom.onclick = function (event) {
 				transition-duration: 1195ms;`;
 			}
 
-
+			transformElement();
 
 		} else if (target.classList.contains('right') && (positionRoom > widthElem * -3)) {
 			positionRoom -= widthElem;
@@ -190,13 +195,42 @@ sliderRoom.onclick = function (event) {
 				if (dotRoom[i].classList.contains('active-pag')) {
 					dotRoom[i].classList.remove('active-pag');
 					dotRoom[i + 1].classList.add('active-pag');
+					transformElement();
 					return;
 				}
 
 			}
+
+			
 
 		} else {
 			return
 		}
 	}
 }
+
+
+
+
+function transformElement() {
+	for(let i = 0; i < dotRoom.length; i++){
+		slideRoom[i].classList.remove('active-elem-room')
+		if(dotRoom[i].classList.contains('active-pag')){
+			slideRoom[i].classList.add('active-elem-room');
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
