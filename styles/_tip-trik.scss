@@ -42,7 +42,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        //overflow: hidden;
 
         .tip-trik-swiper__slide {
             display: flex;
@@ -107,18 +107,12 @@
                 }
             }
 
-            
-
-
         }
-
-
 
     }
 
     .main-swiper__pagination {
         left: calc(50% - 89px);
-        
         top: 100%;
     }
 
