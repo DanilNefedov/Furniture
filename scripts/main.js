@@ -251,46 +251,44 @@ function initSwiperTipTrik (){
 
 	wrapperSlider.querySelectorAll('*').forEach( function(n) {
 		n.remove();
-		
 	})
 
-	//drawSwiper();
+	drawSwiper();
+	drawSwiper();
 }
 console.log(slideArr);
 
 
 function drawSwiper (){
-
+		wrapperSlider.appendChild(slideArr[stepSlide]).style.left = offset * widthSlideTipTrik + 'px';
 		wrapperSlider.appendChild(slideArr[stepSlide]);
-
 		if(stepSlide + 1 == slideArr.length){
 			stepSlide = 0;
 		}else{
 			stepSlide++;
 		}
-		offset++;
-	
+		offset = 1;
 }
-function left(){
-	//let slideVisible = document.querySelectorAll('tip-trik-swiper__slide');
+
+
+function rightSwiperTipTrik(){
+	let slideVisible = document.querySelectorAll('.tip-trik-swiper__slide');
 	let position = 0;
 	// console.log(tipTrikSlide)
-	for(let i = 0; i < tipTrikSlide.length; i++){
-		console.log(tipTrikSlide[i]);
-		wrapperSlider.style.cssText = `transform: translate3d(${(position * -widthSlideTipTrik)}px, 0px, 0px);
-		transition-duration: 1195ms;`;
-		position ++;
+	for(let i = 0; i < slideVisible.length; i++){
+		console.log(slideVisible[i]);
+		slideVisible[i].style.cssText = `left: ${position * widthSlideTipTrik - widthSlideTipTrik}px`;
+		position++;
 	}
 	setTimeout(function(){
-		tipTrikSlide[0].remove();
-		wrapperSlider.style.cssText = `transform: translate3d(${(0)}px, 0px, 0px);
-		transition-duration: 1195ms;`;
+		slideVisible[0].remove();
 		drawSwiper();
-	}, 1195)
+		
+	}, 1000)
 }
 
 initSwiperTipTrik();
-drawSwiper();drawSwiper();
+
 
 
 
