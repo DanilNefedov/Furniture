@@ -1092,10 +1092,6 @@ header {
   width: 1260px;
   flex-shrink: 0;
   padding: 0 50px 50px 50px;
-  position: absolute;
-  transition: all ease 1s;
-  top: 0;
-  left: 0;
 }
 .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem {
   padding: 0 16px;

@@ -209,9 +209,6 @@ sliderRoom.onclick = function (event) {
 	}
 }
 
-
-
-
 function transformElement() {
 	for(let i = 0; i < dotRoom.length; i++){
 		slideRoom[i].classList.remove('active-elem-room')
@@ -229,159 +226,45 @@ function transformElement() {
 
 
 
+const carouselSlide = document.getElementById('wrapper-slider');
+const carouselElem = document.querySelectorAll('.tip-trik-swiper__slide');
 
 
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
 
 
+let counter = 1;
+let widthElemTipTrik = carouselElem[0].offsetWidth; 
 
-const tipTrikSwiper = document.getElementById('tip-trik');
-const tipTrikSlide = document.getElementsByClassName('tip-trik-swiper__slide');
-const wrapperSlider = document.getElementById('wrapper-slider');
-const buttons = document.querySelectorAll('[data-carousel-btn]');
-
+carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`;
 
 
-buttons.forEach(button => {
-	button.addEventListener('click', () => {
-		const offset = button.dataset.carouselBtn === 'next' ? 1 : -1;
-		const slides = button.closest('[data-caruosel]').querySelector('[data-slides]');
-		
-		const activeSlide = slides.querySelector('[data-active]');
-		let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-
-		if(newIndex < 0) newIndex = slides.children.length - 1;
-		if(newIndex >= slides.children.length) newIndex = 0;
-
-		slides.children[newIndex].dataset.active = true;
-		delete activeSlide.dataset.active;
-	})
-})
+nextBtn.addEventListener('click', ()=>{
+	if(counter >= carouselElem.length - 1) return;
+	counter++;
+	carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
+	transition-duration: 695ms;`
+});
 
 
+prevBtn.addEventListener('click', ()=>{
+	if(counter <= 0) return;
+	counter--;
+	carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
+	transition-duration: 695ms;`
+});
 
 
-
-// let slideArr = [];
-// let stepSlide = 0;
-// let stepSlide2 = 2;
-// let widthSlideTipTrik = wrapperSlider.offsetWidth;
-// let offset = 0;
-// let offset2 = 2;
-
-
-// function initSwiperTipTrik (){
-	
-// 	for(let i = 0; i < tipTrikSlide.length; i++){
-// 		slideArr[i] = tipTrikSlide[i].cloneNode(true);
-// 	}
-
-// 	wrapperSlider.querySelectorAll('*').forEach( function(n) {
-// 		n.remove();
-// 	})
-
-// 	drawSwiperR();
-// 	drawSwiperL();
-// }
-// console.log(slideArr);
-
-
-// function drawSwiperR (){
-// 		wrapperSlider.appendChild(slideArr[stepSlide]).style.left = offset * widthSlideTipTrik + 'px';
-// 		wrapperSlider.appendChild(slideArr[stepSlide]);
-// 		if(stepSlide + 1 == slideArr.length){
-// 			stepSlide = 0;
-// 		}else{
-// 			stepSlide++;
-// 		}
-// 		offset = 1;
-// }
-
-
-// function rightSwiperTipTrik(){
-	
-// 	let slideVisible = document.querySelectorAll('.tip-trik-swiper__slide');
-// 	let position = 0;
-// 	// console.log(tipTrikSlide)
-// 	for(let i = 0; i < slideVisible.length; i++){
-// 		console.log(slideVisible[i]);
-// 		slideVisible[i].style.cssText = `left: ${position * widthSlideTipTrik - widthSlideTipTrik}px`;
-// 		position++;
-// 	}
-// 	setTimeout(function(){
-// 		slideVisible[0].remove();
-// 		drawSwiperR();
-		
-// 	}, 800)
-// }
-
-
-
-
-
-
-
-
-
-
-
-// function drawSwiperL() {
-// 	wrapperSlider.appendChild(slideArr[stepSlide2]).style.left = offset * -widthSlideTipTrik + 'px';
-// 	wrapperSlider.appendChild(slideArr[stepSlide2]);
-// 	if(stepSlide2 - 1 < slideArr[stepSlide2] ){
-// 		stepSlide2 = 2;
-// 	}else{
-// 		stepSlide2 -= 1;
-// 	}
-// 	offset = 1;
-// }
-
-
-// function leftSwiperTipTrik(){
-// 	let slideVisible = document.querySelectorAll('.tip-trik-swiper__slide');
-// 	let position = 0;
-
-// 	for(let i = 0; i < slideVisible.length; i++){
-// 		slideVisible[i].style.cssText = `left: ${position * widthSlideTipTrik + widthSlideTipTrik}px`;
-// 		position++;
-// 	}
-	
-// }
-
-// function drawSwiperL (){
-// 	wrapperSlider.appendChild(slideArr[stepSlide]).style.left = offset * -widthSlideTipTrik + 'px';
-// 	wrapperSlider.appendChild(slideArr[stepSlide]);
-// 	if(stepSlide + 1 == slideArr.length){
-// 		stepSlide = 0;
-// 	}else{
-// 		stepSlide++;
-// 	}
-// 	offset = 1;
-// }
-
-
-
-// function leftSwiperTipTrik(){
-	
-// 	let slideVisible = document.querySelectorAll('.tip-trik-swiper__slide');
-// 	let position = 0;
-// 	// console.log(tipTrikSlide)
-// 	for(let i = 1; i > slideVisible.length; i--){
-// 		console.log(slideVisible[i]);
-// 		slideVisible[i].style.cssText = `left: ${position * widthSlideTipTrik - widthSlideTipTrik}px`;
-// 		position++;
-// 	}
-// 	setTimeout(function(){
-// 		slideVisible[0].remove();
-// 		drawSwiperL();
-		
-// 	}, 1000)
-// }
-
-
-//initSwiperTipTrik();
-
-
-
-
-
-
+carouselSlide.addEventListener('transitionend', () =>{
+	if(carouselElem[counter].id === 'last-clone'){
+		carouselSlide.style.transitionDelay = 'none';
+		counter = carouselElem.length - 2;
+		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`; 
+	}
+	if(carouselElem[counter].id === 'first-clone'){
+		carouselSlide.style.transitionDelay = 'none';
+		counter = carouselElem.length - counter;
+		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`; 
+	}
+});
