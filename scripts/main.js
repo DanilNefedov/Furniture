@@ -228,7 +228,8 @@ function transformElement() {
 
 const carouselSlide = document.getElementById('wrapper-slider');
 const carouselElem = document.querySelectorAll('.tip-trik-swiper__slide');
-
+const dotTipTrik = document.getElementsByClassName('dot-tip-trik');
+ 
 
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
@@ -244,7 +245,21 @@ nextBtn.addEventListener('click', ()=>{
 	if(counter >= carouselElem.length - 1) return;
 	counter++;
 	carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
-	transition-duration: 695ms;`
+	transition-duration: 695ms;`;
+	
+	for(let i = 0; i < dotTipTrik.length; i++){
+		let length = dotTipTrik.length;
+		if(dotTipTrik[i].classList.contains('active-pag')){
+			if(dotTipTrik[length-1].classList.contains('active-pag')){
+				dotTipTrik[i].classList.remove('active-pag')
+				dotTipTrik[0].classList.add('active-pag')
+			}else{			
+				dotTipTrik[i].classList.remove('active-pag')
+				dotTipTrik[i+1].classList.add('active-pag')
+				return
+			}
+		}
+	}
 });
 
 
@@ -253,6 +268,20 @@ prevBtn.addEventListener('click', ()=>{
 	counter--;
 	carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
 	transition-duration: 695ms;`
+
+	for(let i = dotTipTrik.length-1; i >= 0; i--){
+		let length = dotTipTrik.length;
+		if(dotTipTrik[i].classList.contains('active-pag')){
+			if(dotTipTrik[0].classList.contains('active-pag')){
+				dotTipTrik[i].classList.remove('active-pag')
+				dotTipTrik[length-1].classList.add('active-pag')
+			}else{
+				dotTipTrik[i-1].classList.add('active-pag')
+				dotTipTrik[i].classList.remove('active-pag')
+				return
+			}
+		}
+	}
 });
 
 
@@ -268,3 +297,17 @@ carouselSlide.addEventListener('transitionend', () =>{
 		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`; 
 	}
 });
+
+
+function tipTrikPagination(event) {
+	let target = event.target;
+	let dataSet = target.dataset.dotTipTrik;
+	counter = Number(dataSet)+1;
+	for(let i = 0; i < dotTipTrik.length; i++){
+		dotTipTrik[i].classList.remove('active-pag')
+		dotTipTrik[dataSet].classList.add('active-pag')
+		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
+		transition-duration: 695ms;`
+	}
+	console.log(dataSet)
+}
