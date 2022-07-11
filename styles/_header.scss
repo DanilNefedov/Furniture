@@ -169,6 +169,12 @@ header {
                 margin: 0 16px;
                 position: relative;
 
+                &:hover{
+                    .main-swiper__about{
+                        opacity: 1;
+                    }
+                }
+
                 img {
                     display: block;
                     
@@ -262,7 +268,9 @@ header {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
     right: 40px;
-    // display: none;
+    opacity: 0;
+    transition: .3s;
+    cursor: pointer;
 
     
     @media(max-width:850px){
@@ -476,5 +484,13 @@ header {
 
 
 
-
+.main-swiper__hover-about{
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    background-color: #F9F1E6;
+    top:0;
+    right: -83%;
+    z-index: 6;
+}
 

@@ -267,6 +267,9 @@ header {
   margin: 0 16px;
   position: relative;
 }
+.main-swiper__content .main-swiper__item .main-swiper__elem:hover .main-swiper__about {
+  opacity: 1;
+}
 .main-swiper__content .main-swiper__item .main-swiper__elem img {
   display: block;
 }
@@ -350,6 +353,9 @@ header {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   right: 40px;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
 }
 @media (max-width: 850px) {
   .main-swiper__about {
@@ -548,6 +554,16 @@ header {
     transform: scale(0.7);
     right: -10px;
   }
+}
+
+.main-swiper__hover-about {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  background-color: #F9F1E6;
+  top: 0;
+  right: -83%;
+  z-index: 6;
 }
 
 .top {

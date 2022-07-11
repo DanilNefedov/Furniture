@@ -1,3 +1,4 @@
+
 const menu = document.getElementById('menu');
 const nav = document.getElementById('nav');
 const widthWind = window.screen.width;
@@ -40,7 +41,6 @@ slider.onclick = function (event) {
 	let target = event.target;
 	let widthElem = widthImg.offsetWidth;
 	let num = target.dataset.slide;
-
 
 
 
@@ -109,10 +109,10 @@ slider.onclick = function (event) {
 		}
 	}
 
-
-
-
 }
+
+
+
 
 
 const sliderRoom = document.getElementById('slider-room');
@@ -311,3 +311,19 @@ function tipTrikPagination(event) {
 	}
 	console.log(dataSet)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
