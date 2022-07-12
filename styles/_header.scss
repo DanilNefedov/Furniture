@@ -11,7 +11,7 @@ header {
     }
 
     .container{
-
+        
         @media(max-width:580px){
             flex-direction: column;
         }
@@ -485,12 +485,16 @@ header {
 
 
 .main-swiper__hover-about{
-    position: absolute;
+    position: fixed;
     width: 600px;
-    height: 500px;
+    height: 100vh;
     background-color: #F9F1E6;
-    top:0;
-    right: -83%;
-    z-index: 6;
+    top:-101%;
+    right: -101%;
+    z-index: 10;
+    transition: all ease-in-out .5s;
 }
 
+.act-body{
+    overflow: hidden;
+}

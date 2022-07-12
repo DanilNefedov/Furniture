@@ -1,7 +1,6 @@
 [
     {
-        "name": 1,
-        "img": "https",
+        "img": "img/main-swiper-f.jpg",
         "header": "Lorem Ipsum is simply dummy text of the printing and typesetting",
         "subtitle": "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "price": "17.000.000",
@@ -9,24 +8,21 @@
         
     },
     {
-        "name": 2,
-        "img": "https",
+        "img": "img/main-swiper-f.jpg",
         "header": "Lorem Ipsum is simply dummy text of the printing and typesetting",
         "subtitle": "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "price": "17.000.000"
-        
+
     },
     {
-        "name": 3,
-        "img": "https",
+        "img": "img/main-swiper-f.jpg",
         "header": "Lorem Ipsum is simply dummy text of the printing and typesetting",
         "subtitle": "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "price": "17.000.000",
         "discount": "30%"
     },
     {
-        "name": 4,
-        "img": "https",
+        "img": "img/main-swiper-f.jpg",
         "header": "Lorem Ipsum is simply dummy text of the printing and typesetting",
         "subtitle": "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "price": "17.000.000",
