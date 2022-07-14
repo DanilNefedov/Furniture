@@ -34,7 +34,16 @@
 
 
 .furniture__main{
-    padding-bottom: 40%;
     background: url(../img/back-furniture.jpg) no-repeat;
     background-size: contain;
+    position: relative;
+
+    .furnitura-hover-img{
+        position: absolute;
+        top:0;
+    }
+}
+
+.fur{
+    fill:rgba(153, 11, 11, 0.3);
 }

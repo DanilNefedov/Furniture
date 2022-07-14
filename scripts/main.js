@@ -324,6 +324,24 @@ function tipTrikPagination(event) {
 
 
 
+const furnituraImg = document.getElementById('furnitura-img');
 
 
+
+furnituraImg.addEventListener('mouseover', (e)=>{
+	if(e.target.id){
+		console.log('t')
+		let index = e.target.id;
+		furnituraImg.insertAdjacentHTML('afterbegin', addHoverImg(index))
+	}else{
+		return
+	}
+})
+
+function addHoverImg(index){
+	furnituraImg.removeChild(furnituraImg.firstChild)
+	return(
+		`<img src="img/fur-${index}.jpg" alt="furnitura" class="furnitura-hover-img" />`
+	)
+}
 
