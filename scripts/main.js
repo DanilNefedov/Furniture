@@ -309,7 +309,7 @@ function tipTrikPagination(event) {
 		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
 		transition-duration: 695ms;`
 	}
-	console.log(dataSet)
+	//console.log(dataSet)
 }
 
 
@@ -325,23 +325,33 @@ function tipTrikPagination(event) {
 
 
 const furnituraImg = document.getElementById('furnitura-img');
-
-
+const svg = document.getElementById('svg')
 
 furnituraImg.addEventListener('mouseover', (e)=>{
-	if(e.target.id){
-		console.log('t')
-		let index = e.target.id;
-		furnituraImg.insertAdjacentHTML('afterbegin', addHoverImg(index))
-	}else{
+	if(e.target.id && e.target.id !='furnitura-img' && e.target.id != 'svg' && e.target.id != 'asd'){
+		let index = +e.target.id;
+		let elemTop = e.target.getBoundingClientRect().top - furnituraImg.getBoundingClientRect().top;
+		let elemRight = furnituraImg.getBoundingClientRect().right - e.target.getBoundingClientRect().right;
+		let elemWidth = e.target.getBoundingClientRect().width;
+		let elemHeigth = e.target.getBoundingClientRect().height;
+		
+		furnituraImg.insertAdjacentHTML('afterbegin', addHoverImg(index, elemTop, elemRight, elemWidth, elemHeigth))
+	}else {
+
 		return
 	}
 })
 
-function addHoverImg(index){
+
+
+
+function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeigth){
 	furnituraImg.removeChild(furnituraImg.firstChild)
 	return(
-		`<img src="img/fur-${index}.jpg" alt="furnitura" class="furnitura-hover-img" />`
+		`<img src="img/fur-${index}.jpg" alt="furnitura" id="asd" class="furnitura-hover-img" 
+		style = "top:${Math.floor(elemTop)}px; right:${Math.floor(elemRight)}px; 
+		width:${Math.floor(elemWidth)}px; height:${Math.floor(elemHeigth)}px;"
+		/>`
 	)
 }
 

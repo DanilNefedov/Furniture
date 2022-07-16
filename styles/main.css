@@ -1291,13 +1291,26 @@ header {
   background-size: contain;
   position: relative;
 }
+.furniture__main path {
+  transition: transform 1s;
+}
 .furniture__main .furnitura-hover-img {
   position: absolute;
-  top: 0;
+  animation: furnituraImg 0.6s;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
+@keyframes furnituraImg {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
 .fur {
-  fill: rgba(153, 11, 11, 0.3);
+  fill: transparent;
 }
 
 footer {

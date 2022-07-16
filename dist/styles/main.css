@@ -1287,9 +1287,30 @@ header {
 }
 
 .furniture__main {
-  padding-bottom: 40%;
   background: url(../img/back-furniture.jpg) no-repeat;
   background-size: contain;
+  position: relative;
+}
+.furniture__main path {
+  transition: transform 1s;
+}
+.furniture__main .furnitura-hover-img {
+  position: absolute;
+  animation: furnituraImg 1s;
+  top: 0;
+  left: 0;
+}
+
+@keyframes furnituraImg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fur {
+  fill: rgba(153, 11, 11, 0.3);
 }
 
 footer {

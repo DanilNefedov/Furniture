@@ -37,13 +37,32 @@
     background: url(../img/back-furniture.jpg) no-repeat;
     background-size: contain;
     position: relative;
+    
+
+    path{
+        transition: transform 1s;
+    }
 
     .furnitura-hover-img{
         position: absolute;
-        top:0;
+        animation: furnituraImg .6s; 
+        transform: scale(1.2);
+        cursor: pointer;
     }
 }
 
+@keyframes furnituraImg {
+    0%{
+       
+        transform: scale(1);
+    }
+    100%{
+       
+        transform: scale(1.2);
+    }
+}
+
+
 .fur{
-    fill:rgba(153, 11, 11, 0.3);
+    fill:transparent;
 }
