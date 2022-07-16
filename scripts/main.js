@@ -333,9 +333,9 @@ furnituraImg.addEventListener('mouseover', (e)=>{
 		let elemTop = e.target.getBoundingClientRect().top - furnituraImg.getBoundingClientRect().top;
 		let elemRight = furnituraImg.getBoundingClientRect().right - e.target.getBoundingClientRect().right;
 		let elemWidth = e.target.getBoundingClientRect().width;
-		let elemHeigth = e.target.getBoundingClientRect().height;
+		let elemHeight = e.target.getBoundingClientRect().height;
 		
-		furnituraImg.insertAdjacentHTML('afterbegin', addHoverImg(index, elemTop, elemRight, elemWidth, elemHeigth))
+		furnituraImg.insertAdjacentHTML('afterbegin', addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight))
 	}else {
 
 		return
@@ -345,12 +345,12 @@ furnituraImg.addEventListener('mouseover', (e)=>{
 
 
 
-function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeigth){
+function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight){
 	furnituraImg.removeChild(furnituraImg.firstChild)
 	return(
 		`<img src="img/fur-${index}.jpg" alt="furnitura" id="asd" class="furnitura-hover-img" 
 		style = "top:${Math.floor(elemTop)}px; right:${Math.floor(elemRight)}px; 
-		width:${Math.floor(elemWidth)}px; height:${Math.floor(elemHeigth)}px;"
+		width:${Math.floor(elemWidth)}px; height:${Math.floor(elemHeight)}px;"
 		/>`
 	)
 }
