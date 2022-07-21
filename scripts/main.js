@@ -4,6 +4,9 @@ const nav = document.getElementById('nav');
 const widthWind = window.screen.width;
 
 
+
+
+
 menu.addEventListener('click', open);
 
 function open(e) {
@@ -35,6 +38,7 @@ const slide = document.getElementById('cont-slide');
 const widthImg = document.getElementById('width-img');
 const dot = document.getElementsByClassName('pag-main-swiper');
 let position = 0;
+
 
 
 slider.onclick = function (event) {
@@ -237,7 +241,7 @@ const nextBtn = document.getElementById('next');
 
 let counter = 1;
 let widthElemTipTrik = carouselElem[0].offsetWidth; 
-
+// console.log(widthElemTipTrik)
 carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`;
 
 

@@ -160,8 +160,12 @@ header {
             margin: 136px -41% 0;
             position: relative;
 
-            @media(max-width:880px){
-                margin: 136px 0% 0;
+            @media(max-width:800px){
+                margin-top: 80px;
+
+                @media(max-width:580px){
+                    margin-top: 45px;
+                }
             }
 
             .main-swiper__elem {
@@ -181,31 +185,12 @@ header {
                 }
 
                 @media(max-width:1100px){
-                    min-width: 33%;
-
-                    @media (max-width:880px) {
-                        min-width: 96%;
-
-                        @media(max-width:600px){
-                            margin: 0 12px;
-
-                            @media(max-width:480px){
-                                margin: 0 9px;
-
-                                @media(max-width:380px){
-                                    margin: 0 6px;
-                                }
-                            }
-                        }
-                        
-                    }
+                   min-width: 34%;
+                    
+                    
                 }
             }
 
-
-            @media(max-width:1100px){
-                margin-top: 100px;
-            }
         }
 
 
@@ -370,6 +355,8 @@ header {
     backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
     
     
+    
+
     .main-swiper__header {
         font-weight: 700;
         font-size: 56px;
@@ -379,14 +366,14 @@ header {
         @media(max-width:1100px){
             font-size: 35px;
 
-            @media (max-width:600px){
-                font-size: 20px;
+            @media(max-width:850px){
+                font-size: 18px;
 
-                @media(max-width:480px){
-                    font-size: 16px;
-                    padding-bottom: 10px;
+                @media(max-width:620px){
+                    padding-bottom: 8px;
                 }
             }
+        
         }
     }
 
@@ -400,13 +387,11 @@ header {
         @media(max-width:1100px){
             font-size: 15px;
             
+            @media(max-width:850px){
+                font-size: 12px;
 
-            @media(max-width:600px){
-                padding-bottom: 20px;
-
-                @media(max-width:480px){
+                @media(max-width:620px){
                     padding-bottom: 10px;
-                    font-size: 13px;
                 }
             }
         }
@@ -417,15 +402,17 @@ header {
         padding: 30px;
         max-width: 340px;
 
-        @media(max-width:600px){
-            left:10px;
-            padding: 10px;
-            max-width: 230px;
-            top:-80px;
 
-            @media(max-width:480px){
-                padding: 5px;
-                max-width: 150px;
+        @media(max-width:850px){
+            max-width: 250px;
+
+            @media(max-width:620px){
+                padding: 20px;
+                top:-30px;
+
+                @media(max-width:520px){
+                    max-width: 170px;
+                }
             }
         }
     }
@@ -504,6 +491,14 @@ header {
     align-items: center;
     overflow-y: auto;
 
+    @media(max-width:640px){
+        max-width: 70vw;
+
+        @media(max-width:420px){
+            max-width: 100vw;
+        }
+    }
+
     .main-swiper__header{
         font-weight: 700;
         font-size: 40px;
@@ -549,10 +544,11 @@ header {
         max-width: 600px;
         color:$gray;
         font-weight: 500;
+        padding: 0 20px;
     }
 
     .main-swiper__btn{
-        padding: 20px 0;
+        padding: 20px 20px;
         margin: 0 auto;
 
         &-buy,
@@ -570,12 +566,22 @@ header {
                 color: $white;
                 background-color: $primary;
             }
+
+            @media(max-width:800px){
+                margin: 0 0 10px 0;
+            }
         }
 
         &-add{
             margin: 0;
         }
         
+        @media(max-width:800px){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          
+        }
     }
 }
 

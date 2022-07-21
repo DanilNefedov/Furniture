@@ -205,42 +205,42 @@ main{
 
     &__link{
         padding-top: 12px;
-        margin-left: 28px;
+        display: flex;
+        justify-content: center;
         a{
             color: $white;
-            margin-right: 80px;
+            margin-right: 40px;
             position: relative;
             transition: .3s;
+            display: flex;
+            align-items: center;
 
             &:hover{
                 color: $primary;
-            }
 
+                .share{
+                    path{
+                        fill:$primary
+                    }
+                }
+
+                .like{
+                    fill:$red;
+                    path{
+                        fill:$red;
+                        stroke:$red
+                    }
+                }
+            }
+            svg{
+                margin-right: 10px;
+                path{
+                    transition: all .3s;
+                }
+            }
 
             &:last-child{
-                margin-right: 0;
-
-                &::before{
-                    left: -32px;
-                    background: url(../img/heart-white.svg) no-repeat;
-                }
-            }
-
-
-            &:first-child{
-                &::before{
-                    left: -32px;
-                    background: url(../img/share.svg) no-repeat;
-                }
-            }
-
-
-            &:before{
-                content: '';
-                position: absolute;
-                width: 24px;
-                height: 24px;
-                top:0;
+                margin: 0;
             }
         }
     }
