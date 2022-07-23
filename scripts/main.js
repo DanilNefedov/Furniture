@@ -241,7 +241,7 @@ const nextBtn = document.getElementById('next');
 
 let counter = 1;
 let widthElemTipTrik = carouselElem[0].offsetWidth;
-// console.log(widthElemTipTrik)
+
 carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`;
 
 
@@ -313,7 +313,7 @@ function tipTrikPagination(event) {
 		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
 		transition-duration: 695ms;`
 	}
-	//console.log(dataSet)
+	
 }
 
 

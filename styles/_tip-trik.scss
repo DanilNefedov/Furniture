@@ -133,9 +133,6 @@
                     display: block;
                     padding-bottom: 16px;
 
-                    // @media(max-width:1280px){
-                    //     max-width: 70%;
-                    // }
                 }
 
                 .tip-trik-swiper__date {
@@ -144,9 +141,7 @@
                     font-size: 14px;
                     line-height: 150%;
                     color: $gray;
-                    // @media(max-width:1280px){
-                    //     font-size: ;
-                    // }
+                  
                     @media(max-width:950px) {
                         font-size: 12px;
                     }
@@ -164,9 +159,6 @@
                         @media(max-width:950px) {
                             font-size: 14px;
 
-                            // @media(max-width:580px) {
-                            //     font-size: 16px;
-                            // }
                         }
                     }
 
