@@ -121,14 +121,15 @@ header {
 @media (max-width: 580px) {
   .header-navigation {
     padding-top: 20px;
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
-@media (max-width: 580px) {
-  .header-navigation .container {
-    flex-direction: column;
+@media (max-width: 580px) and (max-width: 375px) {
+  .header-navigation {
+    max-width: 250px;
   }
 }
-
 .head-nav {
   display: flex;
   justify-content: space-between;
@@ -220,7 +221,6 @@ header {
 }
 @media (max-width: 1170px) and (max-width: 680px) and (max-width: 580px) and (max-width: 350px) {
   .head-search__field {
-    width: 245px;
     padding-left: 74px;
   }
 }
@@ -232,8 +232,10 @@ header {
 }
 @media (max-width: 580px) {
   .head-user {
-    margin-top: 20px;
-    width: 70%;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 0px;
   }
 }
 .head-user__account {
@@ -242,7 +244,29 @@ header {
 }
 @media (max-width: 580px) {
   .head-user__account {
-    margin-left: 10px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .head-user .head-user__account, .head-user .cart, .head-user .hert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.head-user .heart,
+.head-user .cart {
+  left: 5px;
+}
+@media (max-width: 400px) {
+  .head-user .heart,
+.head-user .cart {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -257,12 +281,19 @@ header {
   margin: 136px -41% 0;
   position: relative;
 }
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
+  .main-swiper__content .main-swiper__item {
+    margin-top: 45px;
+    margin-left: -350px;
+    margin-right: auto;
+  }
+}
+@media (max-width: 1100px) and (max-width: 800px) {
   .main-swiper__content .main-swiper__item {
     margin-top: 80px;
   }
 }
-@media (max-width: 800px) and (max-width: 580px) {
+@media (max-width: 1100px) and (max-width: 800px) and (max-width: 580px) {
   .main-swiper__content .main-swiper__item {
     margin-top: 45px;
   }
@@ -280,7 +311,7 @@ header {
 }
 @media (max-width: 1100px) {
   .main-swiper__content .main-swiper__item .main-swiper__elem {
-    min-width: 34%;
+    min-width: 46%;
   }
 }
 
@@ -498,6 +529,7 @@ header {
 @media (max-width: 1100px) and (max-width: 850px) and (max-width: 620px) and (max-width: 520px) {
   .main-swiper__banner {
     max-width: 170px;
+    display: none;
   }
 }
 
@@ -516,6 +548,13 @@ header {
   position: relative;
   cursor: pointer;
 }
+@media (max-width: 520px) {
+  .main-swiper__arrow .arrow {
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
+    margin: 17px;
+  }
+}
 .main-swiper__arrow .main-swiper__right svg {
   margin-top: calc(50% - 12px);
   margin-left: calc(50% - 11px);
@@ -533,6 +572,12 @@ header {
   .main-swiper__arrow {
     transform: scale(0.7);
     right: -10px;
+  }
+}
+@media (max-width: 1100px) and (max-width: 580px) and (max-width: 520px) {
+  .main-swiper__arrow {
+    right: auto;
+    left: 10px;
   }
 }
 
@@ -1096,6 +1141,7 @@ header {
     right: calc(87% - 228px);
     justify-content: space-between;
     width: 438px;
+    left: auto;
   }
 }
 @media (max-width: 1160px) and (max-width: 400px) {
@@ -1222,6 +1268,20 @@ header {
 @media (max-width: 790px) {
   .tip-trik .container .main-swiper__pagination {
     left: calc(50% - 69px);
+  }
+}
+@media (max-width: 520px) {
+  .tip-trik .container .main-swiper__arrow {
+    top: -9%;
+    left: calc(50% - 240px);
+    right: auto;
+    width: 480px;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 520px) {
+  .tip-trik .container .main-swiper__arrow .arrow {
+    box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.26);
   }
 }
 @media (max-width: 950px) {
@@ -1471,6 +1531,12 @@ footer .container {
   .footer-elem .inp {
     justify-content: center;
   }
+}
+.footer-elem a {
+  transition: 0.3s;
+}
+.footer-elem a:hover {
+  color: #E89F71;
 }
 
 .location,
@@ -1738,6 +1804,11 @@ footer .container {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 400px) {
+  .cart {
+    padding: 15px;
+  }
+}
 .cart:hover {
   background-color: rgba(232, 159, 113, 0.3);
 }
@@ -1765,6 +1836,12 @@ footer .container {
 }
 .cart:hover .cart__calc {
   top: 7px;
+}
+@media (max-width: 400px) {
+  .cart:hover .cart__calc {
+    top: 1px;
+    font-size: 18px;
+  }
 }
 
 .main-swiper__arrow {

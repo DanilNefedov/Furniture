@@ -43,7 +43,7 @@ let position = 0;
 
 slider.onclick = function (event) {
 	let target = event.target;
-	let widthElem = widthImg.offsetWidth;
+	let widthElem = widthImg.offsetWidth + 32;
 	let num = target.dataset.slide;
 
 
@@ -205,7 +205,7 @@ sliderRoom.onclick = function (event) {
 
 			}
 
-			
+
 
 		} else {
 			return
@@ -214,9 +214,9 @@ sliderRoom.onclick = function (event) {
 }
 
 function transformElement() {
-	for(let i = 0; i < dotRoom.length; i++){
+	for (let i = 0; i < dotRoom.length; i++) {
 		slideRoom[i].classList.remove('active-elem-room')
-		if(dotRoom[i].classList.contains('active-pag')){
+		if (dotRoom[i].classList.contains('active-pag')) {
 			slideRoom[i].classList.add('active-elem-room');
 		}
 	}
@@ -233,33 +233,33 @@ function transformElement() {
 const carouselSlide = document.getElementById('wrapper-slider');
 const carouselElem = document.querySelectorAll('.tip-trik-swiper__slide');
 const dotTipTrik = document.getElementsByClassName('dot-tip-trik');
- 
+
 
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
 
 let counter = 1;
-let widthElemTipTrik = carouselElem[0].offsetWidth; 
+let widthElemTipTrik = carouselElem[0].offsetWidth;
 // console.log(widthElemTipTrik)
 carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`;
 
 
-nextBtn.addEventListener('click', ()=>{
-	if(counter >= carouselElem.length - 1) return;
+nextBtn.addEventListener('click', () => {
+	if (counter >= carouselElem.length - 1) return;
 	counter++;
 	carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
 	transition-duration: 695ms;`;
-	
-	for(let i = 0; i < dotTipTrik.length; i++){
+
+	for (let i = 0; i < dotTipTrik.length; i++) {
 		let length = dotTipTrik.length;
-		if(dotTipTrik[i].classList.contains('active-pag')){
-			if(dotTipTrik[length-1].classList.contains('active-pag')){
+		if (dotTipTrik[i].classList.contains('active-pag')) {
+			if (dotTipTrik[length - 1].classList.contains('active-pag')) {
 				dotTipTrik[i].classList.remove('active-pag')
 				dotTipTrik[0].classList.add('active-pag')
-			}else{			
+			} else {
 				dotTipTrik[i].classList.remove('active-pag')
-				dotTipTrik[i+1].classList.add('active-pag')
+				dotTipTrik[i + 1].classList.add('active-pag')
 				return
 			}
 		}
@@ -267,20 +267,20 @@ nextBtn.addEventListener('click', ()=>{
 });
 
 
-prevBtn.addEventListener('click', ()=>{
-	if(counter <= 0) return;
+prevBtn.addEventListener('click', () => {
+	if (counter <= 0) return;
 	counter--;
 	carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
 	transition-duration: 695ms;`
 
-	for(let i = dotTipTrik.length-1; i >= 0; i--){
+	for (let i = dotTipTrik.length - 1; i >= 0; i--) {
 		let length = dotTipTrik.length;
-		if(dotTipTrik[i].classList.contains('active-pag')){
-			if(dotTipTrik[0].classList.contains('active-pag')){
+		if (dotTipTrik[i].classList.contains('active-pag')) {
+			if (dotTipTrik[0].classList.contains('active-pag')) {
 				dotTipTrik[i].classList.remove('active-pag')
-				dotTipTrik[length-1].classList.add('active-pag')
-			}else{
-				dotTipTrik[i-1].classList.add('active-pag')
+				dotTipTrik[length - 1].classList.add('active-pag')
+			} else {
+				dotTipTrik[i - 1].classList.add('active-pag')
 				dotTipTrik[i].classList.remove('active-pag')
 				return
 			}
@@ -289,16 +289,16 @@ prevBtn.addEventListener('click', ()=>{
 });
 
 
-carouselSlide.addEventListener('transitionend', () =>{
-	if(carouselElem[counter].id === 'last-clone'){
+carouselSlide.addEventListener('transitionend', () => {
+	if (carouselElem[counter].id === 'last-clone') {
 		carouselSlide.style.transitionDelay = 'none';
 		counter = carouselElem.length - 2;
-		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`; 
+		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`;
 	}
-	if(carouselElem[counter].id === 'first-clone'){
+	if (carouselElem[counter].id === 'first-clone') {
 		carouselSlide.style.transitionDelay = 'none';
 		counter = carouselElem.length - counter;
-		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`; 
+		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`;
 	}
 });
 
@@ -306,8 +306,8 @@ carouselSlide.addEventListener('transitionend', () =>{
 function tipTrikPagination(event) {
 	let target = event.target;
 	let dataSet = target.dataset.dotTipTrik;
-	counter = Number(dataSet)+1;
-	for(let i = 0; i < dotTipTrik.length; i++){
+	counter = Number(dataSet) + 1;
+	for (let i = 0; i < dotTipTrik.length; i++) {
 		dotTipTrik[i].classList.remove('active-pag')
 		dotTipTrik[dataSet].classList.add('active-pag')
 		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
@@ -331,16 +331,16 @@ function tipTrikPagination(event) {
 const furnituraImg = document.getElementById('furnitura-img');
 const svg = document.getElementById('svg')
 
-furnituraImg.addEventListener('mouseover', (e)=>{
-	if(e.target.id && e.target.id !='furnitura-img' && e.target.id != 'svg' && e.target.id != 'asd'){
+furnituraImg.addEventListener('mouseover', (e) => {
+	if (e.target.id && e.target.id != 'furnitura-img' && e.target.id != 'svg' && e.target.id != 'asd') {
 		let index = +e.target.id;
 		let elemTop = e.target.getBoundingClientRect().top - furnituraImg.getBoundingClientRect().top;
 		let elemRight = furnituraImg.getBoundingClientRect().right - e.target.getBoundingClientRect().right;
 		let elemWidth = e.target.getBoundingClientRect().width;
 		let elemHeight = e.target.getBoundingClientRect().height;
-		
+
 		furnituraImg.insertAdjacentHTML('afterbegin', addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight))
-	}else {
+	} else {
 
 		return
 	}
@@ -349,9 +349,9 @@ furnituraImg.addEventListener('mouseover', (e)=>{
 
 
 
-function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight){
+function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight) {
 	furnituraImg.removeChild(furnituraImg.firstChild)
-	return(
+	return (
 		`<img src="img/fur-${index}.jpg" alt="furnitura" id="asd" class="furnitura-hover-img" 
 		style = "top:${Math.floor(elemTop)}px; right:${Math.floor(elemRight)}px; 
 		width:${Math.floor(elemWidth)}px; height:${Math.floor(elemHeight)}px;"
@@ -359,3 +359,35 @@ function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight){
 	)
 }
 
+
+
+
+
+
+
+
+
+
+
+
+const account = document.getElementById('account');
+const heart = document.getElementById('heart');
+const cart = document.getElementById('cart');
+
+
+let openAcc = false;
+account.addEventListener('click', () => {
+	if (openAcc) {
+		heart.style.cssText = `transform: translate(0, 0);
+		transition: .3s;`;
+		cart.style.cssText = `transform: translate(0, 0);
+		transition: .3s;`;
+		openAcc = false;
+	} else {
+		heart.style.cssText = `transform: translate(-35px, 40px);
+		transition: .3s`;
+		cart.style.cssText = `transform: translate(35px, 40px);
+		transition: .3s`;
+		openAcc = true;
+	}
+}) 
