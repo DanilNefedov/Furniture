@@ -1,7 +1,5 @@
 .products-header {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 120%;
+    @include fontG(700, 40px, $fontL:120%);
     padding-bottom: 32px;
     text-align: center;
 
@@ -95,54 +93,37 @@ main{
             }
 
             .products-list__header {
-                font-weight: 600;
-                font-size: 24px;
-                line-height: 120%;
+                @include fontG($fontS:24px, $fontL:120%);
                 padding: 16px 0 0 16px;
             }
 
             .products-list__subtitle {
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 150%;
-                color: $gray;
-                padding: 8px 0 8px 16px;
-
-               
+                @include fontG(500, 16px, $gray);
+                padding: 8px 0 8px 16px;    
             }
 
             .products-list__price {
                 display: inline;
-                font-weight: 600;
                 font-size: 20px;
-                line-height: 150%;
                 padding: 0 16px 0 16px;
 
                
             }
 
             .products-list__discount {
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 150%;
-                color: $gray;
+                @include fontG(400, 16px, $gray, 150%);
                 text-decoration: line-through;
-
-               
             }
 
             
         }
         .discount {
+            @include fontG(500, 16px, $white, 150%);
             border-radius: 50%;
             background-color: $red;
             width: 48px;
             height: 48px;
             position: absolute;
-            color: $white;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 150%;
             padding: 12px 5px;
             top: 24px;
             right: 24px;
@@ -151,21 +132,15 @@ main{
         }
 
         .new {
+            @include fontG(500, 16px, $white, 150%);
             border-radius: 50%;
             background-color: $green;
             width: 48px;
             height: 48px;
             position: absolute;
-            color: $white;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 150%;
             padding: 12px 8px;
             top: 24px;
             right: 24px;
-
-
-        
         }
     }
 }
@@ -188,12 +163,9 @@ main{
         padding-bottom: 12px;
 
         .product-list-hover__add{
+            @include fontG($fontS:16px, $fontC:$primary, $fontL:150%);
             padding: 12px 58px;
             background-color: $white;
-            color:$primary;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 150%;
             transition: .3s;
 
             &:hover{
@@ -249,12 +221,9 @@ main{
 
 
 .button {
+    @include fontG($fontS:15px, $fontC:$primary, $fontL:150%);
     border: 1px solid $primary;
     padding: 12px 82px;
-    color: $primary;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 150%;
     max-width: 245px;
     margin: 30px auto 44px;
     display: block;

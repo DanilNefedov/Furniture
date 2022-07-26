@@ -118,7 +118,6 @@ header {
                     padding-right: 10px;
 
                     @media(max-width:350px){
-                        //width: 245px;
                         padding-left: 74px;
 
                     }
@@ -236,7 +235,7 @@ header {
 .main-swiper__pagination {
     display: flex;
     position: absolute;
-    top: -40px;
+    top: -30px;
     left: calc(56% - 30px);
 
     .main-swiper__dot {
@@ -314,10 +313,7 @@ header {
 
 
     .main-swiper__text {
-        color: $black;
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 120%;
+        @include fontG($fontS:28px, $fontL:120%);
         padding-bottom: 8px;
         
         @media(max-width:850px){
@@ -331,10 +327,7 @@ header {
     }
 
     .main-swiper__descr {
-        font-size: 16px;
-        line-height: 150%;
-        color: $gray-text;
-        font-weight: 500;
+        @include fontG(500, 16px, $gray-text);
         padding-bottom: 8px;
 
 
@@ -349,9 +342,7 @@ header {
     }
 
     .main-swiper__price {
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 150%;
+        @include fontG(20px, $fontL:150%);
 
         @media(max-width:850px){
             font-size: 14px;
@@ -383,7 +374,7 @@ header {
 
 .main-swiper__banner {
     position: absolute;
-    top: -80px;
+    top: -30px;
     left: 100px;
     max-width: 494px;
     padding: 60px;
@@ -394,9 +385,7 @@ header {
     
 
     .main-swiper__header {
-        font-weight: 700;
-        font-size: 56px;
-        line-height: 120%;
+        @include fontG(700, 56px, $fontL:120%);
         padding-bottom: 16px;
 
         @media(max-width:1100px){
@@ -414,10 +403,7 @@ header {
     }
 
     .main-swiper__subtitle {
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 150%;
-        color: $gray-text;
+        @include fontG(500, 20px, $gray-text);
         padding-bottom: 48px;
 
         @media(max-width:1100px){
@@ -460,7 +446,7 @@ header {
 
 .main-swiper__arrow {
     position: absolute;
-    top: -65px;
+    top: -50px;
     right: 100px;
     display: flex;
 
@@ -507,6 +493,7 @@ header {
             @media(max-width:520px){
                right: auto;
                left: 10px;
+               top:-65px;
             }
         }        
     }
@@ -548,9 +535,7 @@ header {
     }
 
     .main-swiper__header{
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 120%;
+        @include fontG(700, 40px, $fontL:120%);
         max-width: 700px;
         text-align: center;
         padding: 20px 0;
@@ -573,26 +558,22 @@ header {
         padding: 20px 0;
 
         &-new{
-            font-weight: 700;
-            font-size: 20px;
-            line-height:  120%;
+            @include fontG(700, 20px, $fontL:120%);
             margin-right: 20px;
         }
         &-old{
-            color: $gray;
+            @include fontG($fontC:$gray, $fontS:16px);
             text-decoration: line-through;
-            font-weight: 500;
-            font-size: 16px;
         }
     }
 
     
 
     .main-swiper__subtitle{
+        @include fontG($fontC:$gray, $fontW:500);
         max-width: 600px;
-        color:$gray;
-        font-weight: 500;
         padding: 0 20px;
+        line-height: 1.3;
     }
 
     .main-swiper__btn{
@@ -601,11 +582,9 @@ header {
 
         &-buy,
         &-add{
+            @include fontG(700, 18px, $fontC:$primary);
             padding: 15px 40px;
-            color: $primary;
             border: 2px solid $primary;
-            font-weight: 700;
-            font-size: 18px;
             margin-right: 60px;
             transition: .3s;
             background-color: $white;

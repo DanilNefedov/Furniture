@@ -63,12 +63,8 @@ nav,footer,header,aside{
 html,body{
 	height: 100%;
 	width: 100%;
-	font-family: 'Gilroy';
+	@include fontG;
     font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 150%;
-    color: $black;
 }
 input,button,textarea{
 	font-family:inherit;

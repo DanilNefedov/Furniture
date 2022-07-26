@@ -313,7 +313,7 @@ function tipTrikPagination(event) {
 		carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);
 		transition-duration: 695ms;`
 	}
-	
+
 }
 
 
@@ -377,17 +377,27 @@ const cart = document.getElementById('cart');
 
 let openAcc = false;
 account.addEventListener('click', () => {
-	if (openAcc) {
+	let width = this.innerWidth;
+	//console.log(a)
+	if (openAcc && width <= 580) {
 		heart.style.cssText = `transform: translate(0, 0);
 		transition: .3s;`;
 		cart.style.cssText = `transform: translate(0, 0);
 		transition: .3s;`;
 		openAcc = false;
-	} else {
+	} else if(width <= 580) {
 		heart.style.cssText = `transform: translate(-35px, 40px);
 		transition: .3s`;
 		cart.style.cssText = `transform: translate(35px, 40px);
 		transition: .3s`;
 		openAcc = true;
 	}
-}) 
+})
+
+
+
+
+
+
+
+

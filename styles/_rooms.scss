@@ -27,9 +27,7 @@
     }
 
     &__header {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 120%;
+        @include fontG(700, 40px, $fontL:120%);
         padding-bottom: 8px;
 
         @media(max-width:780px){
@@ -38,9 +36,7 @@
     }
 
     &__subtitle {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 150%;
+        @include fontG(500, 16px, $fontL: 150%);
         padding-bottom: 24px;
 
         @media(max-width:780px){
@@ -210,10 +206,7 @@
     }
 
     &__position {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 150%;
-        color: $gray-text;
+        @include fontG(500, 16px, $gray-text);
         padding-bottom: 8px;
 
         @media(max-width:780px){
@@ -222,9 +215,7 @@
     }
 
     &__name {
-        font-weight: 600;
-        font-size: 28px;
-        line-height: 120%;
+        @include fontG( $fontS:28px, $fontL: 150%);
 
         @media(max-width:780px){
             font-size: 20px;
@@ -263,3 +254,6 @@
         margin-right: 60px;
     }
 }
+
+
+

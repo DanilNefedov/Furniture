@@ -9,9 +9,7 @@
 
 
 .furniture__header {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 120%;
+    @include fontG(700, 40px, $fontL:120%);
     text-align: center;
 
     @media(max-width:850px){
@@ -19,10 +17,7 @@
     }
 
     &--text {
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 150%;
-        color: $gray-text;
+        @include fontG(700, $fontS:20px, $fontC:$gray-text, $fontL:150%);
         display: block;
 
         @media(max-width:850px){

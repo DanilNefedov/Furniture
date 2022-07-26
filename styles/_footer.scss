@@ -30,10 +30,7 @@ footer {
     }
 
     &__header {
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 30px;
-        color: $black;
+        @include fontG(700, 24px,$black,30px);
         padding-bottom: 16px;
 
         @media(max-width:850px){
@@ -42,12 +39,9 @@ footer {
     }
 
     &__content {
+        @include fontG(400, 16px,$gray-text,150%);
         max-width: 249px;
         padding-bottom: 16px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        color: $gray-text;
         display: block;
 
         @media(max-width:850px){
@@ -172,10 +166,7 @@ footer {
 }
 
 .footer-email::placeholder {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-
+    @include fontG(400, 16px,$fontL:150%);
 }
 
 .footer-email {
