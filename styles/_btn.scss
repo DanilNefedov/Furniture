@@ -289,53 +289,51 @@
 .menu{
   position: relative;
   left: 21px;
-  top: 9px;
+  top: 0;
 }
 
 
-.hamburger::before { 
-  top: 1px; 
 
- 
-}
-
-.hamburger::after { 
-  bottom: 12px; 
-
-  
-}
-
-.hamburger::after, .hamburger::before{
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: $black;
-  border-radius: 2px;
-  
-  @media(max-width:600px){
-    width: 30px;
-  }
-}
 
 .hamburger{
   display: block;
-  width: 40px;
-  height: 3px;
+  width: 33px;
+  height: 4px;
   background: $black;
   align-items: center;
   border-radius: 2px;
+  transition: all .5s;
 
   @media(max-width:600px){
     width: 30px;
   }
+
+  
 }
+
+
+.hamburger:nth-of-type(2){
+  margin: 5px 0;
+}
+
+.rotate-active .hamburger:nth-of-type(1){
+  transform: rotate(45deg);
+  margin: 11px 0 0 0;
+}
+.rotate-active .hamburger:nth-of-type(3){
+  transform: rotate(-45deg);
+  margin: -18px 0 0 0;
+}
+.rotate-active .hamburger:nth-of-type(2){
+  left: 10px;
+  opacity: 0;
+}
+
 
 .label-menu{
   border-radius: 60% 40% 46% 54% / 59% 64% 36% 41% ;
   background-color: $primary;
-  padding: 44px;
+  padding: 33px;
   position: absolute;
   left: -47px;
   top: -36px;
@@ -347,10 +345,6 @@
 
   @media(max-width:1000px){
     display: block;
-
-    @media(max-width:600px){
-      padding: 36px;
-    }
   }
 
 }
@@ -382,8 +376,16 @@
       padding: 20px 0;
     }
   }
+
+
 }
 
+.rotate-active .hamburger{
+  left: -100%;
+}
+// .rotate-active .hamburger::after{
+//   transform: rotate(90deg);
+// }
 
 .scroll{
   overflow: hidden;
@@ -402,7 +404,7 @@
   align-items: center;
   margin: 0;
   top: 7%;
-  left: 50%;
+  left: calc(50% - 60px);
   margin-right: -50%;
   transform: translate(-50%, -50%);
   transform: scale(1.1);
@@ -413,9 +415,13 @@
     left: 40%;
   }
 
+  .arrow-down{
+    margin: 0 0 1px 0;
+  }
+
   .head-nav__item{
     margin: 0;
-    padding: 30px 0;
+    padding: 15px 0;
 
     &:after{
       top:35px;
@@ -426,7 +432,11 @@
     }
 
     &:hover{
-      filter:invert(100%) sepia(40%) saturate(357%) hue-rotate(228deg) brightness(113%) contrast(112%);
+      color:$white;
+
+      path{
+        stroke: $white;
+      }
     }
   }
 

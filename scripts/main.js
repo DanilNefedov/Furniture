@@ -1,6 +1,7 @@
 
 const menu = document.getElementById('menu');
 const nav = document.getElementById('nav');
+const rotate = document.getElementById('rotate')
 const widthWind = window.screen.width;
 
 
@@ -12,13 +13,12 @@ menu.addEventListener('click', open);
 function open(e) {
 	e.preventDefault();
 	menu.classList.toggle('active');
-
 	nav.classList.toggle('act-nav');
-
+	rotate.classList.toggle('rotate-active');
 	document.body.classList.toggle('scroll');
 }
 
-window.addEventListener('resize', function (e) {
+window.addEventListener('resize', function () {
 
 	if ((innerWidth >= 1000) && (nav.classList.contains('act-nav'))) {
 		nav.classList.remove('act-nav');
@@ -124,14 +124,13 @@ const slideRoom = document.getElementsByClassName('rooms-swiper__elem');
 const dotRoom = document.getElementsByClassName('dot-room');
 const roomSwiperImg = document.getElementById('room-swiper-img');
 let positionRoom = 0;
+//console.log('1', roomSwiperImg.offsetWidth )
 
 sliderRoom.onclick = function (event) {
 	let target = event.target;
 	let num = target.dataset.room;
-	let widthElem = roomSwiperImg.offsetWidth * 1.2 - 49;
-
-
-
+	let widthElem = roomSwiperImg.offsetWidth + 25;//(roomSwiperImg.offsetWidth * 1.2) - 47
+	console.log('2',widthElem)
 
 	if (target.classList.contains('dot-room')) {
 
@@ -167,25 +166,29 @@ sliderRoom.onclick = function (event) {
 
 	if (target.classList.contains('arrow') || (target.tagName = 'SVG') || (target.tagName = 'PATH')) {
 
-
-		if (target.classList.contains('left') && positionRoom < 0) {
+	console.log((Math.floor(positionRoom)) > (Math.floor (widthElem * -2)), 'p = ' + Math.floor(positionRoom) + '   wE = ' + Math.floor (widthElem * -2) )
+		
+	
+	
+	if (target.classList.contains('left') && (Math.floor(-positionRoom) >= Math.floor(widthElem))) {
 			positionRoom += widthElem;
-
-			for (let i = 0; i < dotRoom.length; i++) {
-				if (dotRoom[i].classList.contains('active-pag')) {
-					dotRoom[i - 1].classList.add('active-pag')
-				}
-				dotRoom[i].classList.remove('active-pag');
-			}
 
 			for (let i = 0; i < slideRoom.length; i++) {
 				slideRoom[i].style.cssText = `transform: translate3d(${positionRoom}px, 0px, 0px);
 				transition-duration: 1195ms;`;
 			}
+			
+			for (let i = dotRoom.length-1; i >= 0; i--) {
+				if (dotRoom[i].classList.contains('active-pag') && i > 0) {
+					dotRoom[i - 1].classList.add('active-pag');
+					dotRoom[i].classList.remove('active-pag');
+					transformElement();
+					return
+				}	
+			}
+	
 
-			transformElement();
-
-		} else if (target.classList.contains('right') && (positionRoom > widthElem * -3)) {
+		} else if (target.classList.contains('right') && (Math.floor(positionRoom) >= Math.floor(widthElem * -2)) ){
 			positionRoom -= widthElem;
 
 			for (let i = 0; i < slideRoom.length; i++) {
@@ -195,17 +198,13 @@ sliderRoom.onclick = function (event) {
 
 			for (let i = 0; i < dotRoom.length; i++) {
 
-
-				if (dotRoom[i].classList.contains('active-pag')) {
+				if (dotRoom[i].classList.contains('active-pag') && i < 3) {
 					dotRoom[i].classList.remove('active-pag');
 					dotRoom[i + 1].classList.add('active-pag');
 					transformElement();
 					return;
 				}
-
 			}
-
-
 
 		} else {
 			return
@@ -241,6 +240,7 @@ const nextBtn = document.getElementById('next');
 
 let counter = 1;
 let widthElemTipTrik = carouselElem[0].offsetWidth;
+
 
 carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * counter}px, 0px, 0px);`;
 
@@ -389,7 +389,8 @@ account.addEventListener('click', () => {
 		heart.style.cssText = `transform: translate(-35px, 40px);
 		transition: .3s`;
 		cart.style.cssText = `transform: translate(35px, 40px);
-		transition: .3s`;
+		transition: .3s;
+		top:-2px`;
 		openAcc = true;
 	}
 })

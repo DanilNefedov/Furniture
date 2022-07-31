@@ -62,12 +62,16 @@
     margin-right: -890px;
     position: relative;
     overflow: hidden;
-    padding: 0 0 42px 38px;
+    padding: 0 0 42px 75px;
     min-height: 584px;
 
     &__elem {
         margin-right: 24px;
         position: relative;
+
+        @media(max-width:680px){
+            width: 100%;
+        }
 
         img{
             
@@ -84,10 +88,15 @@
             min-height: 0;
             padding-bottom: 90px;
 
-            @media(max-width:400px){
-                margin-right: -800px;
-                padding-bottom: 60px;
+            @media(max-width:680px){
+                padding-left: 50px;
+
+                @media(max-width:400px){
+                    margin-right: -800px;
+                    padding-bottom: 60px;
+                }
             }
+            
         }
     }
 
@@ -103,7 +112,7 @@
             top:570px;
 
             @media(max-width:780px){
-                top:calc(94% - -10px);
+                top:calc(92% - -10px);
                 left: calc(12% - 48px); //try everywhere
                 
                 @media(max-width:400px){
@@ -155,14 +164,14 @@
         
         @media(max-width:1160px){
             top: calc(51% - 50px);
-            right: calc(87% - 228px);
+            right: calc(87% - 218px);
             justify-content: space-between;
             width: 438px;
             left: auto;
 
             @media(max-width:400px){
                 width: 390px;
-                right: calc(89% - 229px);
+                right: calc(90% - 229px);
             }
         }
 
@@ -189,8 +198,8 @@
     padding: 31px 32px 24px 25px;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(8px); //No support Firefox IE Firefox for Android
-    bottom: calc(2% - 25px);
-    left: calc(4% - 25px);
+    bottom: calc(12% - 25px);
+    left: calc(-4% - 25px);
     display: none;
 
     
@@ -201,7 +210,7 @@
         @media(max-width:780px){
             padding: 20px;
             bottom: 0;
-            left: 0;
+            left: -24px;
         }
     }
 
@@ -238,21 +247,17 @@
 
 
 .active-elem-room{
-    margin-top: 49px;
-    margin-right: 61px;
-    
 
     img{
         transform: scale(1.2);
+        transform-origin: right;
+        transition: all .3s;
     }
 
     .elem-about{
         display: block;
     }
-     @media(max-width:1160px){
-        margin-top: 0;
-        margin-right: 60px;
-    }
+    
 }
 
 

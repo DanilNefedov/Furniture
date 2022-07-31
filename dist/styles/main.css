@@ -53,11 +53,11 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: "Gilroy";
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
-  line-height: 150%;
   color: #3A3A3A;
+  line-height: 150%;
+  font-style: normal;
 }
 
 input, button, textarea {
@@ -118,14 +118,19 @@ header {
 .header-navigation {
   padding-top: 40px;
 }
-@media (max-width: 580px) {
+@media (max-width: 1100px) {
+  .header-navigation {
+    padding: 20px 0 20px 0;
+  }
+}
+@media (max-width: 1100px) and (max-width: 580px) {
   .header-navigation {
     padding-top: 20px;
     max-width: 300px;
     margin: 0 auto;
   }
 }
-@media (max-width: 580px) and (max-width: 375px) {
+@media (max-width: 1100px) and (max-width: 580px) and (max-width: 375px) {
   .header-navigation {
     max-width: 250px;
   }
@@ -149,24 +154,30 @@ header {
 }
 .head-nav__item {
   color: #3A3A3A;
-  margin-right: 48px;
+  margin-right: 40px;
   position: relative;
-  transition: 0.2s;
+  transition: 0.3s;
+}
+@media (max-width: 1070px) {
+  .head-nav__item {
+    margin-right: 20px;
+  }
+}
+.head-nav__item path {
+  transition: 0.3s;
 }
 .head-nav__item:last-child {
   margin-right: 0;
 }
 .head-nav__item:hover {
-  filter: brightness(0) saturate(100%) invert(67%) sepia(77%) saturate(337%) hue-rotate(330deg) brightness(93%) contrast(95%);
+  color: #E89F71;
 }
-.head-nav .nav-arr:after {
-  content: "";
-  position: absolute;
-  background: url(../img/arrow-down.svg) no-repeat;
-  width: 20px;
-  height: 20px;
-  top: 5px;
-  right: -25px;
+.head-nav__item:hover path {
+  stroke: #E89F71;
+}
+.head-nav .arrow-down {
+  vertical-align: middle;
+  margin-left: 8px;
 }
 
 .head-search {
@@ -205,22 +216,22 @@ header {
   width: 473px;
   padding: 12px 0 12px 44px;
 }
-@media (max-width: 1170px) {
+@media (max-width: 1230px) {
   .head-search__field {
     width: 300px;
   }
 }
-@media (max-width: 1170px) and (max-width: 680px) {
+@media (max-width: 1230px) and (max-width: 680px) {
   .head-search__field {
-    width: 200px;
+    width: 220px;
   }
 }
-@media (max-width: 1170px) and (max-width: 680px) and (max-width: 580px) {
+@media (max-width: 1230px) and (max-width: 680px) and (max-width: 580px) {
   .head-search__field {
     padding-right: 10px;
   }
 }
-@media (max-width: 1170px) and (max-width: 680px) and (max-width: 580px) and (max-width: 350px) {
+@media (max-width: 1230px) and (max-width: 680px) and (max-width: 580px) and (max-width: 350px) {
   .head-search__field {
     padding-left: 74px;
   }
@@ -291,7 +302,7 @@ header {
 }
 @media (max-width: 1100px) and (max-width: 800px) {
   .main-swiper__content .main-swiper__item {
-    margin-top: 80px;
+    margin-top: 50px;
   }
 }
 @media (max-width: 1100px) and (max-width: 800px) and (max-width: 580px) {
@@ -319,8 +330,8 @@ header {
 .main-swiper__pagination {
   display: flex;
   position: absolute;
-  top: -30px;
-  left: calc(56% - 30px);
+  top: -35px;
+  left: calc(53% - 64px);
 }
 .main-swiper__pagination .main-swiper__dot {
   border-radius: 50%;
@@ -354,7 +365,7 @@ header {
 @media (max-width: 700px) {
   .main-swiper__pagination {
     top: calc(100% - -15px);
-    left: calc(50% - 75px);
+    left: calc(50% - 64px);
   }
 }
 
@@ -391,9 +402,10 @@ header {
   }
 }
 .main-swiper__about .main-swiper__text {
-  color: #3A3A3A;
+  font-family: "Gilroy";
   font-weight: 600;
   font-size: 28px;
+  color: #3A3A3A;
   line-height: 120%;
   padding-bottom: 8px;
 }
@@ -409,10 +421,11 @@ header {
   }
 }
 .main-swiper__about .main-swiper__descr {
-  font-size: 16px;
-  line-height: 150%;
-  color: #616161;
+  font-family: "Gilroy";
   font-weight: 500;
+  font-size: 16px;
+  color: #616161;
+  line-height: 150%;
   padding-bottom: 8px;
 }
 @media (max-width: 850px) {
@@ -427,8 +440,10 @@ header {
   }
 }
 .main-swiper__about .main-swiper__price {
-  font-weight: 600;
-  font-size: 20px;
+  font-family: "Gilroy";
+  font-weight: 20px;
+  font-size: 18px;
+  color: #3A3A3A;
   line-height: 150%;
 }
 @media (max-width: 850px) {
@@ -459,16 +474,18 @@ header {
 
 .main-swiper__banner {
   position: absolute;
-  top: -30px;
-  left: 100px;
+  top: -70px;
+  left: calc(24% - 245px);
   max-width: 494px;
   padding: 60px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
 }
 .main-swiper__banner .main-swiper__header {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 56px;
+  color: #3A3A3A;
   line-height: 120%;
   padding-bottom: 16px;
 }
@@ -488,10 +505,11 @@ header {
   }
 }
 .main-swiper__banner .main-swiper__subtitle {
+  font-family: "Gilroy";
   font-weight: 500;
   font-size: 20px;
-  line-height: 150%;
   color: #616161;
+  line-height: 150%;
   padding-bottom: 48px;
 }
 @media (max-width: 1100px) {
@@ -502,6 +520,7 @@ header {
 @media (max-width: 1100px) and (max-width: 850px) {
   .main-swiper__banner .main-swiper__subtitle {
     font-size: 12px;
+    padding-bottom: 25px;
   }
 }
 @media (max-width: 1100px) and (max-width: 850px) and (max-width: 620px) {
@@ -514,6 +533,7 @@ header {
     left: 25px;
     padding: 30px;
     max-width: 340px;
+    top: -45px;
   }
 }
 @media (max-width: 1100px) and (max-width: 850px) {
@@ -524,7 +544,6 @@ header {
 @media (max-width: 1100px) and (max-width: 850px) and (max-width: 620px) {
   .main-swiper__banner {
     padding: 20px;
-    top: -30px;
   }
 }
 @media (max-width: 1100px) and (max-width: 850px) and (max-width: 620px) and (max-width: 520px) {
@@ -536,7 +555,7 @@ header {
 
 .main-swiper__arrow {
   position: absolute;
-  top: -50px;
+  top: -54px;
   right: 100px;
   display: flex;
 }
@@ -616,8 +635,10 @@ header {
   }
 }
 .main-swiper__hover-about .main-swiper__header {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 40px;
+  color: #3A3A3A;
   line-height: 120%;
   max-width: 700px;
   text-align: center;
@@ -637,33 +658,43 @@ header {
   padding: 20px 0;
 }
 .main-swiper__hover-about .main-swiper__price-new {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 20px;
+  color: #3A3A3A;
   line-height: 120%;
   margin-right: 20px;
 }
 .main-swiper__hover-about .main-swiper__price-old {
-  color: #898989;
-  text-decoration: line-through;
-  font-weight: 500;
+  font-family: "Gilroy";
+  font-weight: 600;
   font-size: 16px;
+  color: #898989;
+  line-height: 150%;
+  text-decoration: line-through;
 }
 .main-swiper__hover-about .main-swiper__subtitle {
-  max-width: 600px;
-  color: #898989;
+  font-family: "Gilroy";
   font-weight: 500;
+  font-size: 18px;
+  color: #898989;
+  line-height: 150%;
+  max-width: 600px;
   padding: 0 20px;
+  line-height: 1.3;
 }
 .main-swiper__hover-about .main-swiper__btn {
   padding: 20px 20px;
   margin: 0 auto;
 }
 .main-swiper__hover-about .main-swiper__btn-buy, .main-swiper__hover-about .main-swiper__btn-add {
-  padding: 15px 40px;
-  color: #E89F71;
-  border: 2px solid #E89F71;
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 18px;
+  color: #E89F71;
+  line-height: 150%;
+  padding: 15px 40px;
+  border: 2px solid #E89F71;
   margin-right: 60px;
   transition: 0.3s;
   background-color: #FFFFFF;
@@ -746,8 +777,10 @@ header {
   margin: 0;
 }
 .list-top__about .list-top__title {
+  font-family: "Gilroy";
   font-weight: 600;
   font-size: 18px;
+  color: #3A3A3A;
   line-height: 150%;
   padding-bottom: 2px;
 }
@@ -757,9 +790,11 @@ header {
   }
 }
 .list-top__about .list-top__subtitle {
+  font-family: "Gilroy";
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
+  color: #898989;
+  line-height: 24px;
 }
 @media (max-width: 600px) {
   .list-top__about .list-top__subtitle {
@@ -773,8 +808,10 @@ header {
 }
 
 .products-header {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 40px;
+  color: #3A3A3A;
   line-height: 120%;
   padding-bottom: 32px;
   text-align: center;
@@ -855,56 +892,60 @@ header {
   }
 }
 .products-list__elem .products-list__about .products-list__header {
+  font-family: "Gilroy";
   font-weight: 600;
   font-size: 24px;
+  color: #3A3A3A;
   line-height: 120%;
   padding: 16px 0 0 16px;
 }
 .products-list__elem .products-list__about .products-list__subtitle {
+  font-family: "Gilroy";
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
   color: #898989;
+  line-height: 150%;
   padding: 8px 0 8px 16px;
 }
 .products-list__elem .products-list__about .products-list__price {
   display: inline;
-  font-weight: 600;
   font-size: 20px;
-  line-height: 150%;
   padding: 0 16px 0 16px;
 }
 .products-list__elem .products-list__about .products-list__discount {
+  font-family: "Gilroy";
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
   color: #898989;
+  line-height: 150%;
   text-decoration: line-through;
 }
 .products-list__elem .discount {
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 150%;
   border-radius: 50%;
   background-color: #E97171;
   width: 48px;
   height: 48px;
   position: absolute;
-  color: #FFFFFF;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
   padding: 12px 5px;
   top: 24px;
   right: 24px;
 }
 .products-list__elem .new {
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 150%;
   border-radius: 50%;
   background-color: #2EC1AC;
   width: 48px;
   height: 48px;
   position: absolute;
-  color: #FFFFFF;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
   padding: 12px 8px;
   top: 24px;
   right: 24px;
@@ -926,12 +967,13 @@ header {
   padding-bottom: 12px;
 }
 .product-list-hover__btn .product-list-hover__add {
-  padding: 12px 58px;
-  background-color: #FFFFFF;
-  color: #E89F71;
+  font-family: "Gilroy";
   font-weight: 600;
   font-size: 16px;
+  color: #E89F71;
   line-height: 150%;
+  padding: 12px 58px;
+  background-color: #FFFFFF;
   transition: 0.3s;
 }
 .product-list-hover__btn .product-list-hover__add:hover {
@@ -975,12 +1017,13 @@ header {
 }
 
 .button {
-  border: 1px solid #E89F71;
-  padding: 12px 82px;
-  color: #E89F71;
+  font-family: "Gilroy";
   font-weight: 600;
   font-size: 15px;
+  color: #E89F71;
   line-height: 150%;
+  border: 1px solid #E89F71;
+  padding: 12px 82px;
   max-width: 245px;
   margin: 30px auto 44px;
   display: block;
@@ -1016,8 +1059,10 @@ header {
   }
 }
 .rooms-text__header {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 40px;
+  color: #3A3A3A;
   line-height: 120%;
   padding-bottom: 8px;
 }
@@ -1027,8 +1072,10 @@ header {
   }
 }
 .rooms-text__subtitle {
+  font-family: "Gilroy";
   font-weight: 500;
   font-size: 16px;
+  color: #3A3A3A;
   line-height: 150%;
   padding-bottom: 24px;
 }
@@ -1058,6 +1105,11 @@ header {
 .rooms-swiper__elem {
   margin-right: 24px;
   position: relative;
+}
+@media (max-width: 680px) {
+  .rooms-swiper__elem {
+    width: 100%;
+  }
 }
 @media (max-width: 1160px) {
   .rooms-swiper__elem img {
@@ -1184,10 +1236,11 @@ header {
   }
 }
 .elem-about__position {
+  font-family: "Gilroy";
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
   color: #616161;
+  line-height: 150%;
   padding-bottom: 8px;
 }
 @media (max-width: 780px) {
@@ -1196,9 +1249,11 @@ header {
   }
 }
 .elem-about__name {
+  font-family: "Gilroy";
   font-weight: 600;
   font-size: 28px;
-  line-height: 120%;
+  color: #3A3A3A;
+  line-height: 150%;
 }
 @media (max-width: 780px) {
   .elem-about__name {
@@ -1237,8 +1292,10 @@ header {
   padding: 44px 0 88px;
 }
 .tip-trik__header {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 40px;
+  color: #3A3A3A;
   line-height: 120%;
   text-align: center;
   padding-bottom: 32px;
@@ -1324,10 +1381,11 @@ header {
   align-items: center;
   width: 1260px;
   flex-shrink: 0;
+  padding: 0 30px;
 }
 @media (max-width: 1280px) {
   .tip-trik-swiper__wrapper .tip-trik-swiper__slide {
-    width: 760px;
+    width: 800px;
   }
 }
 @media (max-width: 1280px) and (max-width: 790px) {
@@ -1366,11 +1424,12 @@ header {
   padding-bottom: 16px;
 }
 .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem .tip-trik-swiper__date {
-  padding-bottom: 16px;
+  font-family: "Gilroy";
   font-weight: 400;
   font-size: 14px;
-  line-height: 150%;
   color: #898989;
+  line-height: 150%;
+  padding-bottom: 16px;
 }
 @media (max-width: 950px) {
   .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem .tip-trik-swiper__date {
@@ -1378,8 +1437,10 @@ header {
   }
 }
 .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem .tip-trik-swiper__header {
+  font-family: "Gilroy";
   font-weight: 600;
   font-size: 24px;
+  color: #3A3A3A;
   line-height: 120%;
   padding-bottom: 8px;
 }
@@ -1404,8 +1465,10 @@ header {
 }
 
 .furniture__header {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 40px;
+  color: #3A3A3A;
   line-height: 120%;
   text-align: center;
 }
@@ -1415,10 +1478,11 @@ header {
   }
 }
 .furniture__header--text {
-  font-weight: 600;
+  font-family: "Gilroy";
+  font-weight: 700;
   font-size: 20px;
-  line-height: 150%;
   color: #616161;
+  line-height: 150%;
   display: block;
 }
 @media (max-width: 850px) {
@@ -1487,10 +1551,11 @@ footer .container {
   }
 }
 .footer-elem__header {
+  font-family: "Gilroy";
   font-weight: 700;
   font-size: 24px;
-  line-height: 30px;
   color: #3A3A3A;
+  line-height: 30px;
   padding-bottom: 16px;
 }
 @media (max-width: 850px) {
@@ -1499,12 +1564,13 @@ footer .container {
   }
 }
 .footer-elem__content {
-  max-width: 249px;
-  padding-bottom: 16px;
+  font-family: "Gilroy";
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
   color: #616161;
+  line-height: 150%;
+  max-width: 249px;
+  padding-bottom: 16px;
   display: block;
 }
 @media (max-width: 850px) {
@@ -1640,8 +1706,10 @@ footer .container {
 }
 
 .footer-email::placeholder {
+  font-family: "Gilroy";
   font-weight: 400;
   font-size: 16px;
+  color: #3A3A3A;
   line-height: 150%;
 }
 
@@ -1685,9 +1753,7 @@ footer .container {
 
 .btn {
   cursor: pointer;
-  font-weight: 600;
   font-size: 20px;
-  line-height: 150%;
   max-width: 374px;
   position: relative;
   width: 100%;
@@ -1901,39 +1967,17 @@ footer .container {
 .menu {
   position: relative;
   left: 21px;
-  top: 9px;
-}
-
-.hamburger::before {
-  top: 1px;
-}
-
-.hamburger::after {
-  bottom: 12px;
-}
-
-.hamburger::after, .hamburger::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #3A3A3A;
-  border-radius: 2px;
-}
-@media (max-width: 600px) {
-  .hamburger::after, .hamburger::before {
-    width: 30px;
-  }
+  top: 0;
 }
 
 .hamburger {
   display: block;
-  width: 40px;
-  height: 3px;
+  width: 33px;
+  height: 4px;
   background: #3A3A3A;
   align-items: center;
   border-radius: 2px;
+  transition: all 0.5s;
 }
 @media (max-width: 600px) {
   .hamburger {
@@ -1941,10 +1985,29 @@ footer .container {
   }
 }
 
+.hamburger:nth-of-type(2) {
+  margin: 5px 0;
+}
+
+.rotate-active .hamburger:nth-of-type(1) {
+  transform: rotate(45deg);
+  margin: 11px 0 0 0;
+}
+
+.rotate-active .hamburger:nth-of-type(3) {
+  transform: rotate(-45deg);
+  margin: -18px 0 0 0;
+}
+
+.rotate-active .hamburger:nth-of-type(2) {
+  left: 10px;
+  opacity: 0;
+}
+
 .label-menu {
   border-radius: 60% 40% 46% 54%/59% 64% 36% 41%;
   background-color: #E89F71;
-  padding: 44px;
+  padding: 33px;
   position: absolute;
   left: -47px;
   top: -36px;
@@ -1956,11 +2019,6 @@ footer .container {
 @media (max-width: 1000px) {
   .label-menu {
     display: block;
-  }
-}
-@media (max-width: 1000px) and (max-width: 600px) {
-  .label-menu {
-    padding: 36px;
   }
 }
 
@@ -1990,6 +2048,10 @@ footer .container {
   padding: 20px 0;
 }
 
+.rotate-active .hamburger {
+  left: -100%;
+}
+
 .scroll {
   overflow: hidden;
 }
@@ -2005,7 +2067,7 @@ footer .container {
   align-items: center;
   margin: 0;
   top: 7%;
-  left: 50%;
+  left: calc(50% - 60px);
   margin-right: -50%;
   transform: translate(-50%, -50%);
   transform: scale(1.1);
@@ -2016,9 +2078,12 @@ footer .container {
     left: 40%;
   }
 }
+.act-nav .arrow-down {
+  margin: 0 0 1px 0;
+}
 .act-nav .head-nav__item {
   margin: 0;
-  padding: 30px 0;
+  padding: 15px 0;
 }
 .act-nav .head-nav__item:after {
   top: 35px;
@@ -2027,7 +2092,10 @@ footer .container {
   margin-top: 30px;
 }
 .act-nav .head-nav__item:hover {
-  filter: invert(100%) sepia(40%) saturate(357%) hue-rotate(228deg) brightness(113%) contrast(112%);
+  color: #FFFFFF;
+}
+.act-nav .head-nav__item:hover path {
+  stroke: #FFFFFF;
 }
 .act-nav .head-nav__logo {
   margin: 0 0 0 0;
