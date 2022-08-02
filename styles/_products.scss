@@ -1,24 +1,30 @@
 .products-header {
-    @include fontG(700, 40px, $fontL:120%);
+    @include fontG(700, 40px, $fontL: 120%);
     padding-bottom: 32px;
     text-align: center;
 
-    @media(max-width:835px){
+    @media(max-width:835px) {
         font-size: 30px;
         padding-bottom: 25px;
     }
 }
 
-main{
-    .container-products{
+main {
+    .container-products {
 
-        @media(max-width:1180px){
+        @media(max-width:1180px) {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
 
-            @media(max-width:835px){
+            @media(max-width:835px) {
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
                 justify-content: space-between;
 
-                @media(max-width:456px){
+                @media(max-width:456px) {
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
                     justify-content: center;
                 }
             }
@@ -27,51 +33,60 @@ main{
 }
 
 .products-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     height: 100%;
     gap: 30px;
 
-   
 
 
-    @media(max-width:1260px){
+
+    @media(max-width:1260px) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 
-    
+
 
     &__elem {
         position: relative;
         cursor: pointer;
         overflow: hidden;
 
-        &:hover{
-           
-            .product-list-hover{
+        &:hover {
+
+            .product-list-hover {
+                -webkit-transition: .7s;
+                -o-transition: .7s;
                 transition: .7s;
-                top:0;
+                top: 0;
             }
         }
 
 
-        
-        img{
+
+        img {
             display: block;
         }
-       
-        @media(max-width:600px){
+
+        @media(max-width:600px) {
             padding-bottom: 15px;
 
-            @media(max-width:456px){
+            @media(max-width:456px) {
                 padding-right: 0;
             }
-        
+
         }
 
-        &:nth-of-type(2n){
-            @media(max-width:1180px){
+        &:nth-of-type(2n) {
+            @media(max-width:1180px) {
                 padding-right: 0;
             }
         }
@@ -88,18 +103,18 @@ main{
             padding-bottom: 30px;
 
 
-            @media(max-width:600px){
+            @media(max-width:600px) {
                 padding-bottom: 15px;
             }
 
             .products-list__header {
-                @include fontG($fontS:24px, $fontL:120%);
+                @include fontG($fontS: 24px, $fontL: 120%);
                 padding: 16px 0 0 16px;
             }
 
             .products-list__subtitle {
                 @include fontG(500, 16px, $gray);
-                padding: 8px 0 8px 16px;    
+                padding: 8px 0 8px 16px;
             }
 
             .products-list__price {
@@ -107,7 +122,7 @@ main{
                 font-size: 20px;
                 padding: 0 16px 0 16px;
 
-               
+
             }
 
             .products-list__discount {
@@ -115,8 +130,9 @@ main{
                 text-decoration: line-through;
             }
 
-            
+
         }
+
         .discount {
             @include fontG(500, 16px, $white, 150%);
             border-radius: 50%;
@@ -128,7 +144,7 @@ main{
             top: 24px;
             right: 24px;
 
-           
+
         }
 
         .new {
@@ -147,71 +163,98 @@ main{
 
 
 
-.product-list-hover{
+.product-list-hover {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
-    top:-100%;
+    top: -100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 
-    &__btn{
+    &__btn {
         max-width: 202px;
         padding-bottom: 12px;
 
-        .product-list-hover__add{
-            @include fontG($fontS:16px, $fontC:$primary, $fontL:150%);
+        .product-list-hover__add {
+            @include fontG($fontS: 16px, $fontC: $primary, $fontL: 150%);
             padding: 12px 58px;
             background-color: $white;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s;
 
-            &:hover{
+            &:hover {
                 background-color: $primary;
                 color: $white;
             }
         }
     }
 
-    &__link{
+    &__link {
         padding-top: 12px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
-        a{
+
+        a {
             color: $white;
             margin-right: 40px;
             position: relative;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
 
-            &:hover{
+            &:hover {
                 color: $primary;
 
-                .share{
-                    path{
-                        fill:$primary
+                .share {
+                    path {
+                        fill: $primary
                     }
                 }
 
-                .like{
-                    fill:$red;
-                    path{
-                        fill:$red;
-                        stroke:$red
+                .like {
+                    fill: $red;
+
+                    path {
+                        fill: $red;
+                        stroke: $red
                     }
                 }
             }
-            svg{
+
+            svg {
                 margin-right: 10px;
-                path{
+
+                path {
+                    -webkit-transition: all .3s;
+                    -o-transition: all .3s;
                     transition: all .3s;
                 }
             }
 
-            &:last-child{
+            &:last-child {
                 margin: 0;
             }
         }
@@ -221,7 +264,7 @@ main{
 
 
 .button {
-    @include fontG($fontS:15px, $fontC:$primary, $fontL:150%);
+    @include fontG($fontS: 15px, $fontC: $primary, $fontL: 150%);
     border: 1px solid $primary;
     padding: 12px 82px;
     max-width: 245px;
@@ -230,5 +273,3 @@ main{
     position: relative;
     background-color: $white;
 }
-
-

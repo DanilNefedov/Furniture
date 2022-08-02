@@ -124,13 +124,13 @@ const slideRoom = document.getElementsByClassName('rooms-swiper__elem');
 const dotRoom = document.getElementsByClassName('dot-room');
 const roomSwiperImg = document.getElementById('room-swiper-img');
 let positionRoom = 0;
-//console.log('1', roomSwiperImg.offsetWidth )
+
 
 sliderRoom.onclick = function (event) {
 	let target = event.target;
 	let num = target.dataset.room;
 	let widthElem = roomSwiperImg.offsetWidth + 25;//(roomSwiperImg.offsetWidth * 1.2) - 47
-	console.log('2',widthElem)
+	
 
 	if (target.classList.contains('dot-room')) {
 
@@ -166,7 +166,6 @@ sliderRoom.onclick = function (event) {
 
 	if (target.classList.contains('arrow') || (target.tagName = 'SVG') || (target.tagName = 'PATH')) {
 
-	console.log((Math.floor(positionRoom)) > (Math.floor (widthElem * -2)), 'p = ' + Math.floor(positionRoom) + '   wE = ' + Math.floor (widthElem * -2) )
 		
 	
 	
@@ -331,9 +330,12 @@ function tipTrikPagination(event) {
 const furnituraImg = document.getElementById('furnitura-img');
 const svg = document.getElementById('svg')
 
+
+
+
 furnituraImg.addEventListener('mouseover', (e) => {
-	if (e.target.id && e.target.id != 'furnitura-img' && e.target.id != 'svg' && e.target.id != 'asd') {
-		let index = +e.target.id;
+	if (e.target.dataset.index && e.target.id != 'furnitura-img' && e.target.id != 'svg' ) {//&& e.target.id != 'asd'
+		let index = e.target.dataset.index;
 		let elemTop = e.target.getBoundingClientRect().top - furnituraImg.getBoundingClientRect().top;
 		let elemRight = furnituraImg.getBoundingClientRect().right - e.target.getBoundingClientRect().right;
 		let elemWidth = e.target.getBoundingClientRect().width;
@@ -378,7 +380,6 @@ const cart = document.getElementById('cart');
 let openAcc = false;
 account.addEventListener('click', () => {
 	let width = this.innerWidth;
-	//console.log(a)
 	if (openAcc && width <= 580) {
 		heart.style.cssText = `transform: translate(0, 0);
 		transition: .3s;`;

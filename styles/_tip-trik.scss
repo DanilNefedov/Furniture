@@ -2,7 +2,7 @@
     padding: 44px 0 88px;
 
     &__header {
-        @include fontG(700, 40px, $fontL:120%);
+        @include fontG(700, 40px, $fontL: 120%);
         text-align: center;
         padding-bottom: 32px;
 
@@ -12,7 +12,7 @@
             @media(max-width:580px) {
                 font-size: 25px;
 
-                @media(max-width:400px){
+                @media(max-width:400px) {
                     font-size: 20px;
                 }
             }
@@ -28,22 +28,26 @@
             left: calc(50% - 87px);
             top: 100%;
 
-            @media(max-width:790px){
+            @media(max-width:790px) {
                 left: calc(50% - 69px);
             }
         }
 
-        .main-swiper__arrow{
-            @media(max-width:520px){
+        .main-swiper__arrow {
+            @media(max-width:520px) {
                 top: -9%;
                 left: calc(50% - 240px);
                 right: auto;
                 width: 480px;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
                 justify-content: space-between;
-                
+
             }
-            .arrow{
-                @media(max-width:520px){
+
+            .arrow {
+                @media(max-width:520px) {
+                    -webkit-box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 26%);
                     box-shadow: 0px 4px 14px 1px rgb(0 0 0 / 26%);
                 }
             }
@@ -68,41 +72,55 @@
     overflow: hidden;
     padding-bottom: 45px;
 
-    @media(max-width:1280px){
+    @media(max-width:1280px) {
         width: 760px;
 
-        @media(max-width:790px){
+        @media(max-width:790px) {
             width: 250px;
             padding-bottom: 20px;
         }
     }
 
     &__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         position: relative;
 
         .tip-trik-swiper__slide {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
             justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
             width: 1260px;
+            -ms-flex-negative: 0;
             flex-shrink: 0;
-            padding:0 30px;
+            padding: 0 30px;
 
 
-            @media(max-width:1280px){
-                width:800px;
-                
-                @media(max-width:790px){
+            @media(max-width:1280px) {
+                width: 800px;
+
+                @media(max-width:790px) {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
                     flex-direction: column;
                     width: 250px;
-                   
+
                 }
             }
 
             .tip-trik-swiper__elem {
                 padding: 0 16px;
                 max-width: 100%;
+                -webkit-transition: .3s;
+                -o-transition: .3s;
                 transition: .3s;
                 cursor: pointer;
 
@@ -119,7 +137,6 @@
 
                 &:hover {
                     -webkit-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
-                    -moz-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
                     box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
                 }
 
@@ -137,14 +154,14 @@
                 .tip-trik-swiper__date {
                     @include fontG(400, 14px, $gray);
                     padding-bottom: 16px;
-                  
+
                     @media(max-width:950px) {
                         font-size: 12px;
                     }
                 }
 
                 .tip-trik-swiper__header {
-                    @include fontG(600, 24px, $fontL:120%);
+                    @include fontG(600, 24px, $fontL: 120%);
                     padding-bottom: 8px;
 
                     @media(max-width:1280px) {

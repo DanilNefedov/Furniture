@@ -7,12 +7,15 @@
 
     .container{
         @media(max-width:1100px){
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
         }
     }
 }
 
 .list-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 114px;
 
@@ -20,6 +23,8 @@
         margin-right: 0;
         padding-top: 40px;
         width: 50%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         @media(max-width:480px){

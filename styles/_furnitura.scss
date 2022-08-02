@@ -1,26 +1,26 @@
-.furniture{
-    
+.furniture {
+
     padding-bottom: 87px;
 
-    @media(max-width:850px){
+    @media(max-width:850px) {
         padding-bottom: 30px;
     }
 }
 
 
 .furniture__header {
-    @include fontG(700, 40px, $fontL:120%);
+    @include fontG(700, 40px, $fontL: 120%);
     text-align: center;
 
-    @media(max-width:850px){
+    @media(max-width:850px) {
         font-size: 20px;
     }
 
     &--text {
-        @include fontG(700, $fontS:20px, $fontC:$gray-text, $fontL:150%);
+        @include fontG(700, $fontS: 20px, $fontC: $gray-text, $fontL: 150%);
         display: block;
 
-        @media(max-width:850px){
+        @media(max-width:850px) {
             font-size: 14px;
         }
     }
@@ -28,36 +28,64 @@
 
 
 
-.furniture__main{
+.furniture__main {
     background: url(../img/back-furniture.jpg) no-repeat;
     background-size: contain;
     position: relative;
-    
 
-    path{
+
+    path {
+        -webkit-transition: -webkit-transform 1s;
+        transition: -webkit-transform 1s;
+        -o-transition: transform 1s;
         transition: transform 1s;
+        transition: transform 1s, -webkit-transform 1s;
     }
 
-    .furnitura-hover-img{
+    .furnitura-hover-img {
         position: absolute;
-        animation: furnituraImg .6s; 
+        -webkit-animation: furnituraImg .6s;
+        animation: furnituraImg .6s;
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
         transform: scale(1.2);
         cursor: pointer;
     }
 }
 
-@keyframes furnituraImg {
-    0%{
-       
+@-webkit-keyframes furnituraImg {
+    0% {
+
+        -webkit-transform: scale(1);
+
         transform: scale(1);
     }
-    100%{
-       
+
+    100% {
+
+        -webkit-transform: scale(1.2);
+
+        transform: scale(1.2);
+    }
+}
+
+@keyframes furnituraImg {
+    0% {
+
+        -webkit-transform: scale(1);
+
+        transform: scale(1);
+    }
+
+    100% {
+
+        -webkit-transform: scale(1.2);
+
         transform: scale(1.2);
     }
 }
 
 
-.fur{
-    fill:transparent;
+.fur {
+    fill: transparent;
 }
