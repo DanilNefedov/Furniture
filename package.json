@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "gulp-htmlmin": "^5.0.1",
-    "imagemin": "^8.0.0"
+    "imagemin": "^8.0.0",
+    "three": "^0.143.0"
   }
 }

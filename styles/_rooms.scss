@@ -251,7 +251,7 @@
         }
     }
 
-    &::after {
+    &__link{
         content: '';
         position: absolute;
         background: url(../img/arr-long-right-white.svg) no-repeat 50% 50%;
