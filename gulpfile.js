@@ -110,7 +110,11 @@ gulp.task('seo', (done) => {
             done();
 });
 
- 
+gulp.task('data', (done) => {
+    return gulp.src( './data/**/*')
+            .pipe(gulp.dest('dist/data-files'));
+            done();
+});
 gulp.task('clean', function (done) {
     return gulp.src('dist', {read: false})
         .pipe(clean());
@@ -123,19 +127,8 @@ exports.buildStyles = buildStyles;
 exports.images = images;
 
 
-exports.build = gulp.series('clean' ,buildStyles, 'critical', 'js', 'webp',  'htmlmin', 'non-critical', 'favicons', 'seo',  images, 'serve','sass');
+exports.build = gulp.series('clean' ,buildStyles, 'critical', 'js', 'webp',  'htmlmin', 'non-critical', 'favicons', 'seo', 'data', images, 'serve','sass');
 
 
 
-
-
-
-// sass +
-// watch/browsersync + 
-//img +
-//js +
-// critical css +
-// htmlmin +
-// move files +-
-// clean dir +
 

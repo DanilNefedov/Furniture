@@ -1,0 +1,225 @@
+[{
+	"id": "1",
+	"header": "Syltherine 1",
+	"subtitle": "Stylish cafe chair",
+	"price": "Rp 2.500.000",
+	"seasonOld":{
+		"discount":"-30%",
+		"oldPrice":"Rp 3.500.000"
+	},
+	"image": "../img/prod-1.jpg"
+},{
+	"id": "2",
+	"header": "Leviosa 2",
+    "subtitle":"Stylish cafe chair",
+	"price":"Rp 2.500.000",
+	"image": "../img/prod-2.jpg"
+},{
+	"id": "3",
+	"header": "Lolito 3",
+	"subtitle":"Luxury big sofa",
+	"price":"Rp 7.000.000",
+	"seasonOld":{
+		"discount":"-50%",
+		"oldPrice":"Rp 14.000.000"
+	},
+	"image": "../img/prod-3.jpg"
+},{
+	"id": "4",
+	"header": "Respira 4",
+	"subtitle":"Minimalist fan",
+	"price":"Rp 500.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-4.jpg"
+},{
+	"id": "5",
+	"header": "Grifo 5",
+	"subtitle":"Night lamp",
+	"price":"Rp 1.500.000",
+	"image": "../img/prod-5.jpg"
+},{
+	"id": "6",
+	"header": "Muggo 6",
+	"subtitle":"Small mug",
+	"price":"Rp 150.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-6.jpg"
+},{
+	"id": "7",
+	"header": "Pingky 7",
+	"subtitle":"Cute bed set",
+	"price":"Rp 7.000.000",
+	"seasonOld":{
+		"discount":"-50%",
+		"oldPrice":"Rp 14.000.000"
+	},
+	"image": "../img/prod-7.jpg"
+},{
+	"id": "8",
+	"header": "Potty 8",
+	"subtitle":"Minimalist flower pot",
+	"price":"Rp 500.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-8.jpg"
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+	"id": "1",
+	"header": "Syltherine 9",
+	"subtitle": "Stylish cafe chair",
+	"price": "Rp 2.500.000",
+	"seasonOld":{
+		"discount":"-30%",
+		"oldPrice":"Rp 3.500.000"
+	},
+	"image": "../img/prod-1.jpg"
+},{
+	"id": "2",
+	"header": "Leviosa 10",
+    "subtitle":"Stylish cafe chair",
+	"price":"Rp 2.500.000",
+	"image": "../img/prod-2.jpg"
+},{
+	"id": "3",
+	"header": "Lolito 11",
+	"subtitle":"Luxury big sofa",
+	"price":"Rp 7.000.000",
+	"seasonOld":{
+		"discount":"-50%",
+		"oldPrice":"Rp 14.000.000"
+	},
+	"image": "../img/prod-3.jpg"
+},{
+	"id": "4",
+	"header": "Respira 12",
+	"subtitle":"Minimalist fan",
+	"price":"Rp 500.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-4.jpg"
+},{
+	"id": "5",
+	"header": "Grifo 13",
+	"subtitle":"Night lamp",
+	"price":"Rp 1.500.000",
+	"image": "../img/prod-5.jpg"
+},{
+	"id": "6",
+	"header": "Muggo 14",
+	"subtitle":"Small mug",
+	"price":"Rp 150.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-6.jpg"
+},{
+	"id": "7",
+	"header": "Pingky 15",
+	"subtitle":"Cute bed set",
+	"price":"Rp 7.000.000",
+	"seasonOld":{
+		"discount":"-50%",
+		"oldPrice":"Rp 14.000.000"
+	},
+	"image": "../img/prod-7.jpg"
+},{
+	"id": "8",
+	"header": "Potty 16",
+	"subtitle":"Minimalist flower pot",
+	"price":"Rp 500.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-8.jpg"
+},{
+	"id": "1",
+	"header": "Syltherine 17",
+	"subtitle": "Stylish cafe chair",
+	"price": "Rp 2.500.000",
+	"seasonOld":{
+		"discount":"-30%",
+		"oldPrice":"Rp 3.500.000"
+	},
+	"image": "../img/prod-1.jpg"
+},{
+	"id": "2",
+	"header": "Leviosa 18",
+    "subtitle":"Stylish cafe chair",
+	"price":"Rp 2.500.000",
+	"image": "../img/prod-2.jpg"
+},{
+	"id": "3",
+	"header": "Lolito 19",
+	"subtitle":"Luxury big sofa",
+	"price":"Rp 7.000.000",
+	"seasonOld":{
+		"discount":"-50%",
+		"oldPrice":"Rp 14.000.000"
+	},
+	"image": "../img/prod-3.jpg"
+},{
+	"id": "4",
+	"header": "Respira 20",
+	"subtitle":"Minimalist fan",
+	"price":"Rp 500.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-4.jpg"
+},{
+	"id": "5",
+	"header": "Grifo 21",
+	"subtitle":"Night lamp",
+	"price":"Rp 1.500.000",
+	"image": "../img/prod-5.jpg"
+},{
+	"id": "6",
+	"header": "Muggo 22",
+	"subtitle":"Small mug",
+	"price":"Rp 150.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-6.jpg"
+},{
+	"id": "7",
+	"header": "Pingky 23",
+	"subtitle":"Cute bed set",
+	"price":"Rp 7.000.000",
+	"seasonOld":{
+		"discount":"-50%",
+		"oldPrice":"Rp 14.000.000"
+	},
+	"image": "../img/prod-7.jpg"
+},{
+	"id": "8",
+	"header": "Potty 24",
+	"subtitle":"Minimalist flower pot",
+	"price":"Rp 500.000",
+	"seasonNew":{
+		"new":"New"
+	},
+	"image": "../img/prod-8.jpg"
+}]

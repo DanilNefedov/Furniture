@@ -1,4 +1,4 @@
-import jsonConfig from "./data-main-swiper-about.json" assert {type:"json"};
+import jsonConfig from "../data/data-main-swiper-about.json" assert {type:"json"};
 
 
 const mainSwiperAbout = document.querySelectorAll('.main-swiper__about');
