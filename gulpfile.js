@@ -115,6 +115,14 @@ gulp.task('data', (done) => {
             .pipe(gulp.dest('dist/data-files'));
             done();
 });
+
+gulp.task('model', (done) => {
+    return gulp.src( './model/**/*')
+            .pipe(gulp.dest('dist/model'));
+            done();
+});
+
+
 gulp.task('clean', function (done) {
     return gulp.src('dist', {read: false})
         .pipe(clean());
@@ -127,7 +135,7 @@ exports.buildStyles = buildStyles;
 exports.images = images;
 
 
-exports.build = gulp.series('clean' ,buildStyles, 'critical', 'js', 'webp',  'htmlmin', 'non-critical', 'favicons', 'seo', 'data', images, 'serve','sass');
+exports.build = gulp.series('clean' ,buildStyles, 'critical', 'js', 'webp', 'model', 'htmlmin', 'non-critical', 'favicons', 'seo', 'data', images, 'serve','sass');
 
 
 

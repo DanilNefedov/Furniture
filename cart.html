@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Furniture</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header-navigation cart-header">
+                <div class="container">
+
+                    <nav class="head-nav " id="nav">
+                        <div class="head-nav__logo">
+                            <a href="index.html"><img src="img/logo.svg" alt="Furniture"></a>
+                        </div>
+                        <a href="#" class="head-nav__item">Products
+                            <span>
+                                <svg class="arrow-down" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.8333 7.50012L10 13.3335L4.16668 7.50012" stroke="#3A3A3A"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#" class="head-nav__item">Rooms
+                            <span>
+                                <svg class="arrow-down" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.8333 7.50012L10 13.3335L4.16668 7.50012" stroke="#3A3A3A"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#" class="head-nav__item ">Inspirations</a>
+
+                    </nav>
+
+
+                    <label class="label-menu" for="menu-burg" id="menu">
+                        <input type="checkbox" id="menu-burg" class="checkbox-menu">
+                        <span class="menu" id="rotate">
+                            <span class="hamburger"></span>
+                            <span class="hamburger"></span>
+                            <span class="hamburger"></span>
+                        </span>
+                    </label>
+
+
+                    <div class="head-search">
+                        <label class="head-search__icon" for="main-search"><img src="img/search.svg"
+                                alt="search"></label>
+                        <input class="head-search__field" type="text" id="main-search"
+                            placeholder="Search for minimalist chair">
+                    </div>
+
+                    <div class="head-user">
+
+                        <a href="#" class="head-user__account heart" id="heart">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.9996 21.0542C-8 10 5.99999 -1.99997 11.9996 5.58809C18 -1.99997 32 10 11.9996 21.0542Z"
+                                    stroke="#262F56" stroke-width="1.8" />
+                            </svg>
+                        </a>
+
+                        <a href="cart.html" target="_blank" class="head-user__account cart" id="cart">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1 2.5H2.65424C3.13263 2.5 3.37183 2.5 3.56628 2.58674C3.73771 2.66321 3.88415 2.78638 3.98886 2.94217C4.10763 3.11888 4.14862 3.35454 4.23058 3.82585L4.6087 6M4.6087 6L5.49173 11.0774C5.67091 12.1077 5.7605 12.6228 6.02583 12.9939C6.25945 13.3207 6.58606 13.5695 6.96311 13.708C7.39133 13.8654 7.91176 13.815 8.95264 13.7143L18.614 12.7793C19.6298 12.681 20.1378 12.6318 20.5221 12.4033C20.8653 12.1993 21.1395 11.8972 21.3095 11.536C21.5 11.1314 21.5 10.6211 21.5 9.6005V9.6005C21.5 8.51582 21.5 7.97348 21.2922 7.55394C21.1068 7.17971 20.809 6.8729 20.4404 6.67654C20.0272 6.4564 19.4851 6.44036 18.4009 6.40826L4.6087 6Z"
+                                    stroke="#262F56" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="8.5" cy="19" r="2" stroke="#262F56" stroke-width="1.8" />
+                                <circle cx="18" cy="19" r="2" stroke="#262F56" stroke-width="1.8" />
+                            </svg>
+                            <span class="cart__calc">0</span>
+                        </a>
+
+
+                        <a href="#" class="head-user__account" id="account"><img src="img/ellipse2.png" alt="user"></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+
+
+        <section class="shop-cart">
+            <div class="container">
+                <div class="shop-cart__list">
+                    <h1 class="shop-cart__header">Shopping Cart</h1>
+                    <div class="shop-cart__container">
+                        
+                     
+                    </div>
+                </div>
+                <div class="shop-cart__check">
+                    <p class="shop-cart__discount">Enter promo code or gift card number:</p>
+                    <input class="shop-cart__inp" id="dicountCart" type="text">
+                    <label for="dicountCart"><img src="./img/check.svg" alt="Check">
+                    </label>
+                    
+                    <p class="shop-cart__subtitle">Subtotal: <span class="shop-cart__subtitle--amount">0</span></p>
+                    <p class="shop-cart__shipping">Estimated shipping: <span class="shop-cart__shipping--amount">0</span></p>
+                    <p class="shop-cart__total">Total: <span class="shop-cart__total--amount">0</span></p>
+
+
+                    <button class="shop-cart__btn">CHECK</button>
+
+                </div>
+            </div>
+            
+        </section>
+
+
+
+    </div>
+    <script src="scripts/cart-js.js"></script>
+</body>
+
+</html>

@@ -89,8 +89,8 @@
 	"header": "Syltherine",
 	"subtitle": "Stylish cafe chair",
 	"price": "Rp 2.500.000",
-	"season":{
-		"old":"-30%",
+	"seasonOld":{
+		"discount":"-30%",
 		"oldPrice":"Rp 3.500.000"
 	},
 	"image": "../img/prod-1.jpg"
@@ -105,8 +105,8 @@
 	"header": "Lolito",
 	"subtitle":"Luxury big sofa",
 	"price":"Rp 7.000.000",
-	"season":{
-		"old":"-50%",
+	"seasonOld":{
+		"discount":"-50%",
 		"oldPrice":"Rp 14.000.000"
 	},
 	"image": "../img/prod-3.jpg"
@@ -115,7 +115,7 @@
 	"header": "Respira",
 	"subtitle":"Minimalist fan",
 	"price":"Rp 500.000",
-	"season":{
+	"seasonNew":{
 		"new":"New"
 	},
 	"image": "../img/prod-4.jpg"
@@ -130,7 +130,7 @@
 	"header": "Muggo",
 	"subtitle":"Small mug",
 	"price":"Rp 150.000",
-	"season":{
+	"seasonNew":{
 		"new":"New"
 	},
 	"image": "../img/prod-6.jpg"
@@ -139,8 +139,8 @@
 	"header": "Pingky",
 	"subtitle":"Cute bed set",
 	"price":"Rp 7.000.000",
-	"season":{
-		"old":"-50%",
+	"seasonOld":{
+		"discount":"-50%",
 		"oldPrice":"Rp 14.000.000"
 	},
 	"image": "../img/prod-7.jpg"
@@ -149,7 +149,7 @@
 	"header": "Potty",
 	"subtitle":"Minimalist flower pot",
 	"price":"Rp 500.000",
-	"season":{
+	"seasonNew":{
 		"new":"New"
 	},
 	"image": "../img/prod-8.jpg"
@@ -158,14 +158,14 @@
 	"header": "Syltherine",
 	"subtitle": "Stylish cafe chair",
 	"price": "Rp 2.500.000",
-	"season":{
-		"old":"-30%",
+	"seasonOld":{
+		"discount":"-30%",
 		"oldPrice":"Rp 3.500.000"
 	},
 	"image": "../img/prod-1.jpg"
 },{
 	"id": "18",
-	"header": "Leviosa",
+	"header": "Leviosa 18",
     "subtitle":"Stylish cafe chair",
 	"price":"Rp 2.500.000",
 	"image": "../img/prod-2.jpg"
@@ -174,8 +174,8 @@
 	"header": "Lolito",
 	"subtitle":"Luxury big sofa",
 	"price":"Rp 7.000.000",
-	"season":{
-		"old":"-50%",
+	"seasonOld":{
+		"discount":"-50%",
 		"oldPrice":"Rp 14.000.000"
 	},
 	"image": "../img/prod-3.jpg"
@@ -184,13 +184,13 @@
 	"header": "Respira",
 	"subtitle":"Minimalist fan",
 	"price":"Rp 500.000",
-	"season":{
+	"seasonNew":{
 		"new":"New"
 	},
 	"image": "../img/prod-4.jpg"
 },{
 	"id": "21",
-	"header": "Grifo",
+	"header": "Grifo 21",
 	"subtitle":"Night lamp",
 	"price":"Rp 1.500.000",
 	"image": "../img/prod-5.jpg"
@@ -199,7 +199,7 @@
 	"header": "Muggo",
 	"subtitle":"Small mug",
 	"price":"Rp 150.000",
-	"season":{
+	"seasonNew":{
 		"new":"New"
 	},
 	"image": "../img/prod-6.jpg"
@@ -208,8 +208,8 @@
 	"header": "Pingky",
 	"subtitle":"Cute bed set",
 	"price":"Rp 7.000.000",
-	"season":{
-		"old":"-50%",
+	"seasonOld":{
+		"discount":"-50%",
 		"oldPrice":"Rp 14.000.000"
 	},
 	"image": "../img/prod-7.jpg"
@@ -218,7 +218,7 @@
 	"header": "Potty",
 	"subtitle":"Minimalist flower pot",
 	"price":"Rp 500.000",
-	"season":{
+	"seasonNew":{
 		"new":"New"
 	},
 	"image": "../img/prod-8.jpg"

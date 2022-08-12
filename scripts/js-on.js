@@ -1,4 +1,4 @@
-const containerProduct = document.getElementById("ad");
+const containerProduct = document.getElementById("container-product");
 const more = document.getElementById("showMore");
 let valueId = 8;
 let start = 0;
@@ -13,10 +13,11 @@ async function getResponse() {
   }).then(data => {
     buildElem(data);
     buildElemAddit(data);
+    loadCart(data);
     more.addEventListener('click', (e) => {
       e.preventDefault();
-      
-      if(valueId < data.length){
+
+      if (valueId < data.length) {
         start += 8;
         valueId += 8;
         buildElem(data);
@@ -37,10 +38,10 @@ getResponse()
 
 
 function buildElem(values) {
-    for (let i = start; i < values.length; i++) {
-      if(i < valueId){
-        containerProduct.insertAdjacentHTML("beforeend",
-        `<div class="products-list__elem">
+  for (let i = start; i < values.length; i++) {
+    if (i < valueId) {
+      containerProduct.insertAdjacentHTML("beforeend",
+        `<div class="products-list__elem" >
           <img src="${values[i].image}" alt="Syltherine" class="products-list__img">
           <div class="products-list__about">
             <h2 class="products-list__header">${values[i].header}</h2>
@@ -50,7 +51,7 @@ function buildElem(values) {
 
           <div class="product-list-hover">
                 <div class="product-list-hover__btn">
-                  <button class="product-list-hover__add">Add to cart</button>
+                  <button class="product-list-hover__add" data-id="${values[i].id}">Add to cart</button>
                 </div>
                 <div class="product-list-hover__link">
                   <a href="#" class="product-list-hover__share"><svg class="share" width="24" height="24"
@@ -71,16 +72,16 @@ function buildElem(values) {
               </div>
         </div>
         `);
-        
-     }
-      
+
     }
-  
+
+  }
+
 }
 
 
 function buildElemAddit(values) {
-  
+
   for (let i = start; i < values.length; i++) {
     const cont = document.querySelectorAll(".products-list__elem");
     const oldPrice = document.querySelectorAll(".products-list__price");
@@ -106,4 +107,32 @@ function buildElemAddit(values) {
 
 }
 
+
+let arrElem =[];
+
+if(localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0){
+  arrElem = JSON.parse(localStorage.getItem('objElem'))
+  loadCart(arrElem)
+}else{
+  arrElem = [];
+}
+
+
+function loadCart (data){
+
+  containerProduct.onclick = function (event) {
+    event.preventDefault();
+    if(event.target.classList.contains('product-list-hover__add')){
+      let idEleme = event.target.dataset.id;
+
+      for(let i = 0; i < data.length; i++){
+        if(data[i].id === idEleme){
+          arrElem.push(data[i]);
+          localStorage.setItem('objElem', JSON.stringify(arrElem))
+
+        }
+      }
+    }
+  }
+}
 

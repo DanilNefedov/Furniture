@@ -2476,3 +2476,28 @@ footer .container {
 .button:hover::before {
   top: calc(50% - 15px);
 }
+
+.cart-header {
+  padding-bottom: 40px;
+}
+
+.shop-cart__list {
+  width: 80%;
+}
+.shop-cart__list .shop-cart__header {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 25;
+}
+
+.shop-cart__element {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+  background-color: #FCF9F4;
+  width: 100%;
+}
+.shop-cart__element img {
+  max-width: 150px;
+}
