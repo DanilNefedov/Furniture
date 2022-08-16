@@ -368,10 +368,6 @@ function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight) {
 
 
 
-
-
-
-
 const account = document.getElementById('account');
 const heart = document.getElementById('heart');
 const cart = document.getElementById('cart');

@@ -14,6 +14,7 @@ async function getResponse() {
     buildElem(data);
     buildElemAddit(data);
     loadCart(data);
+    loadBtn();
     more.addEventListener('click', (e) => {
       e.preventDefault();
 
@@ -46,7 +47,7 @@ function buildElem(values) {
           <div class="products-list__about">
             <h2 class="products-list__header">${values[i].header}</h2>
             <p class="products-list__subtitle">${values[i].subtitle}</p>
-            <p class="products-list__price">${values[i].price}</p>
+            <p class="products-list__price">Rp ${values[i].price}</p>
           </div>
 
           <div class="product-list-hover">
@@ -88,7 +89,7 @@ function buildElemAddit(values) {
     if (i < valueId) {
       if (values[i].seasonOld) {
         oldPrice[i].insertAdjacentHTML("beforeend", `
-          <span class="products-list__discount">${values[i].seasonOld.oldPrice}</span>
+          <span class="products-list__discount">Rp ${values[i].seasonOld.oldPrice}</span>
           `
         );
         cont[i].insertAdjacentHTML("afterbegin", `
@@ -108,31 +109,63 @@ function buildElemAddit(values) {
 }
 
 
-let arrElem =[];
 
-if(localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0){
+
+
+let arrElem = [];
+
+if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
   arrElem = JSON.parse(localStorage.getItem('objElem'))
   loadCart(arrElem)
-}else{
+} else {
   arrElem = [];
 }
 
 
-function loadCart (data){
+
+function loadBtn() {
+  const button = document.querySelectorAll('.product-list-hover__add')
+  for (let i = 0; i < arrElem.length; i++) {
+    let elemId = arrElem[i].id;
+    let buttonDataset = button[elemId - 1]
+    buttonDataset.classList.add('click-product')
+  }
+}
+
+
+
+function loadCart(data) {
 
   containerProduct.onclick = function (event) {
     event.preventDefault();
-    if(event.target.classList.contains('product-list-hover__add')){
+    if (event.target.classList.contains('product-list-hover__add')) {
+
       let idEleme = event.target.dataset.id;
 
-      for(let i = 0; i < data.length; i++){
-        if(data[i].id === idEleme){
-          arrElem.push(data[i]);
-          localStorage.setItem('objElem', JSON.stringify(arrElem))
-
+      if (event.target.classList.contains('click-product') && !(document.querySelector('.alert-product'))) {
+        alertWindow()
+        return false
+      } else if (!(document.querySelector('.alert-product'))) {
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].id === idEleme) {
+            event.target.classList.add('click-product');
+            arrElem.push(data[i]);
+            localStorage.setItem('objElem', JSON.stringify(arrElem));
+          }
         }
+      } else {
+        return false
       }
     }
   }
 }
 
+function alertWindow() {
+  let div = document.createElement('div');
+  div.className = 'alert-product';
+  div.innerHTML = 'This product is already in the cart';
+  document.querySelector('.wrapper').appendChild(div);
+  setTimeout(() => {
+    div.remove();
+  }, 4950)
+}
