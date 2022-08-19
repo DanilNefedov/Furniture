@@ -1,4 +1,3 @@
-
 const menu = document.getElementById('menu');
 const nav = document.getElementById('nav');
 const rotate = document.getElementById('rotate')

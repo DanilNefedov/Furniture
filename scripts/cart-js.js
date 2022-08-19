@@ -3,12 +3,26 @@ let counterBuildElem = 0;
 let storageELem;
 
 
+// --------------- burger -------------- //
+const menu = document.getElementById('menu');
+const nav = document.getElementById('nav');
+const rotate = document.getElementById('rotate')
+// --------------- burger -------------- //
+
+// ------------ cart header ----------- //
+
+const cartCountHeader = document.querySelector('.cart__calc')
+
+// ------------ cart header ----------- //
+
+
 function loadPage(){
     if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
         storageELem = JSON.parse(localStorage.getItem('objElem'))
         buildElem(storageELem)
         subtotalCalc()
         calcClick()
+        cartCuont()
     }
     else {
         storageELem = [];
@@ -23,6 +37,7 @@ window.addEventListener('storage', function () {
     buildElem(storageELem)
     subtotalCalc()
     calcClick()
+    cartCuont()
 })
 
 
@@ -146,3 +161,75 @@ function minus(elem) {
         subtotalCalc();
     }
 }
+
+
+
+
+
+// ------------- burger ------------ //
+
+menu.addEventListener('click', open);
+
+function open(e) {
+	e.preventDefault();
+	menu.classList.toggle('active');
+	nav.classList.toggle('act-nav');
+	rotate.classList.toggle('rotate-active');
+	document.body.classList.toggle('scroll');
+}
+
+window.addEventListener('resize', function () {
+
+	if ((innerWidth >= 1000) && (nav.classList.contains('act-nav'))) {
+		nav.classList.remove('act-nav');
+		menu.classList.remove('active');
+		document.body.classList.remove('scroll');
+	} else {
+		return false
+	}
+});
+
+// ------------- burger ------------ //
+
+
+
+
+// ------------- account ---------- //
+
+const account = document.getElementById('account');
+const heart = document.getElementById('heart');
+const cart = document.getElementById('cart');
+
+
+let openAcc = false;
+account.addEventListener('click', () => {
+	let width = this.innerWidth;
+	if (openAcc && width <= 580) {
+		heart.style.cssText = `transform: translate(0, 0);
+		transition: .3s;`;
+		cart.style.cssText = `transform: translate(0, 0);
+		transition: .3s;`;
+		openAcc = false;
+	} else if(width <= 580) {
+		heart.style.cssText = `transform: translate(-35px, 40px);
+		transition: .3s`;
+		cart.style.cssText = `transform: translate(35px, 40px);
+		transition: .3s;
+		top:-2px`;
+		openAcc = true;
+	}
+})
+
+// ------------- account ---------- //
+
+
+// ----------- cart header --------- //
+
+
+function cartCuont(){
+    let amount = storageELem.length;
+    cartCountHeader.innerHTML = amount;
+}
+cartCuont();
+
+// ----------- cart header --------- //

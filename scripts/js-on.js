@@ -1,12 +1,15 @@
 const containerProduct = document.getElementById("container-product");
 const more = document.getElementById("showMore");
+const cartNew = document.getElementById('cart');
 let valueId = 8;
 let start = 0;
 
 
 
+
+
 async function getResponse() {
-  let link = '../data/data-product.json';
+  const link = '../data/data-product.json';
 
   fetch(link).then(response => {
     return response.json();
@@ -23,15 +26,13 @@ async function getResponse() {
         valueId += 8;
         buildElem(data);
         buildElemAddit(data);
+        if((data.length - valueId) === 0){
+          showMoreBtn();
+        }
       }
-      // else{
-      //   custom btn
-      // }
-
     })
   }).catch(err => {
     console.error(err)
-
   });
 }
 getResponse()
@@ -72,8 +73,7 @@ function buildElem(values) {
                 </div>
               </div>
         </div>
-        `);
-
+      `);
     }
 
   }
@@ -110,13 +110,14 @@ function buildElemAddit(values) {
 
 
 
-
+const cartCountHeader = document.querySelector('.cart__calc')
 
 let arrElem = [];
 
 if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
   arrElem = JSON.parse(localStorage.getItem('objElem'))
-  loadCart(arrElem)
+  loadCart(arrElem);
+  cartCuont();
 } else {
   arrElem = [];
 }
@@ -135,7 +136,6 @@ function loadBtn() {
 
 
 function loadCart(data) {
-
   containerProduct.onclick = function (event) {
     event.preventDefault();
     if (event.target.classList.contains('product-list-hover__add')) {
@@ -143,7 +143,7 @@ function loadCart(data) {
       let idEleme = event.target.dataset.id;
 
       if (event.target.classList.contains('click-product') && !(document.querySelector('.alert-product'))) {
-        alertWindow()
+        alertWindow();
         return false
       } else if (!(document.querySelector('.alert-product'))) {
         for (let i = 0; i < data.length; i++) {
@@ -151,6 +151,7 @@ function loadCart(data) {
             event.target.classList.add('click-product');
             arrElem.push(data[i]);
             localStorage.setItem('objElem', JSON.stringify(arrElem));
+            cartCuont();
           }
         }
       } else {
@@ -160,6 +161,8 @@ function loadCart(data) {
   }
 }
 
+
+
 function alertWindow() {
   let div = document.createElement('div');
   div.className = 'alert-product';
@@ -168,4 +171,34 @@ function alertWindow() {
   setTimeout(() => {
     div.remove();
   }, 4950)
+}
+
+
+
+function clickCart(){
+  if(document.querySelector('.new-product-vis')){
+    document.querySelector('.new-product-vis').remove()
+  }
+}
+
+
+
+function cartCuont(){
+  let amount = arrElem.length;
+  cartCountHeader.innerHTML = amount;
+
+  if(!(document.querySelector('.new-product-vis')) && amount > 0){
+  cartNew.insertAdjacentHTML("beforeend",
+    `<span class="new-product-vis">
+    </span>`
+    )
+  }
+}
+cartCuont()
+
+
+
+
+function showMoreBtn(){
+  more.classList.add('hidden-btn-product');
 }
