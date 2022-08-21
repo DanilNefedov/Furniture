@@ -3,21 +3,69 @@ const more = document.getElementById("showMore");
 const cartNew = document.getElementById('cart');
 let valueId = 8;
 let start = 0;
-
+let maxNumb = 0;
+const cartCountHeader = document.querySelector('.cart__calc')
+let arrElem = [];
 
 
 
 
 async function getResponse() {
-  const link = '../Furniture/data/data-product.json';
+  const linkForGulp = '../data/data-product-gulp.json';
+  const linkForGithub = '../Furniture/data/data-product-github.json';
   //hrfs
-  fetch(link).then(response => {
+  fetch(linkForGulp).then(response => {
     return response.json();
   }).then(data => {
+    
+
+    
+    // maxArr();
+
+    // let arrNumberID = [];
+    // for(let i = 0; i < arrElem.length; i++){
+    //   arrNumberID.push(+(arrElem[i].id));
+    // }
+    // maxNumb = Math.max(...arrNumberID);
+    // if(maxNumb > valueId){
+    //   let n = maxNumb/valueId
+    //   let nN =  Math.trunc(n)
+    //   start *= nN+1;
+    //   valueId *= nN+1;
+    // }else{
+    //   valueId = 8;
+    //   start = 0;
+    // }
+    // console.log(valueId, start)
+
     buildElem(data);
     buildElemAddit(data);
     loadCart(data);
     loadBtn();
+
+
+    // buildElemAddit(data);
+    //loadCart(data);
+
+    // if(maxArr()){
+    //   let a = maxArr()
+    //   console.log(a)
+    //   start *= a;
+    //   valueId *= a;
+    //   buildElem(data);
+    //   buildElemAddit(data);
+    //   loadBtn();
+
+    // }else{
+    //   buildElem(data);
+    //   buildElemAddit(data);
+    //   loadBtn();
+    // }
+
+    // buildElem(data);
+    // buildElemAddit(data);
+    // loadBtn();
+
     more.addEventListener('click', (e) => {
       e.preventDefault();
 
@@ -37,6 +85,9 @@ async function getResponse() {
   });
 }
 getResponse()
+
+
+
 
 
 
@@ -95,7 +146,6 @@ function buildElemAddit(values) {
           <div class="discount">${values[i].seasonOld.discount}</div>
           `
         );
-
       } else if (values[i].seasonNew) {
         cont[i].insertAdjacentHTML("afterbegin", `
           <div class="new">${values[i].seasonNew.new}</div>
@@ -104,19 +154,37 @@ function buildElemAddit(values) {
       }
     }
   }
-
 }
 
 
 
-const cartCountHeader = document.querySelector('.cart__calc')
+// const cartCountHeader = document.querySelector('.cart__calc')
+// let arrElem = [];
 
-let arrElem = [];
+// function maxArr(){debugger
+//   let arrNumberID = [];
+//   for(let i = 0; i < arrElem.length; i++){
+//     arrNumberID.push(+(arrElem[i].id));
+//   }
+//   maxNumb = Math.max(...arrNumberID);
+//   if(maxNumb > valueId){
+//     let n = maxNumb/valueId
+//     let nN =  Math.trunc(n)
+//     start *= nN;
+//     valueId *= nN;
+//   }else{
+//     valueId = 8;
+//     start = 0;
+//   }
+// }
+
+
+
 
 if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
   arrElem = JSON.parse(localStorage.getItem('objElem'))
   loadCart(arrElem);
-  cartCuont()
+  cartCuont();
 } else {
   arrElem = [];
 }
@@ -125,11 +193,10 @@ if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem'
 window.addEventListener('storage', function () {
   arrElem = JSON.parse(localStorage.getItem('objElem'))
   loadCart(arrElem);
-  cartCuont()
+  cartCuont();
 })
 
 
-//обновить localStorage при удаление товара на странице товара 
 
 
 function loadCart(data) {
@@ -159,13 +226,12 @@ function loadCart(data) {
 
 
 
-//проверка на то что товар не закрыт при обновлении страницы (нажатие на кнопку "показать больше")
-// проверку на наличие клааса по айди товара, если есть то открыть таворы
+
 function loadBtn() {
   const button = document.querySelectorAll('.product-list-hover__add')
   for (let i = 0; i < arrElem.length; i++) {
     if(button){
-      let elemId = arrElem[i].id;
+      let elemId = +arrElem[i].id;
       let buttonDataset = button[elemId-1]
       buttonDataset.classList.add('click-product')
     }
@@ -215,4 +281,23 @@ cartCuont()
 
 function showMoreBtn(){
   more.classList.add('hidden-btn-product');
+}
+
+
+
+function maxArr(){
+  let arrNumberID = [];
+  for(let i = 0; i < arrElem.length; i++){
+    arrNumberID.push(+(arrElem[i].id));
+  }
+  maxNumb = Math.max(...arrNumberID);
+  if(maxNumb > valueId){
+    let n = maxNumb/valueId
+    let nN =  Math.trunc(n)
+    start *= nN;
+    valueId *= nN;
+  }else{
+    valueId = 8;
+    start = 0;
+  }
 }
