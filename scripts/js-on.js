@@ -9,7 +9,7 @@ let start = 0;
 
 
 async function getResponse() {
-  const link = 'https://github.com/DanilNefedov/Furniture/blob/cart/data/data-product.json';
+  const link = '../Furniture/data/data-product.json';
 
   fetch(link).then(response => {
     return response.json();
