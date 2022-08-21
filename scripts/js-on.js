@@ -9,7 +9,7 @@ let start = 0;
 
 
 async function getResponse() {
-  const link = '../data/data-product.json';
+  const link = 'https://github.com/DanilNefedov/Furniture/blob/cart/data/data-product.json';
 
   fetch(link).then(response => {
     return response.json();
@@ -26,6 +26,7 @@ async function getResponse() {
         valueId += 8;
         buildElem(data);
         buildElemAddit(data);
+        loadBtn();
         if((data.length - valueId) === 0){
           showMoreBtn();
         }
@@ -75,9 +76,7 @@ function buildElem(values) {
         </div>
       `);
     }
-
   }
-
 }
 
 
@@ -117,29 +116,26 @@ let arrElem = [];
 if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
   arrElem = JSON.parse(localStorage.getItem('objElem'))
   loadCart(arrElem);
-  cartCuont();
+  cartCuont()
 } else {
   arrElem = [];
 }
 
 
+window.addEventListener('storage', function () {
+  arrElem = JSON.parse(localStorage.getItem('objElem'))
+  loadCart(arrElem);
+  cartCuont()
+})
 
-function loadBtn() {
-  const button = document.querySelectorAll('.product-list-hover__add')
-  for (let i = 0; i < arrElem.length; i++) {
-    let elemId = arrElem[i].id;
-    let buttonDataset = button[elemId - 1]
-    buttonDataset.classList.add('click-product')
-  }
-}
 
+//обновить localStorage при удаление товара на странице товара 
 
 
 function loadCart(data) {
   containerProduct.onclick = function (event) {
     event.preventDefault();
     if (event.target.classList.contains('product-list-hover__add')) {
-
       let idEleme = event.target.dataset.id;
 
       if (event.target.classList.contains('click-product') && !(document.querySelector('.alert-product'))) {
@@ -160,6 +156,24 @@ function loadCart(data) {
     }
   }
 }
+
+
+
+//проверка на то что товар не закрыт при обновлении страницы (нажатие на кнопку "показать больше")
+// проверку на наличие клааса по айди товара, если есть то открыть таворы
+function loadBtn() {
+  const button = document.querySelectorAll('.product-list-hover__add')
+  for (let i = 0; i < arrElem.length; i++) {
+    if(button){
+      let elemId = arrElem[i].id;
+      let buttonDataset = button[elemId-1]
+      buttonDataset.classList.add('click-product')
+    }
+   
+  }
+}
+
+
 
 
 
