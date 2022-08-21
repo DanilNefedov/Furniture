@@ -10,7 +10,7 @@ let start = 0;
 
 async function getResponse() {
   const link = '../Furniture/data/data-product.json';
-
+  //hrfs
   fetch(link).then(response => {
     return response.json();
   }).then(data => {
