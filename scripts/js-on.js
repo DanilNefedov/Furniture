@@ -1,10 +1,10 @@
 const containerProduct = document.getElementById("container-product");
 const more = document.getElementById("showMore");
 const cartNew = document.getElementById('cart');
+const cartCountHeader = document.querySelector('.cart__calc');
 let valueId = 8;
 let start = 0;
 let maxNumb = 0;
-const cartCountHeader = document.querySelector('.cart__calc')
 let arrElem = [];
 
 
@@ -14,58 +14,34 @@ async function getResponse() {
   const linkForGulp = '../data/data-product-gulp.json';
   const linkForGithub = '../Furniture/data/data-product-github.json';
   //hrfs
-  fetch(linkForGulp).then(response => {
+  fetch(linkForGithub).then(response => {
     return response.json();
   }).then(data => {
     
-
+    let arrNumberID = [];
+    for(let i = 0; i < arrElem.length; i++){
+      arrNumberID.push(+(arrElem[i].id));
+    }
+    maxNumb = Math.max(...arrNumberID);
+    if( (0 < maxNumb) && (maxNumb > valueId) ){
+      let numberOFMultiplus = maxNumb/valueId
+      let numberOFMultiplusRouded = Math.trunc(numberOFMultiplus)
+      let numderOfProductPage = 8 * numberOFMultiplusRouded
+      valueId += numderOfProductPage;
+      buildElem(data);
+      buildElemAddit(data);
+      loadCart(data);
+      loadBtn();
+      showMoreBtn(data);
+      start += numderOfProductPage;  
+    }else{
+      buildElem(data);
+      buildElemAddit(data);
+      loadCart(data);
+      loadBtn();
+      showMoreBtn(data);
+    }
     
-    // maxArr();
-
-    // let arrNumberID = [];
-    // for(let i = 0; i < arrElem.length; i++){
-    //   arrNumberID.push(+(arrElem[i].id));
-    // }
-    // maxNumb = Math.max(...arrNumberID);
-    // if(maxNumb > valueId){
-    //   let n = maxNumb/valueId
-    //   let nN =  Math.trunc(n)
-    //   start *= nN+1;
-    //   valueId *= nN+1;
-    // }else{
-    //   valueId = 8;
-    //   start = 0;
-    // }
-    // console.log(valueId, start)
-
-    buildElem(data);
-    buildElemAddit(data);
-    loadCart(data);
-    loadBtn();
-
-
-    // buildElemAddit(data);
-    //loadCart(data);
-
-    // if(maxArr()){
-    //   let a = maxArr()
-    //   console.log(a)
-    //   start *= a;
-    //   valueId *= a;
-    //   buildElem(data);
-    //   buildElemAddit(data);
-    //   loadBtn();
-
-    // }else{
-    //   buildElem(data);
-    //   buildElemAddit(data);
-    //   loadBtn();
-    // }
-
-    // buildElem(data);
-    // buildElemAddit(data);
-    // loadBtn();
-
     more.addEventListener('click', (e) => {
       e.preventDefault();
 
@@ -75,9 +51,7 @@ async function getResponse() {
         buildElem(data);
         buildElemAddit(data);
         loadBtn();
-        if((data.length - valueId) === 0){
-          showMoreBtn();
-        }
+        showMoreBtn(data);
       }
     })
   }).catch(err => {
@@ -94,6 +68,7 @@ getResponse()
 function buildElem(values) {
   for (let i = start; i < values.length; i++) {
     if (i < valueId) {
+      console.log(valueId, start)
       containerProduct.insertAdjacentHTML("beforeend",
         `<div class="products-list__elem" >
           <img src="${values[i].image}" alt="Syltherine" class="products-list__img">
@@ -156,27 +131,6 @@ function buildElemAddit(values) {
   }
 }
 
-
-
-// const cartCountHeader = document.querySelector('.cart__calc')
-// let arrElem = [];
-
-// function maxArr(){debugger
-//   let arrNumberID = [];
-//   for(let i = 0; i < arrElem.length; i++){
-//     arrNumberID.push(+(arrElem[i].id));
-//   }
-//   maxNumb = Math.max(...arrNumberID);
-//   if(maxNumb > valueId){
-//     let n = maxNumb/valueId
-//     let nN =  Math.trunc(n)
-//     start *= nN;
-//     valueId *= nN;
-//   }else{
-//     valueId = 8;
-//     start = 0;
-//   }
-// }
 
 
 
@@ -279,25 +233,9 @@ cartCuont()
 
 
 
-function showMoreBtn(){
-  more.classList.add('hidden-btn-product');
-}
-
-
-
-function maxArr(){
-  let arrNumberID = [];
-  for(let i = 0; i < arrElem.length; i++){
-    arrNumberID.push(+(arrElem[i].id));
-  }
-  maxNumb = Math.max(...arrNumberID);
-  if(maxNumb > valueId){
-    let n = maxNumb/valueId
-    let nN =  Math.trunc(n)
-    start *= nN;
-    valueId *= nN;
-  }else{
-    valueId = 8;
-    start = 0;
+function showMoreBtn(data){
+  if((data.length - valueId) === 0){
+    more.classList.add('hidden-btn-product');
   }
 }
+
