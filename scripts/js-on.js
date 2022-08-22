@@ -68,7 +68,7 @@ getResponse()
 function buildElem(values) {
   for (let i = start; i < values.length; i++) {
     if (i < valueId) {
-      console.log(valueId, start)
+      
       containerProduct.insertAdjacentHTML("beforeend",
         `<div class="products-list__elem" >
           <img src="${values[i].image}" alt="Syltherine" class="products-list__img">
