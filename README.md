@@ -26,7 +26,7 @@ Download this progect to your computer.
 * package-lock.json
 * package.json
 3. Now we need to change the link. Change `linkForGithub` to `linkForGulp`
-   ![alt text](../Furniture/readME-con/link.jpg)
+   ![alt text]((https://github.com/DanilNefedov/Furniture/blob/Furniture/image.jpg?raw=true)
 4. Now we start the project.
    ```
    gulp build
