@@ -128,7 +128,7 @@ let positionRoom = 0;
 sliderRoom.onclick = function (event) {
 	let target = event.target;
 	let num = target.dataset.room;
-	let widthElem = roomSwiperImg.offsetWidth + 25;//(roomSwiperImg.offsetWidth * 1.2) - 47
+	let widthElem = roomSwiperImg.offsetWidth + 25;
 	
 
 	if (target.classList.contains('dot-room')) {

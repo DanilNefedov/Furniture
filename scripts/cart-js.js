@@ -130,7 +130,6 @@ function calcClick() {
 let sum;
 
 function plus(elem) {
-    const priceElem = +elem.children[1].children[1].innerHTML.slice(2).replace(/[\s.,%]/g, '');
     const count = +elem.children[2].children[1].innerHTML.replace(/[\s.,%]/g, '');
     sum = elem.children[2].children[1].innerHTML = count + 1;
     loadPage();
@@ -140,7 +139,6 @@ function plus(elem) {
 
 function minus(elem) {
     const reloadElem = document.getElementsByClassName('shop-cart__element');
-    //const priceElem = +elem.children[1].children[1].innerHTML.slice(2).replace(/[\s.,%]/g, '');
     const count = +elem.children[2].children[1].innerHTML.replace(/[\s.,%]/g, '');
     if (count === 1 && elem) {
         let idProduct = elem.dataset.id

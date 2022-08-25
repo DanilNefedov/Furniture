@@ -1170,10 +1170,20 @@ header {
   color: #FFFFFF;
   left: calc(50% - 219px);
   bottom: 50px;
+  -webkit-animation: alert 3s;
   animation: alert 3s;
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
 
+@-webkit-keyframes alert {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes alert {
   0% {
     opacity: 0;
@@ -2548,6 +2558,9 @@ footer .container {
 }
 @media (max-width: 1625px) and (max-width: 1285px) and (max-width: 1115px) and (max-width: 1000px) {
   .shop-cart .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
     margin: 20px auto 0;
   }
@@ -2582,9 +2595,15 @@ footer .container {
 }
 
 .shop-cart__element {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 40px 0;
   background-color: #FCF9F4;
@@ -2610,6 +2629,9 @@ footer .container {
 }
 @media (max-width: 1115px) and (max-width: 515px) {
   .shop-cart__element {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     max-width: 200px;
     margin: 20px auto;
@@ -2617,7 +2639,12 @@ footer .container {
 }
 
 .shop-cart__about {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 @media (max-width: 1000px) {
@@ -2644,8 +2671,14 @@ footer .container {
 }
 
 .shop-cart__calc {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 @media (max-width: 515px) {
@@ -2653,7 +2686,8 @@ footer .container {
     padding-bottom: 20px;
   }
 }
-.shop-cart__calc .shop-cart__plus, .shop-cart__calc .shop-cart__minus {
+.shop-cart__calc .shop-cart__plus,
+.shop-cart__calc .shop-cart__minus {
   display: block;
   margin: 0 20px;
   width: 40px;
@@ -2661,7 +2695,8 @@ footer .container {
   cursor: pointer;
   position: relative;
 }
-.shop-cart__calc .shop-cart__plus::after, .shop-cart__calc .shop-cart__minus::after {
+.shop-cart__calc .shop-cart__plus::after,
+.shop-cart__calc .shop-cart__minus::after {
   content: "";
   position: absolute;
   width: 16px;

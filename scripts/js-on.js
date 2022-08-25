@@ -11,10 +11,10 @@ let arrElem = [];
 
 
 async function getResponse() {
-  const linkForGulp = '../data/data-product-gulp.json';
-  const linkForGithub = '../Furniture/data/data-product-github.json';
-  //hrfs
-  fetch(linkForGithub).then(response => {
+  const linkForGulp = '../data/data-product-gulp.json'; // if on gulp progect
+  const linkForGithub = '../Furniture/data/data-product-github.json'; // if github-pages progect
+
+  fetch(linkForGulp).then(response => {
     return response.json();
   }).then(data => {
     
@@ -24,10 +24,12 @@ async function getResponse() {
     }
     maxNumb = Math.max(...arrNumberID);
     if( (0 < maxNumb) && (maxNumb > valueId) ){
-      let numberOFMultiplus = maxNumb/valueId
-      let numberOFMultiplusRouded = Math.trunc(numberOFMultiplus)
-      let numderOfProductPage = 8 * numberOFMultiplusRouded
+      let numberOFMultiplus = maxNumb/valueId;
+      let numberOFMultiplusRouded = Math.trunc(numberOFMultiplus);
+      let numderOfProductPage = 8 * numberOFMultiplusRouded;
       valueId += numderOfProductPage;
+
+      
       buildElem(data);
       buildElemAddit(data);
       loadCart(data);
