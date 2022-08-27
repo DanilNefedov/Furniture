@@ -26,7 +26,11 @@ Download this progect to your computer.
 * package-lock.json
 * package.json
 3. Now we need to change the link. Change `linkForGithub` to `linkForGulp`
-   ![alt text](../Furniture/readME-con/link.jpg)
+   ```JavaScript
+  fetch(linkForGithub).then(response => {
+    return response.json();
+  }).then(data => {
+   ```
 4. Now we start the project.
    ```
    gulp build

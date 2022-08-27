@@ -1518,7 +1518,7 @@ header {
   left: calc(50% - 87px);
   top: 100%;
 }
-@media (max-width: 790px) {
+@media (max-width: 810px) {
   .tip-trik .container .main-swiper__pagination {
     left: calc(50% - 69px);
   }
@@ -1559,10 +1559,10 @@ header {
 }
 @media (max-width: 1280px) {
   .tip-trik-swiper {
-    width: 760px;
+    width: 785px;
   }
 }
-@media (max-width: 1280px) and (max-width: 790px) {
+@media (max-width: 1280px) and (max-width: 810px) {
   .tip-trik-swiper {
     width: 250px;
     padding-bottom: 20px;
@@ -1592,9 +1592,10 @@ header {
 @media (max-width: 1280px) {
   .tip-trik-swiper__wrapper .tip-trik-swiper__slide {
     width: 800px;
+    padding: 0;
   }
 }
-@media (max-width: 1280px) and (max-width: 790px) {
+@media (max-width: 1280px) and (max-width: 810px) {
   .tip-trik-swiper__wrapper .tip-trik-swiper__slide {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2402,12 +2403,15 @@ footer .container {
   display: none;
 }
 
+.stop-click {
+  pointer-events: none;
+}
+
 .active {
   -webkit-box-shadow: 0 0 0 100vw #E89F71, 0 0 0 100vh #E89F71;
   box-shadow: 0 0 0 100vw #E89F71, 0 0 0 100vh #E89F71;
   border-radius: 0;
   overflow: hidden;
-  pointer-events: auto;
   position: fixed;
 }
 .active::-webkit-scrollbar {

@@ -474,13 +474,17 @@
   display: none;
 }
 
+.stop-click{
+  pointer-events: none;
+}
+
 .active {
   -webkit-box-shadow: 0 0 0 100vw $primary, 0 0 0 100vh $primary;
   box-shadow: 0 0 0 100vw $primary, 0 0 0 100vh $primary;
   border-radius: 0;
   overflow: hidden;
-  pointer-events: auto;
   position: fixed;
+
 
   &::-webkit-scrollbar {
     width: 0;

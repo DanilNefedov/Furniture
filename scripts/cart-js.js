@@ -15,6 +15,20 @@ const cartCountHeader = document.querySelector('.cart__calc')
 
 // ------------ cart header ----------- //
 
+let sum;
+
+
+
+const account = document.getElementById('account');
+const heart = document.getElementById('heart');
+const cart = document.getElementById('cart');
+
+
+
+let openAcc = false;
+
+
+
 
 function loadPage(){
     if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
@@ -127,7 +141,7 @@ function calcClick() {
     }
 }
 
-let sum;
+
 
 function plus(elem) {
     const count = +elem.children[2].children[1].innerHTML.replace(/[\s.,%]/g, '');
@@ -194,12 +208,10 @@ window.addEventListener('resize', function () {
 
 // ------------- account ---------- //
 
-const account = document.getElementById('account');
-const heart = document.getElementById('heart');
-const cart = document.getElementById('cart');
 
 
-let openAcc = false;
+
+
 account.addEventListener('click', () => {
 	let width = this.innerWidth;
 	if (openAcc && width <= 580) {

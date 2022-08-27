@@ -28,7 +28,7 @@
             left: calc(50% - 87px);
             top: 100%;
 
-            @media(max-width:790px) {
+            @media(max-width:810px) {
                 left: calc(50% - 69px);
             }
         }
@@ -73,9 +73,9 @@
     padding-bottom: 45px;
 
     @media(max-width:1280px) {
-        width: 760px;
+        width: 785px;
 
-        @media(max-width:790px) {
+        @media(max-width:810px) {
             width: 250px;
             padding-bottom: 20px;
         }
@@ -105,8 +105,9 @@
 
             @media(max-width:1280px) {
                 width: 800px;
+                padding: 0;
 
-                @media(max-width:790px) {
+                @media(max-width:810px) {
                     -webkit-box-orient: vertical;
                     -webkit-box-direction: normal;
                     -ms-flex-direction: column;

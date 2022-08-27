@@ -11,8 +11,8 @@ let arrElem = [];
 
 
 async function getResponse() {
-  const linkForGulp = '../data/data-product-gulp.json'; // if on gulp progect
-  const linkForGithub = '../Furniture/data/data-product-github.json'; // if github-pages progect
+  const linkForGulp = '../data/data-product-gulp.json'; // for gulp progect
+  const linkForGithub = '../Furniture/data/data-product-github.json'; // for github-pages progect
 
   fetch(linkForGithub).then(response => {
     return response.json();
