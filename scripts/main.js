@@ -59,7 +59,6 @@ window.onload = function (){
 
 
 
-
 menu.addEventListener('click', open);
 
 function open(e) {
@@ -342,13 +341,6 @@ function transformElement() {
 		}
 	}
 }
-
-
-
-
-
-
-
 
 
 
