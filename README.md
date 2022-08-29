@@ -26,14 +26,10 @@ Download this progect to your computer.
 * package-lock.json
 * package.json
 3. Now we need to change the link. Change `linkForGithub` to `linkForGulp`
-<<<<<<< HEAD
-   ```JavaScript
-=======
   ```JavaScript
->>>>>>> ee5566092f6aa0ec64e6a88e58eb4fae0dca9729
-  fetch(linkForGithub).then(response => {
-    return response.json();
-  }).then(data => {
+    fetch(linkForGithub).then(response => {
+      return response.json();
+    }).then(data => {
    ```
 4. Now we start the project.
    ```
