@@ -50,6 +50,16 @@ let openAcc = false;
 
 
 
+window.onload = function (){
+	let preloader = document.getElementById('preloader');
+	preloader.style.display = 'none';
+}
+
+
+
+
+
+
 menu.addEventListener('click', open);
 
 function open(e) {
