@@ -93,8 +93,8 @@ gulp.task('htmlmin', (done) => {
 });
 
 gulp.task('non-critical', (done) => {
-    return gulp.src( './*.html', '!./index.html')
-            .pipe(gulp.dest('dist/'));
+    return gulp.src( 'pages/**/*.html', '!./index.html')
+            .pipe(gulp.dest('dist/pages/'));
             done();
 });
 

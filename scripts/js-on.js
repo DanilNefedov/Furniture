@@ -14,7 +14,7 @@ async function getResponse() {
   const linkForGulp = '../data/data-product-gulp.json'; // for gulp progect
   const linkForGithub = '../Furniture/data/data-product-github.json'; // for github-pages progect
 
-  fetch(linkForGithub).then(response => {
+  fetch(linkForGulp).then(response => {
     return response.json();
   }).then(data => {
     
