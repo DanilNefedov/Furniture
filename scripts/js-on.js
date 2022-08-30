@@ -191,7 +191,6 @@ function loadBtn() {
       let buttonDataset = button[elemId-1]
       buttonDataset.classList.add('click-product')
     }
-   
   }
 }
 
