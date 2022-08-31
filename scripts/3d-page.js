@@ -17,6 +17,7 @@ console.log(containerProduct)
 
 function init() {
     let wrapper = document.querySelector('.model-container');
+
     
    
     //Scene
@@ -27,7 +28,34 @@ function init() {
 
     //Camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.2, 1000);
-    camera.position.set(400, 400, 400)
+    console.log(idProduct)
+    switch(idProduct){
+        case '0':
+            camera.position.set(3, 1.5, 3)
+            break;
+        case '1':
+            camera.position.set(2.5, 2.5, 3)
+            break;
+        case '2':
+            camera.position.set(50, 50, 50)
+            break;  
+        case '4':
+        case '5':
+            camera.position.set(2, 2, 2)
+            break;
+        case '6':
+        case '3':
+            camera.position.set(1, 1, 1)
+            break;
+        case '7':
+            camera.position.set(1, 1, 3)
+            break;
+        case '8':
+            camera.position.set(400, 400, 400)
+            break;      
+    }
+    
+    //camera.position.set(400, 400, 400)
     //for 0 (4, 2.5, 2)
     //for 1 (2.5, 2.5, 3)
     //for 2 (50, 50, 50)

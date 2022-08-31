@@ -2840,3 +2840,56 @@ footer .container {
   max-width: 25px;
   vertical-align: middle;
 }
+
+.about-product {
+  position: absolute;
+  max-width: 500px;
+  top: 10%;
+  left: 5%;
+  border-radius: 51% 49% 53% 47%/45% 46% 54% 55%;
+  background: -moz-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
+  /* opera 11.10+ */
+  background: -o-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
+  /* ie 10+ */
+  background: -ms-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
+  /* global 92%+ browsers support */
+  background: radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
+}
+.about-product .container {
+  display: block;
+  padding: 50px;
+}
+.about-product .container .about-product__header {
+  font-family: "Gilroy";
+  font-weight: 700;
+  font-size: 56px;
+  color: #3A3A3A;
+  line-height: 120%;
+  padding-bottom: 16px;
+  text-align: center;
+}
+.about-product .container .about-product__subtitle {
+  text-align: center;
+}
+.about-product .container .about-product__button {
+  background-color: #E89F71;
+  padding: 20px 60px;
+  font-family: "Gilroy";
+  font-weight: 700;
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 120%;
+  margin: 40px auto;
+  display: block;
+  transition: 0.3s;
+}
+.about-product .container .about-product__button:hover {
+  background-color: #FFFFFF;
+  color: #E89F71;
+}
+
+.model-container {
+  cursor: grab;
+}
