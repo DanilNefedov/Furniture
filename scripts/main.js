@@ -557,11 +557,11 @@ furnituraImg.addEventListener('mouseover', (e) => {
 
 
 function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight) {
-	localStorage.setItem('keyProduct', JSON.stringify(index))
 	furnituraImg.removeChild(furnituraImg.firstChild)
-	//console.log(furnituraImg.removeChild(furnituraImg.firstChild))
+	let searchParams = new URLSearchParams(window.location.search);
+	searchParams.append("idProduct", `${index}`)
 	return (
-		`<a href="pages/3d-page.html" target="_blank"><img src="img/fur-${index}.jpg" alt="furnitura" id="asd" class="furnitura-hover-img" 
+		`<a href="pages/3d-page.html?${searchParams.toString()}" target="_blank"><img src="img/fur-${index}.jpg" alt="furnitura" id="asd" class="furnitura-hover-img" 
 		style = "top:${Math.floor(elemTop)}px; right:${Math.floor(elemRight)}px; 
 		width:${Math.floor(elemWidth)}px; height:${Math.floor(elemHeight)}px;"/></a>`
 	)

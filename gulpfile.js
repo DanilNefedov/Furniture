@@ -94,7 +94,7 @@ gulp.task('htmlmin', (done) => {
 
 gulp.task('non-critical', (done) => {
     return gulp.src( 'pages/**/*.html', '!./index.html')
-            .pipe(gulp.dest('dist/pages/'));
+            .pipe(gulp.dest('dist/pages'));
             done();
 });
 
@@ -116,9 +116,9 @@ gulp.task('data', (done) => {
             done();
 });
 
-gulp.task('model', (done) => {
-    return gulp.src( './model/**/*')
-            .pipe(gulp.dest('dist/model'));
+gulp.task('models', (done) => {
+    return gulp.src( './models/**/*')
+            .pipe(gulp.dest('dist/models/'));
             done();
 });
 
@@ -135,7 +135,7 @@ exports.buildStyles = buildStyles;
 exports.images = images;
 
 
-exports.build = gulp.series('clean' ,buildStyles, 'critical', 'js', 'webp', 'model', 'htmlmin', 'non-critical', 'favicons', 'seo', 'data', images, 'serve','sass');
+exports.build = gulp.series('clean' ,buildStyles, 'critical', 'js', 'webp', 'models', 'htmlmin', 'non-critical', 'favicons', 'seo', 'data', images, 'serve','sass');
 
 
 
