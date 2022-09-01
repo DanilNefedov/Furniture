@@ -70,25 +70,20 @@ function init() {
             if(window.innerWidth <= 870){
                 height = 400;
                 onWindowResize()
-                //camera.position.set(-1, 2.5, -2)
-                camera.position.set(2.5, 2.5, 3)
+                camera.position.set(2, 2, 2)
             }else{
                 height = window.innerHeight;
                 onWindowResize()
                 camera.position.set(2.5, 2.5, 3)
             }
             window.addEventListener('resize', function(){
-                if(window.innerWidth < 870){
-                    height = 400;
-                    //camera.position.set(-1, 2.5, -2)
-                    //camera.position.set(-1, 2.5, -2)
-                }else{
+                if(window.innerWidth > 870){
                     height = window.innerHeight;
-                    
-                    //camera.position.set(2.5, 2.5, 3)
+                }else{
+                    height = 400;
                 }
             })
-            //camera.position.set(2.5, 2.5, 3)
+        
             
         break;
         case '2':

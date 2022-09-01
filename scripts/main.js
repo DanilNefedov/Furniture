@@ -572,11 +572,6 @@ function addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight) {
 
 
 
-
-
-
-
-
 account.addEventListener('click', () => {
 	let width = this.innerWidth;
 	if (openAcc && width <= 580) {

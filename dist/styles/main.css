@@ -2841,24 +2841,32 @@ footer .container {
   vertical-align: middle;
 }
 
-.about-product {
+.about-product-3d {
   position: absolute;
   max-width: 500px;
   top: 10%;
   left: 5%;
 }
-.about-product .container {
-  display: block;
-  padding: 50px;
+@media (max-width: 870px) {
+  .about-product-3d {
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 .model {
   max-width: 100%;
-  max-height: 500px;
+  border: 1px black solid;
+}
+.model canvas {
+  display: block;
 }
 @media (max-width: 870px) {
   .model {
-    margin-top: 80px;
+    margin-top: 20px;
   }
 }
 .model__container {
@@ -2867,6 +2875,10 @@ footer .container {
 
 .page-3d .wrapper {
   background-color: #656565;
+}
+
+.bg-3d {
+  max-height: 100vh;
 }
 
 .logo {
@@ -2911,7 +2923,14 @@ footer .container {
     left: calc(50% - 79px);
   }
 }
-@media (max-width: 1000px) and (max-width: 380px) {
+@media (max-width: 1000px) and (max-width: 870px) {
+  .product-name {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+@media (max-width: 1000px) and (max-width: 870px) and (max-width: 380px) {
   .product-name {
     font-size: 30px;
     top: 6%;
@@ -2986,11 +3005,11 @@ footer .container {
 }
 @media (max-width: 1000px) and (max-width: 870px) {
   .product-btn-3d {
-    bottom: 3%;
-  }
-}
-@media (max-width: 1000px) and (max-width: 870px) and (max-width: 380px) {
-  .product-btn-3d {
-    left: calc(50% - 75px);
+    min-height: 100vh;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 6% auto;
+    max-width: 164px;
   }
 }

@@ -11,10 +11,17 @@ let arrElem = [];
 
 
 async function getResponse() {
-  const linkForGulp = '../data/data-product-gulp.json'; // for gulp progect
-  const linkForGithub = '../Furniture/data/data-product-github.json'; // for github-pages progect
+  let linkBuild = '';
+  
+  if(window.location.href === 'http://localhost:3000/'){
+    linkBuild = '../data/data-product-gulp.json';
+  }else if(window.location.href === 'https://danilnefedov.github.io/Furniture/'){
+    linkBuild = '../Furniture/data/data-product-github.json';
+  }else{
+    console.log('Link is not valid')
+  }
 
-  fetch(linkForGulp).then(response => {
+  fetch(linkBuild).then(response => {
     return response.json();
   }).then(data => {
     
