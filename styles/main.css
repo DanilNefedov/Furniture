@@ -2889,8 +2889,10 @@ footer .container {
   background-color: #656565;
 }
 
-.bg-3d {
-  max-height: 100vh;
+@media (max-width: 870px) {
+  .bg-3d {
+    max-height: 100vh;
+  }
 }
 
 .logo {

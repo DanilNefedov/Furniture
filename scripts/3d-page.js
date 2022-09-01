@@ -25,6 +25,9 @@ function init() {
     let wrapper = document.querySelector('.model__container');
     let height = window.innerHeight;
    
+    window.addEventListener('resize', function(){
+        height = window.innerHeight
+    })
     //Scene
     const scene = new THREE.Scene()
     scene.background = new THREE.Color("#656565"); //
