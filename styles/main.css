@@ -2841,55 +2841,175 @@ footer .container {
   vertical-align: middle;
 }
 
-.about-product {
+.about-product-3d {
   position: absolute;
   max-width: 500px;
   top: 10%;
   left: 5%;
-  border-radius: 51% 49% 53% 47%/45% 46% 54% 55%;
-  background: -moz-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
-  /* safari 5.1+,chrome 10+ */
-  background: -webkit-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
-  /* opera 11.10+ */
-  background: -o-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
-  /* ie 10+ */
-  background: -ms-radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
-  /* global 92%+ browsers support */
-  background: radial-gradient(circle at 50% 50%, #ded7cd 30%, #656565 70%);
 }
-.about-product .container {
+@media (max-width: 870px) {
+  .about-product-3d {
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.model {
+  max-width: 100%;
+  border: 1px black solid;
+}
+.model canvas {
   display: block;
-  padding: 50px;
 }
-.about-product .container .about-product__header {
+@media (max-width: 870px) {
+  .model {
+    margin-top: 20px;
+  }
+}
+.model__container {
+  cursor: grab;
+}
+
+.page-3d .wrapper {
+  background-color: #656565;
+}
+
+.bg-3d {
+  max-height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  top: 4%;
+  left: 1.25%;
+  width: 100px;
+  height: 25px;
+}
+.logo a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.logo a img {
+  max-width: none;
+}
+@media (max-width: 380px) {
+  .logo {
+    top: 1%;
+    left: 0%;
+  }
+}
+
+.product-name {
+  position: absolute;
+  top: 2.5%;
+  left: calc(50% - 126px);
   font-family: "Gilroy";
   font-weight: 700;
   font-size: 56px;
-  color: #3A3A3A;
+  color: #1b1b1b;
   line-height: 120%;
   padding-bottom: 16px;
   text-align: center;
 }
-.about-product .container .about-product__subtitle {
-  text-align: center;
+@media (max-width: 1000px) {
+  .product-name {
+    font-size: 35px;
+    left: calc(50% - 79px);
+  }
 }
-.about-product .container .about-product__button {
-  background-color: #E89F71;
+@media (max-width: 1000px) and (max-width: 870px) {
+  .product-name {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+@media (max-width: 1000px) and (max-width: 870px) and (max-width: 380px) {
+  .product-name {
+    font-size: 30px;
+    top: 6%;
+  }
+}
+
+.about-product {
+  position: absolute;
+  top: calc(50% - 75px);
+  right: 5%;
+  max-width: 20%;
+  text-align: center;
+  left: auto;
+  color: #1b1b1b;
+}
+@media (max-width: 1000px) {
+  .about-product {
+    max-width: 25%;
+    font-size: 16px;
+    top: calc(50% - 113px);
+  }
+}
+@media (max-width: 1000px) and (max-width: 870px) {
+  .about-product {
+    top: 13%;
+    max-width: 90%;
+  }
+}
+@media (max-width: 1000px) and (max-width: 870px) and (max-width: 380px) {
+  .about-product {
+    top: 15%;
+    font-size: 15px;
+  }
+}
+
+.product-btn-3d {
+  position: absolute;
+  bottom: 10%;
+  left: calc(50% - 100px);
+  max-width: 200px;
+}
+.product-btn-3d button {
+  background-color: #1b1b1b;
   padding: 20px 60px;
   font-family: "Gilroy";
   font-weight: 700;
   font-size: 20px;
   color: #FFFFFF;
   line-height: 120%;
-  margin: 40px auto;
-  display: block;
   transition: 0.3s;
 }
-.about-product .container .about-product__button:hover {
-  background-color: #FFFFFF;
-  color: #E89F71;
+.product-btn-3d button:hover {
+  background-color: #E89F71;
+  color: #E4E4E4;
 }
-
-.model-container {
-  cursor: grab;
+@media (max-width: 1000px) {
+  .product-btn-3d button {
+    padding: 15px 50px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 1000px) and (max-width: 380px) {
+  .product-btn-3d button {
+    font-size: 15px;
+    padding: 13px 45px;
+  }
+}
+@media (max-width: 1000px) {
+  .product-btn-3d {
+    left: calc(50% - 81px);
+  }
+}
+@media (max-width: 1000px) and (max-width: 870px) {
+  .product-btn-3d {
+    min-height: 100vh;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 6% auto;
+    max-width: 164px;
+  }
 }

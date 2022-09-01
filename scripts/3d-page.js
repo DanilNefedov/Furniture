@@ -8,17 +8,22 @@ import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib';
 
 let linkProduct = new URLSearchParams(window.location.search)
 let idProduct = linkProduct.get('idProduct')
-const containerProduct = document.getElementById('container-prod-about')
-console.log(containerProduct)
+const model = document.getElementById('model')
 
+
+
+
+window.onload = function (){
+	let preloader = document.getElementById('preloader');
+	preloader.style.display = 'none';
+}
 
 
 
 
 function init() {
-    let wrapper = document.querySelector('.model-container');
-
-    
+    let wrapper = document.querySelector('.model__container');
+    let height = window.innerHeight;
    
     //Scene
     const scene = new THREE.Scene()
@@ -27,17 +32,83 @@ function init() {
 
 
     //Camera
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.2, 1000);
-    console.log(idProduct)
+    const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    
+    //render
+    const renderer = new THREE.WebGLRenderer({antialias: true})
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    wrapper.appendChild(renderer.domElement)
+
+    // const helper = new THREE.CameraHelper( camera );
+    // scene.add( helper );
+    // Model
+    loadModel(scene);
+    shadowLight(scene)
+    // shadowLightSec (scene)
+    // shadowTherd(scene)
+    lightSun(scene)
+
+
+
+    //Resize
+    window.addEventListener('resize', onWindowResize, false)
+    
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / height;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(window.innerWidth, height)
+    }
+
+    
     switch(idProduct){
         case '0':
-            camera.position.set(3, 1.5, 3)
+            camera.position.set(6, 3, 6)
             break;
         case '1':
-            camera.position.set(2.5, 2.5, 3)
-            break;
+            if(window.innerWidth <= 870){
+                height = 400;
+                onWindowResize()
+                //camera.position.set(-1, 2.5, -2)
+                camera.position.set(2.5, 2.5, 3)
+            }else{
+                height = window.innerHeight;
+                onWindowResize()
+                camera.position.set(2.5, 2.5, 3)
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth < 870){
+                    height = 400;
+                    //camera.position.set(-1, 2.5, -2)
+                    //camera.position.set(-1, 2.5, -2)
+                }else{
+                    height = window.innerHeight;
+                    
+                    //camera.position.set(2.5, 2.5, 3)
+                }
+            })
+            //camera.position.set(2.5, 2.5, 3)
+            
+        break;
         case '2':
-            camera.position.set(50, 50, 50)
+            if(window.innerWidth <= 550){
+                camera.position.set(55, 100, 70)
+                
+            }else{
+                camera.position.set(50, 50, 50)
+            }
+            window.addEventListener('resize', function () {
+                if(window.innerWidth <= 550){
+                    if(window.innerWidth <= 550 && window.innerWidth >= 540){
+                        location.reload()
+                    }
+                    
+                    camera.position.set(55, 100, 70)
+                }else{
+                    camera.position.set(50, 50, 50)
+                }
+            }); 
             break;  
         case '4':
         case '5':
@@ -55,22 +126,12 @@ function init() {
             break;      
     }
     
-    //camera.position.set(400, 400, 400)
-    //for 0 (4, 2.5, 2)
-    //for 1 (2.5, 2.5, 3)
-    //for 2 (50, 50, 50)
-    //for 3 (1, 1, 1)
-    //for 4 (2, 2, 2)
-    //for 5 (2, 2, 2)
-    //for 6 (1, 1, 1)
-    //for 7 (1, 1, 3)
-    //for 8 (400, 400, 400)
 
 
     //render
-    const renderer = new THREE.WebGLRenderer({antialias: true})
-    renderer.setSize(window.innerWidth, window.innerHeight)
-    wrapper.appendChild(renderer.domElement)
+    // const renderer = new THREE.WebGLRenderer({antialias: true})
+    // renderer.setSize(window.innerWidth, window.innerHeight)
+    // wrapper.appendChild(renderer.domElement)
 
     // let plain;
     // {
@@ -84,12 +145,12 @@ function init() {
     //     scene.add(plain)
     // }
 
-    // // Model
-    loadModel(scene);
-    shadowLight(scene)
-    // shadowLightSec (scene)
-    // shadowTherd(scene)
-    lightSun(scene)
+    // Model
+    // loadModel(scene);
+    // shadowLight(scene)
+    // // shadowLightSec (scene)
+    // // shadowTherd(scene)
+    // lightSun(scene)
    
 
     {
@@ -125,28 +186,33 @@ function init() {
     controls.autoRotateSpeed = 5;
     controls.enableDamping = true;
 
-    //Resize
-    window.addEventListener('resize', onWindowResize, false)
-    
-    function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
 
-        renderer.setSize(window.innerWidth, window.innerHeight)
-    }
+    // //Resize
+    // window.addEventListener('resize', onWindowResize, false)
+    
+    // function onWindowResize() {
+    //     camera.aspect = window.innerWidth / height;
+    //     camera.updateProjectionMatrix();
+
+    //     renderer.setSize(window.innerWidth, height)
+    // }
 
     // Animate
     function animate() {
         requestAnimationFrame(animate)
         //controls.update();
         renderer.render(scene, camera)
+        
     }
+   
     animate()
-
+    // window.onload = function (){
+    //     let preloader = document.getElementById('preloader');
+    //     preloader.style.display = 'none';
+    // }
 }
 
 init()
-
 
 
 
@@ -195,12 +261,13 @@ function loadModel(scene){
     const loader = new GLTFLoader();
     loader.load(`../models/model-${idProduct}/scene.gltf`, gltf => {
     scene.add(gltf.scene);
+    
     }, 
         function (error) {
             console.log('Error: ' + error)
         }
     )
-
+    
 }
 
 function lightSun(scene){
@@ -214,15 +281,21 @@ function lightSun(scene){
     // scene.add(helper)
 }
 
+const prodName = document.querySelector('.product-name')
+const aboutProduct = document.querySelector('.about-product-3d')
 
+
+function buildAboutProd (){
+    aboutProduct.insertAdjacentHTML("beforeend", 
+    `<p class='about-product__subtitle '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>`
+    )
+}
+buildAboutProd ()
 
 
 function buildMainBlock (){
-    containerProduct.insertAdjacentHTML("beforeend", 
-    `<h1 class='about-product__header '>Product ${idProduct}</h1>
-    <p class='about-product__subtitle'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    <button class='about-product__button'>Buy now</button> 
-    `
+    prodName.insertAdjacentHTML("beforeend", 
+    `<h1 class='about-product__header '>Product ${idProduct}</h1>`
     )
 }
 buildMainBlock ()

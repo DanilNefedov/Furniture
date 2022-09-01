@@ -1,55 +1,166 @@
-.about-product{
+.about-product-3d{
     position: absolute;
     max-width: 500px;
     top:10%;
     left: 5%;
-    //background-color: #DED7CD;
-    border-radius:51% 49% 53% 47% / 45% 46% 54% 55%;
-    background:-moz-radial-gradient(circle at 50% 50%, rgba(222, 215, 205, 1) 30%, rgba(101, 101, 101, 1) 70%);
-
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 50% 50%, rgba(222, 215, 205, 1) 30%, rgba(101, 101, 101, 1) 70%);
-
-    /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 50% 50%, rgba(222, 215, 205, 1) 30%, rgba(101, 101, 101, 1) 70%);
-
-    /* ie 10+ */
-    background:-ms-radial-gradient(circle at 50% 50%, rgba(222, 215, 205, 1) 30%, rgba(101, 101, 101, 1) 70%);
-
-    /* global 92%+ browsers support */
-    background:radial-gradient(circle at 50% 50%, rgba(222, 215, 205, 1) 30%, rgba(101, 101, 101, 1) 70%);
+   
     
-    
-    .container{
+    @media(max-width:870px){
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+.model{
+    max-width: 100%;
+    border: 1px black solid;
+
+    canvas{
         display: block;
-        padding: 50px;
 
-        .about-product__header{
-            @include fontG(700, 56px, $fontL: 120%);
-            padding-bottom: 16px;
-            text-align: center;
+        // @media(max-width:870px){
+        //     max-height: 400px;
+        // }
+    }
+    @media(max-width:870px){
+        margin-top: 20px;
+        // max-height: 400px;
+    }
+
+    &__container{
+        cursor: grab;
+    } 
+}
+
+.page-3d{
+
+    .wrapper{
+        background-color:#656565 ;
+    }
+}
+
+.bg-3d{
+    max-height: 100vh;
+}
+
+.logo{
+    position: absolute;
+    top: 4%;
+    left: 1.25%;
+    width: 100px;
+    height: 25px;
+    
+    a{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        img{ 
+            max-width: none;
         }
+    }
 
-        .about-product__subtitle{
-            text-align: center;
+    @media(max-width: 380px){
+        top: 1%;
+        left: 0%;
+    }
+}
+
+.product-name{
+    position: absolute;
+    top: 2.5%;
+    left: calc(50% - 126px);
+    @include fontG(700, 56px, $fontL: 120%, $fontC: #1b1b1b);
+    padding-bottom: 16px;
+    text-align: center;
+
+    @media(max-width:1000px){
+        font-size: 35px;
+        left:calc(50% - 79px);
+
+        @media(max-width:870px){
+            position: relative;
+            top:auto;
+            left:auto;
+
+            @media(max-width:380px){
+                font-size: 30px;
+                top: 6%;
+            }
         }
+        
+    }
+}
 
-        .about-product__button{
-            background-color: $primary;
-            padding: 20px 60px;
-            @include fontG(700, 20px, $fontL: 120%, $fontC:$white);
-            margin: 40px auto;
-            display: block;
-            transition: .3s;
+.about-product{
+    position: absolute;
+    top: calc(50% - 75px);
+    right: 5%;
+    max-width: 20%;
+    text-align: center;
+    left: auto;
+    color: #1b1b1b;
 
-            &:hover{
-                background-color: $white;
-                color:$primary;
+    @media(max-width:1000px){
+        max-width: 25%;
+        font-size: 16px;
+        top: calc(50% - 113px);
+
+        @media(max-width:870px){
+            top: 13%;
+            max-width: 90%;
+
+            @media(max-width:380px){
+                top: 15%;
+                font-size: 15px;
             }
         }
     }
 }
 
-.model-container{
-    cursor: grab;
+
+.product-btn-3d{
+    position: absolute;
+    bottom: 10%;
+    left: calc(50% - 100px);
+    max-width: 200px;
+
+    button{
+        background-color: #1b1b1b;
+        padding: 20px 60px;
+        @include fontG(700, 20px, $fontL: 120%, $fontC:$white);
+        transition: .3s;
+
+        &:hover{
+            background-color: $primary;
+            color: #E4E4E4;
+        }
+
+        @media(max-width:1000px){
+            padding: 15px 50px;
+            font-size: 16px;
+
+            @media(max-width:380px){
+                font-size: 15px;
+                padding: 13px 45px;
+            }
+        }
+    }
+
+    @media(max-width:1000px){
+        left: calc(50% - 81px);
+
+        @media(max-width:870px){
+            min-height: 100vh;
+            position: relative;
+            bottom: auto;
+            left:auto;
+            margin: 6% auto;
+            max-width: 164px;
+            
+        }
+    }    
 }

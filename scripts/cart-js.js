@@ -28,6 +28,12 @@ const cart = document.getElementById('cart');
 let openAcc = false;
 
 
+window.onload = function (){
+	let preloader = document.getElementById('preloader');
+	preloader.style.display = 'none';
+}
+
+
 
 
 function loadPage(){
