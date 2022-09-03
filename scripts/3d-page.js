@@ -3,20 +3,21 @@ import { OrbitControls } from 'OrbitControls';
 import { GLTFLoader } from 'GLTFLoader';
 import { RectAreaLightHelper } from 'RectAreaLightHelper'
 import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib';
+import { AmbientLight } from 'three';
 
 
 
 let linkProduct = new URLSearchParams(window.location.search)
 let idProduct = linkProduct.get('idProduct')
 const model = document.getElementById('model')
+//console.log(typeof idProduct)
 
 
 
-
-window.onload = function (){
-	let preloader = document.getElementById('preloader');
-	preloader.style.display = 'none';
-}
+// window.onload = function (){
+// 	let preloader = document.getElementById('preloader');
+// 	preloader.style.display = 'none';
+// }
 
 
 
@@ -27,6 +28,11 @@ function init() {
    
     window.addEventListener('resize', function(){
         height = window.innerHeight
+
+        if(window.innerWidth <= 870){
+            height = 300;
+
+        }
     })
     //Scene
     const scene = new THREE.Scene()
@@ -46,11 +52,19 @@ function init() {
     // const helper = new THREE.CameraHelper( camera );
     // scene.add( helper );
     // Model
-    loadModel(scene);
-    shadowLight(scene)
+    const loader = new GLTFLoader();
+    loader.load(`../models/model-${idProduct}/scene.gltf`, gltf => {
+    scene.add(gltf.scene);
+    }, 
+        function (error) {
+            console.log('Error: ' + error)
+        }
+    )
+    
+    //shadowLight(scene)
     // shadowLightSec (scene)
     // shadowTherd(scene)
-    lightSun(scene)
+    //lightSun(scene)
 
 
 
@@ -64,120 +78,315 @@ function init() {
         renderer.setSize(window.innerWidth, height)
     }
 
+
+
+    const mesh = new THREE.Mesh(
+        new THREE.PlaneGeometry(1000, 1000),
+        new THREE.MeshBasicMaterial({color: "#E2DFE1"})
+    )
+    mesh.reciveShadow = true;
+    mesh.position.set(0, -2, 0)
+    mesh.rotateX(-Math.PI / 2);
+    scene.add(mesh)
+
+
+
+    const sphere = new THREE.SphereGeometry();
+    const object = new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( 0xff0000 ) );
+    const box = new THREE.BoxHelper( object, 0xffff00 );
+    scene.add( box );
+
+
+
+
+
+
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2)
+    scene.add(ambientLight)
+    
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.BasicShadowMap; // default THREE.PCFShadowMap
+
     
     switch(idProduct){
         case '0':
-            camera.position.set(6, 3, 6)
-            break;
-        case '1':
             if(window.innerWidth <= 870){
-                height = 400;
+                height = 300;
+                camera.fov = 20;
+                camera.updateProjectionMatrix();
                 onWindowResize()
-                camera.position.set(2, 2, 2)
             }else{
                 height = window.innerHeight;
+                camera.fov = 35;
+                camera.updateProjectionMatrix();
                 onWindowResize()
-                camera.position.set(2.5, 2.5, 3)
             }
             window.addEventListener('resize', function(){
                 if(window.innerWidth > 870){
                     height = window.innerHeight;
+                    camera.fov = 35;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
                 }else{
-                    height = 400;
+                    height = 300; 
+                    camera.fov = 20;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
                 }
             })
-        
-            
-        break;
-        case '2':
-            if(window.innerWidth <= 550){
-                camera.position.set(55, 100, 70)
-                
+            camera.position.set(-10, 3, 10)
+            lightSun(scene, 6)
+            shadowLight(scene, renderer)
+            rectLight (scene, 2, 10, 0, 0)
+            rectLight (scene, 2,5, 5, 0, -50)
+            break;
+        case '1':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 60;
+                camera.updateProjectionMatrix();
+                onWindowResize()
             }else{
-                camera.position.set(50, 50, 50)
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
             }
-            window.addEventListener('resize', function () {
-                if(window.innerWidth <= 550){
-                    if(window.innerWidth <= 550 && window.innerWidth >= 540){
-                        location.reload()
-                    }
-                    
-                    camera.position.set(55, 100, 70)
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
                 }else{
-                    camera.position.set(50, 50, 50)
+                    height = 300; 
+                    camera.fov = 60;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
                 }
-            }); 
+            })
+            camera.position.set(2, 2, 2)
+            break;
+        case '2':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 50;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }else{
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }else{
+                    height = 300; 
+                    camera.fov = 50;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }
+            })
+            camera.position.set(40, 60, 60)
             break;  
         case '4':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 40;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }else{
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }else{
+                    height = 300; 
+                    camera.fov = 40;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }
+            })
+            camera.position.set(2, 2, 2)
+            break;
         case '5':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 60;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }else{
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }else{
+                    height = 300; 
+                    camera.fov = 60;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }
+            })
             camera.position.set(2, 2, 2)
             break;
         case '6':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 45;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }else{
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()    
+                }else{
+                    height = 300; 
+                    camera.fov = 45;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }
+            })
+            camera.position.set(1, 1, 1)
+            break;
         case '3':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 70;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }else{
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }else{
+                    height = 300; 
+                    camera.fov = 70;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }
+            })
             camera.position.set(1, 1, 1)
             break;
         case '7':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 35;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }else{
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }else{
+                    height = 300; 
+                    camera.fov = 35;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }
+            })
             camera.position.set(1, 1, 3)
             break;
         case '8':
+            if(window.innerWidth <= 870){
+                height = 300;
+                camera.fov = 40;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }else{
+                height = window.innerHeight;
+                camera.fov = 75;
+                camera.updateProjectionMatrix();
+                onWindowResize()
+            }
+            window.addEventListener('resize', function(){
+                if(window.innerWidth > 870){
+                    height = window.innerHeight;
+                    camera.fov = 75;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }else{
+                    height = 300; 
+                    camera.fov = 40;
+                    camera.updateProjectionMatrix();
+                    onWindowResize()
+                }
+            })
             camera.position.set(400, 400, 400)
             break;      
     }
     
 
-
-    //render
-    // const renderer = new THREE.WebGLRenderer({antialias: true})
-    // renderer.setSize(window.innerWidth, window.innerHeight)
-    // wrapper.appendChild(renderer.domElement)
-
-    // let plain;
     // {
-    //     plain = new THREE.Mesh(
-    //         new THREE.PlaneGeometry(1000, 1000),
-    //         new THREE.MeshBasicMaterial({color: "#E2DFE1"})
-    //     )
-    //     plain.reciveShadow = true;
-    //     plain.position.set(0, -1, 0)
-    //     plain.rotateX(-Math.PI / 2);
-    //     scene.add(plain)
+    //     const light = new THREE.DirectionalLight( 0xffffff , 0.5 );
+    //     light.position.set( 0, 1, 0 ); //default; light shining from top
+    //     light.castShadow = true; // default false
+    //     scene.add( light );
     // }
 
-    // Model
-    // loadModel(scene);
-    // shadowLight(scene)
-    // // shadowLightSec (scene)
-    // // shadowTherd(scene)
-    // lightSun(scene)
-   
-
-    {
-        const light = new THREE.DirectionalLight( 0xffffff , 0.5 );
-        light.position.set( 0, 1, 0 ); //default; light shining from top
-        light.castShadow = true; // default false
-        scene.add( light );
-    }
-
     RectAreaLightUniformsLib.init();
-    {
-        const rectLight = new THREE.RectAreaLight(0xffffff, 2, 25, 25);
-        rectLight.position.set(-1,0,-5)
-        rectLight.rotation.y = Math.PI + Math.PI/4;
-        scene.add(rectLight)
-
-        // const rectLightHelper = new RectAreaLightHelper( rectLight );
-        // rectLight.add( rectLightHelper );
-    }
-
-    {
-        const rectLight = new THREE.RectAreaLight(0xffffff, 1, 100, 100);
-        rectLight.position.set(10,0,0)
-        rectLight.rotation.y = Math.PI - Math.PI/4;
+    function rectLight (scene, intensi, x, y, z){
+        const rectLight = new THREE.RectAreaLight(0xffffff, intensi, 25, 25);
+        rectLight.position.set(x, y, z)
+        rectLight.rotation.y = Math.PI/2;
         scene.add(rectLight)
         // const rectLightHelper = new RectAreaLightHelper( rectLight );
         // rectLight.add( rectLightHelper );
     }
     
+    function rectLight (scene, intensi, x, y, z){
+        const rectLight = new THREE.RectAreaLight(0xffffff, intensi, 100, 100);
+        rectLight.position.set(x, y, z)
+        rectLight.rotation.y = Math.PI/1.5;
+        scene.add(rectLight)
+        // const rectLightHelper = new RectAreaLightHelper( rectLight );
+        // rectLight.add( rectLightHelper );
+    }
+   
+
     //OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = true;
@@ -185,63 +394,27 @@ function init() {
     controls.enableDamping = true;
 
 
-    // //Resize
-    // window.addEventListener('resize', onWindowResize, false)
-    
-    // function onWindowResize() {
-    //     camera.aspect = window.innerWidth / height;
-    //     camera.updateProjectionMatrix();
-
-    //     renderer.setSize(window.innerWidth, height)
-    // }
-
-    // Animate
     function animate() {
         requestAnimationFrame(animate)
         //controls.update();
         renderer.render(scene, camera)
-        
     }
-   
     animate()
-    // window.onload = function (){
-    //     let preloader = document.getElementById('preloader');
-    //     preloader.style.display = 'none';
-    // }
 }
 
 init()
 
 
 
-// function shadowLightSec (scene){
-//     const renderer = new THREE.WebGLRenderer();
-//     renderer.shadowMap.enabled = true;
-//     renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
 
-//     //Create a DirectionalLight and turn on shadows for the light
-//     const light = new THREE.DirectionalLight( 0xffffff, 1 );
-//     light.position.set( 0, 1, 0 ); //default; light shining from top
-//     light.castShadow = true; // default false
-//     scene.add( light );
-
-//     //Set up shadow properties for the light
-//     light.shadow.mapSize.width = 512; // default
-//     light.shadow.mapSize.height = 512; // default
-//     light.shadow.camera.near = 0.5; // default
-//     light.shadow.camera.far = 500; // default
-// }
-
-
-function shadowLight(scene){
-    //Create a WebGLRenderer and turn on shadows in the renderer
-    const renderer = new THREE.WebGLRenderer();
+function shadowLight(scene, renderer){
+    //const renderer = new THREE.WebGLRenderer();
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
+    renderer.shadowMap.type = THREE.BasicShadowMap; // default THREE.PCFShadowMap
 
     //Create a PointLight and turn on shadows for the light
-    const light = new THREE.PointLight( 0x777777, 0.2, 100 );
-    light.position.set( 0, 10, 4 );
+    const light = new THREE.PointLight( 0x000000, 1, 100 );
+    light.position.set( -5, 3, 5);
     light.castShadow = true; // default false
     scene.add( light );
 
@@ -250,26 +423,13 @@ function shadowLight(scene){
     light.shadow.mapSize.height = 512; // default
     light.shadow.camera.near = 0.5; // default
     light.shadow.camera.far = 500; // default
-
-
 }
 
 
-function loadModel(scene){
-    const loader = new GLTFLoader();
-    loader.load(`../models/model-${idProduct}/scene.gltf`, gltf => {
-    scene.add(gltf.scene);
-    
-    }, 
-        function (error) {
-            console.log('Error: ' + error)
-        }
-    )
-    
-}
 
-function lightSun(scene){
-    const light = new THREE.DirectionalLight(0xffffff, 2)
+
+function lightSun(scene, intensi){
+    const light = new THREE.DirectionalLight(0xffffff, intensi) 
     light.position.set(-5, 3, 5)
     light.lookAt(0, -1, 0)
     scene.add(light)

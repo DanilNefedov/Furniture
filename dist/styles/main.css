@@ -2843,17 +2843,29 @@ footer .container {
 
 .about-product-3d {
   position: absolute;
-  max-width: 500px;
-  top: 10%;
-  left: 5%;
+  top: calc(50% - 75px);
+  right: 5%;
+  max-width: 20%;
+  text-align: center;
+  left: auto;
+  color: #1b1b1b;
 }
-@media (max-width: 870px) {
+@media (max-width: 1000px) {
+  .about-product-3d {
+    max-width: 25%;
+    font-size: 16px;
+    top: calc(50% - 113px);
+  }
+}
+@media (max-width: 1000px) and (max-width: 870px) {
   .about-product-3d {
     position: relative;
     top: auto;
-    left: auto;
+    right: auto;
     text-align: center;
     margin: 0 auto;
+    max-width: 90%;
+    font-size: 20px;
   }
 }
 
@@ -2877,8 +2889,10 @@ footer .container {
   background-color: #656565;
 }
 
-.bg-3d {
-  max-height: 100vh;
+@media (max-width: 870px) {
+  .bg-3d {
+    max-height: 100vh;
+  }
 }
 
 .logo {
