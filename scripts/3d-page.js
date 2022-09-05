@@ -94,6 +94,8 @@ function init() {
         })
         scene.add(model);
         animate();
+        let preloader = document.getElementById('preloader');
+        preloader.style.display = 'none';
     });
 
 
@@ -196,7 +198,3 @@ function buildMainBlock() {
 buildMainBlock()
 
 
-window.onload = function (){
-	let preloader = document.getElementById('preloader');
-	preloader.style.display = 'none';
-}
