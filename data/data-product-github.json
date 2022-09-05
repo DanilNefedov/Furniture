@@ -7,13 +7,13 @@
 		"discount":"-30%",
 		"oldPrice":"3.500.000"
 	},
-	"image": "../Furniture/img/prod-1.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-1.jpg"
 },{
 	"id": "2",
 	"header": "Leviosa",
     "subtitle":"Stylish cafe chair",
 	"price":"2.500.000",
-	"image": "../Furniture/img/prod-2.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-2.jpg"
 },{
 	"id": "3",
 	"header": "Lolito",
@@ -23,7 +23,7 @@
 		"discount":"-50%",
 		"oldPrice":"14.000.000"
 	},
-	"image": "../Furniture/img/prod-3.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-3.jpg"
 },{
 	"id": "4",
 	"header": "Respira",
@@ -32,13 +32,13 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-4.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-4.jpg"
 },{
 	"id": "5",
 	"header": "Grifo",
 	"subtitle":"Night lamp",
 	"price":"1.500.000",
-	"image": "../Furniture/img/prod-5.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-5.jpg"
 },{
 	"id": "6",
 	"header": "Muggo",
@@ -47,7 +47,7 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-6.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-6.jpg"
 },{
 	"id": "7",
 	"header": "Pingky",
@@ -57,7 +57,7 @@
 		"discount":"-50%",
 		"oldPrice":" 14.000.000"
 	},
-	"image": "../Furniture/img/prod-7.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-7.jpg"
 },{
 	"id": "8",
 	"header": "Potty",
@@ -66,7 +66,7 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-8.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-8.jpg"
 },
 {
 	"id": "9",
@@ -77,13 +77,13 @@
 		"discount":"-30%",
 		"oldPrice":" 3.500.000"
 	},
-	"image": "../Furniture/img/prod-1.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-1.jpg"
 },{
 	"id": "10",
 	"header": "Leviosa",
     "subtitle":"Stylish cafe chair",
 	"price":" 2.500.000",
-	"image": "../Furniture/img/prod-2.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-2.jpg"
 },{
 	"id": "11",
 	"header": "Lolito",
@@ -93,7 +93,7 @@
 		"discount":"-50%",
 		"oldPrice":" 14.000.000"
 	},
-	"image": "../Furniture/img/prod-3.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-3.jpg"
 },{
 	"id": "12",
 	"header": "Respira",
@@ -102,13 +102,13 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-4.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-4.jpg"
 },{
 	"id": "13",
 	"header": "Grifo",
 	"subtitle":"Night lamp",
 	"price":" 1.500.000",
-	"image": "../Furniture/img/prod-5.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-5.jpg"
 },{
 	"id": "14",
 	"header": "Muggo",
@@ -117,7 +117,7 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-6.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-6.jpg"
 },{
 	"id": "15",
 	"header": "Pingky",
@@ -127,7 +127,7 @@
 		"discount":"-50%",
 		"oldPrice":" 14.000.000"
 	},
-	"image": "../Furniture/img/prod-7.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-7.jpg"
 },{
 	"id": "16",
 	"header": "Potty",
@@ -136,7 +136,7 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-8.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-8.jpg"
 },{
 	"id": "17",
 	"header": "Syltherine",
@@ -146,13 +146,13 @@
 		"discount":"-30%",
 		"oldPrice":" 3.500.000"
 	},
-	"image": "../Furniture/img/prod-1.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-1.jpg"
 },{
 	"id": "18",
 	"header": "Leviosa 18",
     "subtitle":"Stylish cafe chair",
 	"price":"2.500.000",
-	"image": "../Furniture/img/prod-2.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-2.jpg"
 },{
 	"id": "19",
 	"header": "Lolito",
@@ -162,7 +162,7 @@
 		"discount":"-50%",
 		"oldPrice":"14.000.000"
 	},
-	"image": "../Furniture/img/prod-3.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-3.jpg"
 },{
 	"id": "20",
 	"header": "Respira",
@@ -171,13 +171,13 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-4.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-4.jpg"
 },{
 	"id": "21",
 	"header": "Grifo",
 	"subtitle":"Night lamp",
 	"price":"1.500.000",
-	"image": "../Furniture/img/prod-5.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-5.jpg"
 },{
 	"id": "22",
 	"header": "Muggo",
@@ -186,7 +186,7 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-6.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-6.jpg"
 },{
 	"id": "23",
 	"header": "Pingky",
@@ -196,7 +196,7 @@
 		"discount":"-50%",
 		"oldPrice":"14.000.000"
 	},
-	"image": "../Furniture/img/prod-7.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-7.jpg"
 },{
 	"id": "24",
 	"header": "Potty",
@@ -205,5 +205,5 @@
 	"seasonNew":{
 		"new":"New"
 	},
-	"image": "../Furniture/img/prod-8.jpg"
+	"image": "https://danilnefedov.github.io/Furniture/img/prod-8.jpg"
 }]
