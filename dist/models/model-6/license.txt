@@ -1,11 +1,11 @@
 Model Information:
-* title:	Wooden Chair
-* source:	https://sketchfab.com/3d-models/wooden-chair-c4ea42b0c5b745fb83d095281df54a5d
-* author:	Zian (https://sketchfab.com/zian_0912)
+* title:	Stool
+* source:	https://sketchfab.com/3d-models/stool-69c8a117d535403dbbc72ece3a1cf0ec
+* author:	shedmon (https://sketchfab.com/shedmon)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Wooden Chair" (https://sketchfab.com/3d-models/wooden-chair-c4ea42b0c5b745fb83d095281df54a5d) by Zian (https://sketchfab.com/zian_0912) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Stool" (https://sketchfab.com/3d-models/stool-69c8a117d535403dbbc72ece3a1cf0ec) by shedmon (https://sketchfab.com/shedmon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

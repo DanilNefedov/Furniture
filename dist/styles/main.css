@@ -2871,7 +2871,6 @@ footer .container {
 
 .model {
   max-width: 100%;
-  border: 1px black solid;
 }
 .model canvas {
   display: block;
@@ -2887,12 +2886,6 @@ footer .container {
 
 .page-3d .wrapper {
   background-color: #656565;
-}
-
-@media (max-width: 870px) {
-  .bg-3d {
-    max-height: 100vh;
-  }
 }
 
 .logo {
@@ -3019,11 +3012,12 @@ footer .container {
 }
 @media (max-width: 1000px) and (max-width: 870px) {
   .product-btn-3d {
-    min-height: 100vh;
+    max-height: 100vh;
     position: relative;
     bottom: auto;
     left: auto;
     margin: 6% auto;
     max-width: 164px;
+    display: block;
   }
 }

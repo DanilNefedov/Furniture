@@ -3,49 +3,49 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 344,
+      "count": 954,
       "max": [
-        0.22027045488357544,
-        0.22027043998241425,
-        0.51576167345047
+        0.6776919960975647,
+        1.0,
+        0.6677669882774353
       ],
       "min": [
-        -0.22027230262756348,
-        -0.22027236223220825,
-        -0.00010882783681154251
+        -0.6776919960975647,
+        -1.0,
+        -0.6677669882774353
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 4128,
+      "byteOffset": 11448,
       "componentType": 5126,
-      "count": 344,
+      "count": 954,
       "max": [
-        0.999997615814209,
         1.0,
-        1.0
+        1.0,
+        0.9993782639503479
       ],
       "min": [
-        -0.999997615814209,
         -1.0,
-        -1.0
+        -1.0,
+        -0.9993782639503479
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 3,
       "componentType": 5126,
-      "count": 344,
+      "count": 954,
       "max": [
         1.0,
-        1.0,
-        0.9999974370002747,
+        0.9999960660934448,
+        0.9999999403953552,
         1.0
       ],
       "min": [
         -1.0,
-        -1.0,
+        -0.9999961853027344,
         -1.0,
         1.0
       ],
@@ -54,61 +54,61 @@
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 344,
+      "count": 954,
       "max": [
-        0.996940016746521,
-        0.9971259832382202
+        0.9701619744300842,
+        0.9900000095367432
       ],
       "min": [
-        0.0018530000234022737,
-        0.0018530000234022737
+        0.009999999776482582,
+        0.009999999776482582
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 816,
+      "count": 3840,
       "type": "SCALAR"
     }
   ],
   "asset": {
     "extras": {
-      "author": "Zian (https://sketchfab.com/zian_0912)",
+      "author": "shedmon (https://sketchfab.com/shedmon)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/wooden-chair-c4ea42b0c5b745fb83d095281df54a5d",
-      "title": "Wooden Chair"
+      "source": "https://sketchfab.com/3d-models/stool-69c8a117d535403dbbc72ece3a1cf0ec",
+      "title": "Stool"
     },
-    "generator": "Sketchfab-12.66.0",
+    "generator": "Sketchfab-12.65.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 3264,
+      "byteLength": 15360,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 2752,
-      "byteOffset": 3264,
+      "byteLength": 7632,
+      "byteOffset": 15360,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 8256,
-      "byteOffset": 6016,
+      "byteLength": 22896,
+      "byteOffset": 22992,
       "byteStride": 12,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 5504,
-      "byteOffset": 14272,
+      "byteLength": 15264,
+      "byteOffset": 45888,
       "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
@@ -116,25 +116,40 @@
   ],
   "buffers": [
     {
-      "byteLength": 19776,
+      "byteLength": 61152,
       "uri": "scene.bin"
     }
   ],
+  "extensionsUsed": [
+    "KHR_materials_clearcoat"
+  ],
   "images": [
     {
-      "uri": "textures/Scene_-_Root_baseColor.png"
+      "uri": "textures/Default_baseColor.jpeg"
     },
     {
-      "uri": "textures/Scene_-_Root_metallicRoughness.png"
+      "uri": "textures/Default_metallicRoughness.png"
     },
     {
-      "uri": "textures/Scene_-_Root_normal.png"
+      "uri": "textures/Default_normal.png"
     }
   ],
   "materials": [
     {
       "doubleSided": true,
-      "name": "Scene_-_Root",
+      "extensions": {
+        "KHR_materials_clearcoat": {
+          "clearcoatFactor": 1.0,
+          "clearcoatNormalTexture": {
+            "index": 2
+          },
+          "clearcoatRoughnessFactor": 1.0,
+          "clearcoatRoughnessTexture": {
+            "index": 1
+          }
+        }
+      },
+      "name": "Default",
       "normalTexture": {
         "index": 2
       },
@@ -153,7 +168,7 @@
   ],
   "meshes": [
     {
-      "name": "Wood_Chair_01b.003__0",
+      "name": "defaultMaterial",
       "primitives": [
         {
           "attributes": {
@@ -175,17 +190,17 @@
         1
       ],
       "matrix": [
-        1.0,
+        0.3793700039386749,
         0.0,
         0.0,
         0.0,
         0.0,
-        2.220446049250313e-16,
-        -1.0,
+        8.423706264497065e-17,
+        -0.3793700039386749,
         0.0,
         0.0,
-        1.0,
-        2.220446049250313e-16,
+        0.3793700039386749,
+        8.423706264497065e-17,
         0.0,
         0.0,
         0.0,
@@ -199,58 +214,34 @@
         2
       ],
       "matrix": [
-        0.009999999776482582,
+        1.0,
         0.0,
         0.0,
         0.0,
         0.0,
+        -4.371139006309477e-08,
+        0.999999999999999,
         0.0,
-        0.009999999776482582,
         0.0,
-        0.0,
-        -0.009999999776482582,
-        0.0,
+        -0.999999999999999,
+        -4.371139006309477e-08,
         0.0,
         0.0,
         0.0,
         0.0,
         1.0
       ],
-      "name": "2bb582ec441c49a7a36f61ebd995c1fa.fbx"
+      "name": "Collada visual scene group"
     },
     {
       "children": [
         3
       ],
-      "name": "RootNode"
-    },
-    {
-      "children": [
-        4
-      ],
-      "matrix": [
-        100.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        -1.629206793918314e-05,
-        -99.99999999999868,
-        0.0,
-        0.0,
-        99.99999999999868,
-        -1.629206793918314e-05,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "Wood_Chair_01b.003"
+      "name": "g"
     },
     {
       "mesh": 0,
-      "name": "Wood_Chair_01b.003__0"
+      "name": "defaultMaterial"
     }
   ],
   "samplers": [
