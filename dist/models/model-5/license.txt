@@ -1,11 +1,11 @@
 Model Information:
-* title:	Leather Chair Chik
-* source:	https://sketchfab.com/3d-models/leather-chair-chik-bf38ede8922d4842b87e6dfb47aa8eff
-* author:	jaikrajak (https://sketchfab.com/jaikrajak)
+* title:	Old Armchair Textures Comparison
+* source:	https://sketchfab.com/3d-models/old-armchair-textures-comparison-339ac3a31db046648463f5b5b852ad3e
+* author:	Francesco Coldesina (https://sketchfab.com/topfrank2013)
 
 Model License:
-* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
-* requirements:	Author must be credited. No commercial use.
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Leather Chair Chik" (https://sketchfab.com/3d-models/leather-chair-chik-bf38ede8922d4842b87e6dfb47aa8eff) by jaikrajak (https://sketchfab.com/jaikrajak) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+This work is based on "Old Armchair Textures Comparison" (https://sketchfab.com/3d-models/old-armchair-textures-comparison-339ac3a31db046648463f5b5b852ad3e) by Francesco Coldesina (https://sketchfab.com/topfrank2013) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
