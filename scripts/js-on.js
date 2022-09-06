@@ -24,7 +24,6 @@ async function getResponse() {
   fetch(linkBuild).then(response => {
     return response.json();
   }).then(data => {
-    
     let arrNumberID = [];
     for(let i = 0; i < arrElem.length; i++){
       arrNumberID.push(+(arrElem[i].id));
@@ -72,6 +71,25 @@ getResponse()
 
 
 
+if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
+  arrElem = JSON.parse(localStorage.getItem('objElem'))
+  loadCart(arrElem);
+  cartCuont();
+} else {
+  arrElem = [];
+}
+
+
+window.addEventListener('storage', function () {
+  arrElem = JSON.parse(localStorage.getItem('objElem'))
+  window.location.reload()
+  loadCart(arrElem);
+  cartCuont();
+})
+
+
+
+
 
 
 function buildElem(values) {
@@ -89,7 +107,7 @@ function buildElem(values) {
 
           <div class="product-list-hover">
                 <div class="product-list-hover__btn">
-                  <button class="product-list-hover__add" data-id="${values[i].id}">Add to cart</button>
+                  <button class="product-list-hover__add"  data-id="${values[i].id}">Add to cart</button>
                 </div>
                 <div class="product-list-hover__link">
                   <a href="#" class="product-list-hover__share"><svg class="share" width="24" height="24"
@@ -143,21 +161,6 @@ function buildElemAddit(values) {
 
 
 
-
-if (localStorage.getItem('objElem') && JSON.parse(localStorage.getItem('objElem')).length > 0) {
-  arrElem = JSON.parse(localStorage.getItem('objElem'))
-  loadCart(arrElem);
-  cartCuont();
-} else {
-  arrElem = [];
-}
-
-
-window.addEventListener('storage', function () {
-  arrElem = JSON.parse(localStorage.getItem('objElem'))
-  loadCart(arrElem);
-  cartCuont();
-})
 
 
 
