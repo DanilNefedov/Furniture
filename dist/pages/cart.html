@@ -130,10 +130,13 @@
                 </div>
                 <div class="shop-cart__check">
                     <p class="shop-cart__discount">Enter promo code or gift card number:</p>
-                    <input class="shop-cart__inp" id="dicountCart" type="text">
-                    <label for="dicountCart"><img src="../img/check.svg" alt="Check">
+                    <input class="shop-cart__inp" id="discountCart" type="text">
+                    <label for="discountCart" onclick="checkPromo()">
+                        <img src="../img/check.svg" alt="Check">
                     </label>
-                    
+                    <span class="prompt-shop-cart">The promo code must consist of capital letters or numbers, no spaces or special characters, 3-5 characters</span>
+
+                    <p class="shop-cart__parsent">Discount: <span class="shop-cart__parsent--amount">0</span></p>
                     <p class="shop-cart__subtotal">Subtotal: <span class="shop-cart__subtotal--amount">0</span></p>
                     <p class="shop-cart__shipping">Estimated shipping: <span class="shop-cart__shipping--amount">1.000.000</span></p>
                     <p class="shop-cart__total">Total: Rp <span class="shop-cart__total--amount">0</span></p>

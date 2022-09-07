@@ -6,7 +6,8 @@ import { GLTFLoader } from 'GLTFLoader';
 // import { AmbientLight, DirectionalLight, Light } from 'three';
 
 
-
+const prodName = document.querySelector('.product-name')
+const aboutProduct = document.querySelector('.about-product-3d')
 let linkProduct = new URLSearchParams(window.location.search)
 let idProduct = linkProduct.get('idProduct')
 let wrapper = document.querySelector('.model__container');
@@ -178,8 +179,7 @@ function animate() {
 init()
 
 
-const prodName = document.querySelector('.product-name')
-const aboutProduct = document.querySelector('.about-product-3d')
+
 
 
 function buildAboutProd() {

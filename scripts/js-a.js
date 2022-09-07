@@ -27,7 +27,7 @@ function getCoord(obj, index){
         </div>
 
         <div class="main-swiper__img">
-            <img src="${obj[index].img}" alt="furnitura">
+            <img src="${obj[index].img}" alt="${obj[index].header}">
             
         </div>
         <div class="main-swiper__price">

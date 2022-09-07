@@ -27,8 +27,7 @@
 }
 .model{
     max-width: 100%;
-   // border: 1px black solid;
-
+   
     canvas{
         display: block;
     }
@@ -38,6 +37,7 @@
     }
 
     &__container{
+        cursor: -webkit-grab;
         cursor: grab;
     } 
 }
@@ -49,13 +49,7 @@
     }
 }
 
-// .bg-3d{
 
-//     @media(max-width:870px){
-//         // max-height: 100vh;
-//     }
-    
-// }
 
 .logo{
     position: absolute;
@@ -66,9 +60,15 @@
     
     a{
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         height: 100%;
         img{ 
             max-width: none;
@@ -144,6 +144,8 @@
         background-color: #1b1b1b;
         padding: 20px 60px;
         @include fontG(700, 20px, $fontL: 120%, $fontC:$white);
+        -webkit-transition: .3s;
+        -o-transition: .3s;
         transition: .3s;
 
         &:hover{

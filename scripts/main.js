@@ -546,7 +546,6 @@ furnituraImg.addEventListener('mouseover', (e) => {
 
 		furnituraImg.insertAdjacentHTML('afterbegin', addHoverImg(index, elemTop, elemRight, elemWidth, elemHeight))
 		
-	
 	} else {
 
 		return

@@ -76,7 +76,7 @@ function loadDiscount() {
         let persent = 20;
         promoDiscount = JSON.parse(sessionStorage.getItem('discount'))
         discBlock.value = promoDiscount
-        //checkPromo()
+
         subtotalCalc(persent)
     } else {
         let persent = 0;
@@ -97,7 +97,7 @@ function buildElem(elem) {
             counterBuildElem++
             containerShopCart.insertAdjacentHTML("beforeend",
                 `<div class="shop-cart__element" data-id="${storageELem[i].id}">
-                <img src="${storageELem[i].image}" alt="#">
+                    <img src="${storageELem[i].image}" alt="${storageELem[i].header}">
                 <div class="shop-cart__about">
                     <p class="shop-cart__name">${storageELem[i].header}</p>
                     <p class="shop-cart__price">Rp ${storageELem[i].price}</p>
@@ -213,7 +213,7 @@ function plus(elem) {
     sum = elem.children[2].children[1].innerHTML = count + 1;
     loadPage();
     loadDiscount()
-    //subtotalCalc()
+
 }
 
 
@@ -232,13 +232,13 @@ function minus(elem) {
                 counterBuildElem -= 1;
                 loadPage();
                 loadDiscount()
-                //subtotalCalc()
+
             }
         }
     } else {
         sum = elem.children[2].children[1].innerHTML = count - 1;
         loadDiscount()
-        //subtotalCalc()
+
     }
 }
 
@@ -338,7 +338,6 @@ function checkPromo() {
         sessionStorage.setItem('discount', JSON.stringify(promoDiscount))
         loadDiscount()
     }
-    console.log(promoDiscount)
 }
 
 

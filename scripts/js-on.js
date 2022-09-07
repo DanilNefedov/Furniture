@@ -98,7 +98,7 @@ function buildElem(values) {
       
       containerProduct.insertAdjacentHTML("beforeend",
         `<div class="products-list__elem" >
-          <img src="${values[i].image}" alt="Syltherine" class="products-list__img">
+          <img src="${values[i].image}" alt="${values[i].header}" class="products-list__img">
           <div class="products-list__about">
             <h2 class="products-list__header">${values[i].header}</h2>
             <p class="products-list__subtitle">${values[i].subtitle}</p>
