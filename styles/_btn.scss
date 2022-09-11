@@ -257,7 +257,7 @@
 
 }
 
-.main-swiper__right:hover svg {
+.main-swiper__right:active svg{
   -webkit-animation: arrowSwiperR 1s;
   animation: arrowSwiperR 1s;
   -webkit-animation-iteration-count: 1;
@@ -266,13 +266,28 @@
 }
 
 
+.arrow{
+
+  &:hover{
+    background-color: $primary;
+
+    svg{
+
+      path{
+        stroke: $white;
+      }
+    }
+  }
+}
+
+
 
 .arrow {
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
 
-  &:hover {
+  &:active {
     background-color: $primary;
 
     svg {
@@ -282,6 +297,7 @@
       }
     }
   }
+
 }
 
 
@@ -330,7 +346,7 @@
 
 
 
-.main-swiper__left:hover svg {
+.main-swiper__left:active svg{
   -webkit-animation: arrowSwiperL 1s;
   animation: arrowSwiperL 1s;
   -webkit-animation-iteration-count: 1;

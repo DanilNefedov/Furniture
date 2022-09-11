@@ -10,7 +10,7 @@ const slide = document.getElementById('cont-slide');
 const widthImg = document.getElementById('width-img');
 const dot = document.getElementsByClassName('pag-main-swiper');
 let position = 0;
-let widthElem = widthImg.offsetWidth + 32;
+let widthElem ;
 let positionX1 = null;
 let positionY1 = null;
 
@@ -53,6 +53,8 @@ let openAcc = false;
 window.onload = function (){
 	let preloader = document.getElementById('preloader');
 	preloader.style.display = 'none';
+
+	widthElem = widthImg.offsetWidth + 32;	
 }
 
 
@@ -102,7 +104,7 @@ slide.addEventListener('touchmove', moveTouch);
 
 
 function startMove(event) {
-	event.preventDefault();
+
 	const firstTouch = event.touches[0];
 	positionX1 = firstTouch.clientX;
 	positionY1 = firstTouch.clientY;
@@ -110,8 +112,9 @@ function startMove(event) {
 
 
 function moveTouch(event) {
-	event.preventDefault();
+
 	if (!positionX1 || !positionY1) {
+		if (event.cancelable) event.preventDefault();
 		return false
 	}
 	let positionX2 = event.touches[0].clientX;
@@ -350,14 +353,13 @@ carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * coun
 
 
 
-carouselSlide.addEventListener('touchstart', startMoveTipTrik );
-carouselSlide.addEventListener('touchmove', moveTouchTipTrik);
+carouselSlide.addEventListener('touchstart', startMoveTipTrik, false);
+carouselSlide.addEventListener('touchmove', moveTouchTipTrik, false);
 
 
 
 
 function startMoveTipTrik(event) {
-	event.preventDefault();
 	const firstTouch = event.touches[0];
 	positionTipTrikX1 = firstTouch.clientX;
 	positionTipTrikY1 = firstTouch.clientY;
@@ -366,8 +368,8 @@ function startMoveTipTrik(event) {
 
 
 function moveTouchTipTrik(event) {
-	event.preventDefault();
 	if (!positionTipTrikX1 || !positionTipTrikY1) {
+		if (event.cancelable) event.preventDefault();
 		return false
 	}
 	let positionTipX2 = event.touches[0].clientX;
@@ -431,13 +433,10 @@ function moveTouchTipTrik(event) {
 	}
 	positionTipTrikX1 = null
 	positionTipTrikY1 = null
-	
 }
 
 
 
-
-	
 
 	
 

@@ -194,6 +194,9 @@ header {
             height: 30px;
         }
     }
+
+
+    
 }
 
 .new-product-vis{
@@ -242,6 +245,8 @@ header {
                 margin: 0 16px;
                 position: relative;
 
+
+                &:active,
                 &:hover {
                     .main-swiper__about {
                         opacity: 1;
