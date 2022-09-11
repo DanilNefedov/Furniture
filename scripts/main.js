@@ -72,13 +72,13 @@ function open(e) {
 	document.querySelector('.main-swiper').classList.toggle('stop-click')
 	document.querySelector('.top').classList.toggle('stop-click')
 	document.querySelector('.head-search').classList.toggle('stop-click')
+	document.querySelector('#main-hover-about').classList.toggle('stop-click')
 	account.classList.toggle('stop-click')
 	heart.classList.toggle('stop-click')
 	cart.classList.toggle('stop-click')
 }
 
 window.addEventListener('resize', function () {
-
 	if ((innerWidth >= 1000) && (nav.classList.contains('act-nav'))) {
 		nav.classList.remove('act-nav');
 		menu.classList.remove('active');
