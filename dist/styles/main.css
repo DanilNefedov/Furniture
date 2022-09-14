@@ -2303,19 +2303,18 @@ footer .container {
   overflow: hidden;
 }
 
-.main-swiper__right:hover svg {
+.main-swiper__right:active svg {
   -webkit-animation: arrowSwiperR 1s;
   animation: arrowSwiperR 1s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
-@media (max-width: 1000px) {
-  .main-swiper__right:hover svg:active svg {
-    -webkit-animation: arrowSwiperR 1s;
-    animation: arrowSwiperR 1s;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-  }
+
+.arrow:hover {
+  background-color: #E89F71;
+}
+.arrow:hover svg path {
+  stroke: #FFFFFF;
 }
 
 .arrow {
@@ -2323,19 +2322,11 @@ footer .container {
   -o-transition: 0.1s;
   transition: 0.1s;
 }
-.arrow:hover {
+.arrow:active {
   background-color: #E89F71;
 }
-.arrow:hover svg path {
+.arrow:active svg path {
   stroke: #FFFFFF;
-}
-@media (max-width: 1000px) {
-  .arrow:active {
-    background-color: #E89F71;
-  }
-  .arrow:active svg path {
-    stroke: #FFFFFF;
-  }
 }
 
 @-webkit-keyframes arrowSwiperR {
@@ -2372,19 +2363,11 @@ footer .container {
     transform: translateX(0);
   }
 }
-.main-swiper__left:hover svg {
+.main-swiper__left:active svg {
   -webkit-animation: arrowSwiperL 1s;
   animation: arrowSwiperL 1s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
-}
-@media (max-width: 1000px) {
-  .main-swiper__left:hover svg:active svg {
-    -webkit-animation: arrowSwiperL 1s;
-    animation: arrowSwiperL 1s;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-  }
 }
 
 @-webkit-keyframes arrowSwiperL {

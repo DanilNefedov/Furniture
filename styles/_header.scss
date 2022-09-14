@@ -291,11 +291,12 @@ header {
         cursor: pointer;
         position: relative;
 
-        &:hover {
+        &:active {
             background-color: $primary;
+            
         }
 
-        &:hover::after {
+        &:active::after {
             border-color: $primary;
         }
 
@@ -323,6 +324,7 @@ header {
         left: calc(50% - 64px);
     }
 }
+
 
 
 .main-swiper__about {

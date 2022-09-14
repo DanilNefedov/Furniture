@@ -48,7 +48,6 @@ function getCoord(obj, index){
             <button class="main-swiper__btn-buy">Buy</button>
 		    <button class="main-swiper__btn-add">Add to cart</button>
         </div>
-        
         `
     );
 }
@@ -58,5 +57,4 @@ addBlockMainSwiper.addEventListener('click', (e)=>{
         addBlockMainSwiper.style.top = '-100%';
         addBlockMainSwiper.style.right = '-100%';
     }
-    
 })

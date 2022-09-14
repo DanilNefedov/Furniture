@@ -144,11 +144,11 @@
             cursor: pointer;
             position: relative;
 
-            &:hover {
+            &:active {
                 background-color: $primary;
             }
 
-            &:hover::after {
+            &:active::after {
                 border-color: $primary;
             }
 
