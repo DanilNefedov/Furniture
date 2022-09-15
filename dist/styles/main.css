@@ -462,10 +462,10 @@ header {
   cursor: pointer;
   position: relative;
 }
-.main-swiper__pagination .main-swiper__dot:hover {
+.main-swiper__pagination .main-swiper__dot:active {
   background-color: #E89F71;
 }
-.main-swiper__pagination .main-swiper__dot:hover::after {
+.main-swiper__pagination .main-swiper__dot:active::after {
   border-color: #E89F71;
 }
 .main-swiper__pagination .main-swiper__dot::after {
@@ -1402,7 +1402,7 @@ header {
 @media (max-width: 1160px) {
   .rooms-swiper .main-swiper__pagination {
     left: 125px;
-    top: 570px;
+    top: 560px;
   }
 }
 @media (max-width: 1160px) and (max-width: 780px) {
@@ -1428,10 +1428,10 @@ header {
   cursor: pointer;
   position: relative;
 }
-.rooms-swiper .main-swiper__pagination .main-swiper__dot:hover {
+.rooms-swiper .main-swiper__pagination .main-swiper__dot:active {
   background-color: #E89F71;
 }
-.rooms-swiper .main-swiper__pagination .main-swiper__dot:hover::after {
+.rooms-swiper .main-swiper__pagination .main-swiper__dot:active::after {
   border-color: #E89F71;
 }
 .rooms-swiper .main-swiper__pagination .main-swiper__dot::after {
@@ -1691,12 +1691,24 @@ header {
 }
 @media (max-width: 1280px) and (max-width: 950px) {
   .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem {
-    padding: 0 8px;
+    padding: 0 0px;
+  }
+}
+@media (max-width: 1280px) and (max-width: 950px) and (max-width: 810px) {
+  .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem {
+    margin-bottom: 20px;
   }
 }
 .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem:hover {
   -webkit-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 810px) {
+  .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem:hover {
+    -webkit-box-shadow: 0px -27px 26px -19px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px -27px 26px -19px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px -27px 26px -19px rgba(34, 60, 80, 0.2) inset;
+  }
 }
 .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem .tip-trik-swiper__header,
 .tip-trik-swiper__wrapper .tip-trik-swiper__slide .tip-trik-swiper__elem .tip-trik-swiper__date {
@@ -3002,6 +3014,7 @@ footer .container {
     position: relative;
     top: auto;
     left: auto;
+    margin-top: 30px;
   }
 }
 @media (max-width: 1000px) and (max-width: 870px) and (max-width: 380px) {

@@ -129,7 +129,11 @@
                     max-width: 250px;
 
                     @media(max-width:950px) {
-                        padding: 0 8px;
+                        padding: 0 0px;
+
+                        @media(max-width:810px) {
+                            margin-bottom: 20px;
+                        }
                     }
                 }
 
@@ -139,6 +143,12 @@
                 &:hover {
                     -webkit-box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
                     box-shadow: 0px 22px 41px -8px rgba(0, 0, 0, 0.2);
+
+                    @media(max-width:810px) {
+                        -webkit-box-shadow: 0px -27px 26px -19px rgba(34, 60, 80, 0.2) inset;
+                        -moz-box-shadow: 0px -27px 26px -19px rgba(34, 60, 80, 0.2) inset;
+                        box-shadow: 0px -27px 26px -19px rgba(34, 60, 80, 0.2) inset;
+                    }
                 }
 
                 .tip-trik-swiper__header,

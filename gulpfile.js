@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const jsmin = require('gulp-jsmin');
-const rename = require('gulp-rename');
+//const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const critical = require('critical');
@@ -10,6 +10,7 @@ const htmlmin = require('gulp-htmlmin');
 const path = require('path');
 const replace = require('gulp-replace-path');
 const clean = require('gulp-clean');
+const uglify = require('gulp-uglify-es').default;
 
 // Static Server + watching scss/html files
 gulp.task('serve', function() {
@@ -38,13 +39,26 @@ function buildStyles(done) {
     done();
 };
 
-gulp.task('js', function (done) {
-    gulp.src('scripts/**/*.js')
-        .pipe(jsmin())
-        .pipe(rename({suffix: '.min'})) // ?
-        .pipe(gulp.dest('dist/scripts'));
+
+
+
+
+gulp.task("uglify", function (done) {
+	return gulp.src("scripts/**/*.js")
+		//.pipe(rename('*.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest("dist/scripts"));
         done();
 });
+
+
+// gulp.task('js', function (done) {
+//     gulp.src('scripts/**/*.js')
+//         .pipe(jsmin())
+//         .pipe(rename({suffix: '.min'})) // ?
+//         .pipe(gulp.dest('dist/scripts'));
+//         done();
+// });
 
 
 function images(done){
@@ -100,7 +114,13 @@ gulp.task('non-critical', (done) => {
 
 gulp.task('favicons', (done) => {
     return gulp.src( './favicons/**/*')
-            .pipe(gulp.dest('dist/'));
+            .pipe(gulp.dest('dist/favicons/'));
+            done();
+});
+
+gulp.task('fonts', (done) => {
+    return gulp.src( './fonts/**/*')
+            .pipe(gulp.dest('dist/fonts/'));
             done();
 });
 
@@ -135,7 +155,7 @@ exports.buildStyles = buildStyles;
 exports.images = images;
 
 
-exports.build = gulp.series('clean' ,buildStyles, 'critical', 'js', 'webp', 'models', 'htmlmin', 'non-critical', 'favicons', 'seo', 'data', images, 'serve','sass');
+exports.build = gulp.series('clean' ,buildStyles, 'fonts', 'critical', 'uglify', 'webp', 'models', 'htmlmin', 'non-critical', 'favicons', 'seo', 'data', images, 'serve','sass');
 
 
 

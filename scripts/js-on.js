@@ -18,7 +18,7 @@ async function getResponse() {
   }else if(window.location.href === 'https://danilnefedov.github.io/Furniture/'){
     linkBuild = '../Furniture/data/data-product-github.json';
   }else{
-    console.log('Link is not valid')
+    linkBuild = '../dist/data-files/data-product-gulp.json';
   }
 
   fetch(linkBuild).then(response => {
