@@ -128,13 +128,11 @@ function moveTouch(event) {
 			
 			if(position > widthElem * (-2)){
 				position -= widthElem;
-				console.log('r')
 				slide.style.cssText = `transform: translate3d(${position}px, 0px, 0px);
 				transition-duration: 1195ms;`;
 
 				for (let i = 0; i < dot.length; i++) {
 					if (dot[i].classList.contains('active-pag')) {
-						console.log(dot[i].classList)
 						dot[i].classList.remove('active-pag');
 
 						dot[i + 1].classList.add('active-pag')

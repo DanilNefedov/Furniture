@@ -1,27 +1,27 @@
 const prodName = document.querySelector('.product-name')
-	const aboutProduct = document.querySelector('.about-product-3d')
-	let linkProduct = new URLSearchParams(window.location.search)
-	let idProduct = linkProduct.get('idProduct')
-	let wrapper = document.querySelector('.model__container');
+const aboutProduct = document.querySelector('.about-product-3d')
+let linkProduct = new URLSearchParams(window.location.search)
+let idProduct = linkProduct.get('idProduct')
+let wrapper = document.querySelector('.model__container');
 
 
 
 
-	let camera, scene, renderer, model, hemiLight, spotLight, controls;
-	let height = window.innerHeight;
+let camera, scene, renderer, model, hemiLight, spotLight, controls;
+let height = window.innerHeight;
 
-	window.addEventListener('resize', function () {
-		height = window.innerHeight
+window.addEventListener('resize', function () {
+	height = window.innerHeight
 
-		if (window.innerWidth <= 870) {
-			height = 300;
+	if (window.innerWidth <= 870) {
+		height = 300;
 
-		}
-	})
+	}
+})
 
 
 
-	function init() {
+function init() {
 
     
 
