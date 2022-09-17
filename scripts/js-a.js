@@ -1,5 +1,5 @@
 import jsonConfig from "../data/data-main-swiper-about.json" assert {type:"json"};
-
+console.log(jsonConfig)
 
 const mainSwiperAbout = document.querySelectorAll('.main-swiper__about');
 const addBlockMainSwiper = document.getElementById('main-hover-about');
