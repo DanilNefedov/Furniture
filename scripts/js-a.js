@@ -9,7 +9,7 @@ const mainHoverContent = document.getElementById('main-hover-content');
 
 for(let i = 0; i < mainSwiperAbout.length; i++){
     mainSwiperAbout[i].addEventListener('click', ()=>{
-        
+        console.log('sas')
         mainHoverContent.insertAdjacentHTML('afterbegin', getCoord(jsonConfig, i))
         addBlockMainSwiper.style.top = '0px';
         addBlockMainSwiper.style.right = '0px';

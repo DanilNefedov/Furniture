@@ -874,7 +874,7 @@ header {
   position: relative;
 }
 .block-x-mark .x-mark {
-  position: fixed;
+  position: absolute;
   top: 31px;
   right: 25px;
   width: 40px;
