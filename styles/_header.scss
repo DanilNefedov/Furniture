@@ -691,22 +691,25 @@ header {
     }
 }
 
+.block-x-mark{
+    position: relative;
+    
+    .x-mark {
+        position: fixed;
+        top: 31px;
+        right: 25px;
+        width: 40px;
+        height: 35px;
+        display: block;
+        cursor: pointer;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
 
-.x-mark {
-    position: fixed;
-    top: 31px;
-    right: 25px;
-    width: 40px;
-    height: 35px;
-    display: block;
-    cursor: pointer;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-
-    &:hover {
-        -webkit-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-        transform: scale(1.5);
+        &:hover {
+            -webkit-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            transform: scale(1.5);
+        }
     }
 }
