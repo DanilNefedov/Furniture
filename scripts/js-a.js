@@ -1,16 +1,16 @@
-import jsonConfig from "../data/data-main-swiper-about.json" assert {type:"json"};
-console.log(jsonConfig)
+import jsonConfig from "../data/data-main-swiper-about.json" assert {type:"json"}
+
 
 const mainSwiperAbout = document.querySelectorAll('.main-swiper__about');
 const addBlockMainSwiper = document.getElementById('main-hover-about');
 const mainHoverContent = document.getElementById('main-hover-content');
-console.log(mainSwiperAbout)
+
 
 
 for(let i = 0; i < mainSwiperAbout.length; i++){
-    console.log(mainSwiperAbout[i])
+
     mainSwiperAbout[i].addEventListener('click', ()=>{
-        console.log('sas')
+
         mainHoverContent.insertAdjacentHTML('afterbegin', getCoord(jsonConfig, i))
         addBlockMainSwiper.style.top = '0px';
         addBlockMainSwiper.style.right = '0px';
@@ -20,7 +20,7 @@ for(let i = 0; i < mainSwiperAbout.length; i++){
 
 function getCoord(obj, index){
     while (mainHoverContent.firstChild) {
-        mainHoverContent.removeChild(mainHoverContent.firstChild);
+        mainHoverContent.removeChild(mainHoverContent.firstChild)
     }
     return(
         `<div class="main-swiper__header">
