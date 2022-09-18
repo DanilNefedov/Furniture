@@ -870,8 +870,11 @@ header {
   }
 }
 
-.x-mark {
-  position: fixed;
+.block-x-mark {
+  position: relative;
+}
+.block-x-mark .x-mark {
+  position: absolute;
   top: 31px;
   right: 25px;
   width: 40px;
@@ -882,7 +885,7 @@ header {
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.x-mark:hover {
+.block-x-mark .x-mark:hover {
   -webkit-transform: scale(1.5);
   -ms-transform: scale(1.5);
   transform: scale(1.5);

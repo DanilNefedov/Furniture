@@ -354,8 +354,8 @@ carouselSlide.style.cssText = `transform: translate3d(${-widthElemTipTrik * coun
 
 
 
-carouselSlide.addEventListener('touchstart', startMoveTipTrik, false);
-carouselSlide.addEventListener('touchmove', moveTouchTipTrik, false);
+carouselSlide.addEventListener('touchstart', startMoveTipTrik);
+carouselSlide.addEventListener('touchmove', moveTouchTipTrik);
 
 
 
@@ -369,6 +369,7 @@ function startMoveTipTrik(event) {
 
 
 function moveTouchTipTrik(event) {
+	
 	if (!positionTipTrikX1 || !positionTipTrikY1) {
 		if (event.cancelable) event.preventDefault();
 		return false
