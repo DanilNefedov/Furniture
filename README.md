@@ -4,6 +4,7 @@ It is also possible to see an example of using the [THREE.js](https://threejs.or
 
 ***If you don't need project folder you can just click on this link -> [Furnitura](https://danilnefedov.github.io/Furniture/).***
 
+### ***Some functionality may not work on IOS. No device to fix.***
 
 In the project, you can load additional products.
 
