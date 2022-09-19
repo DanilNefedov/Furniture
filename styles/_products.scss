@@ -1,16 +1,19 @@
-.products-header {
-    @include fontG(700, 40px, $fontL: 120%);
-    padding-bottom: 32px;
-    text-align: center;
 
-    @media(max-width:835px) {
-        font-size: 30px;
-        padding-bottom: 25px;
-    }
-}
 
 main {
     .container-products {
+        display: block;
+        
+        .products-header {
+            @include fontG(700, 40px, $fontL: 120%);
+            padding-bottom: 32px;
+            text-align: center;
+
+            @media(max-width:835px) {
+                font-size: 30px;
+                padding-bottom: 25px;
+            }
+        }
 
         @media(max-width:1180px) {
             -webkit-box-pack: center;

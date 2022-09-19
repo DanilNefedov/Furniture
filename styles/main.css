@@ -970,7 +970,10 @@ header {
   }
 }
 
-.products-header {
+main .container-products {
+  display: block;
+}
+main .container-products .products-header {
   font-family: "Gilroy";
   font-weight: 700;
   font-size: 40px;
@@ -980,12 +983,11 @@ header {
   text-align: center;
 }
 @media (max-width: 835px) {
-  .products-header {
+  main .container-products .products-header {
     font-size: 30px;
     padding-bottom: 25px;
   }
 }
-
 @media (max-width: 1180px) {
   main .container-products {
     -webkit-box-pack: center;
