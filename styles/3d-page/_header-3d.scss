@@ -30,6 +30,7 @@
    
     canvas{
         display: block;
+
     }
     @media(max-width:870px){
         margin-top: 20px;
@@ -106,76 +107,4 @@
         }
         
     }
-}
-
-.about-product{
-    position: absolute;
-    top: calc(50% - 75px);
-    right: 5%;
-    max-width: 20%;
-    text-align: center;
-    left: auto;
-    color: #1b1b1b;
-
-    @media(max-width:1000px){
-        max-width: 25%;
-        font-size: 16px;
-        top: calc(50% - 113px);
-
-        @media(max-width:870px){
-            top: 13%;
-            max-width: 90%;
-
-            @media(max-width:380px){
-                top: 15%;
-                font-size: 15px;
-            }
-        }
-    }
-}
-
-
-.product-btn-3d{
-    position: absolute;
-    bottom: 10%;
-    left: calc(50% - 100px);
-    max-width: 200px;
-
-    button{
-        background-color: #1b1b1b;
-        padding: 20px 60px;
-        @include fontG(700, 20px, $fontL: 120%, $fontC:$white);
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s;
-
-        &:hover{
-            background-color: $primary;
-            color: #E4E4E4;
-        }
-
-        @media(max-width:1000px){
-            padding: 15px 50px;
-            font-size: 16px;
-
-            @media(max-width:380px){
-                font-size: 15px;
-                padding: 13px 45px;
-            }
-        }
-    }
-
-    @media(max-width:1000px){
-        left: calc(50% - 81px);
-
-        @media(max-width:870px){
-            max-height: 100vh;
-            position: relative;
-            bottom: auto;
-            left:auto;
-            margin: 6% auto;
-            max-width: 164px;
-            display: block;
-        }
-    }    
 }
